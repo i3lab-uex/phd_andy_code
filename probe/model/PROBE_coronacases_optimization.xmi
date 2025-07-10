@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Probe:PROBE
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Probe="https://www.example.org/probe"
+    xsi:schemaLocation="https://www.example.org/probe ../metamodel/probe.ecore">
+  <dataset name="Coronacases"
+      description="Lung CT (Coronacases Dataset)">
+    <subset
+        name="trainingSet"
+        path="/mnt/c/Users/Usuario/PycharmProjects/mismef/datasets/covid"
+        dataFolderName="COVID-19-CT-Seg_20cases"
+        labelsFolderName="Lung_Mask">
+      <sample
+          filename="coronacases_001.nii.gz"/>
+      <sample
+          filename="coronacases_002.nii.gz"/>
+      <sample
+          filename="coronacases_003.nii.gz"/>
+      <sample
+          filename="coronacases_004.nii.gz"/>
+      <sample
+          filename="coronacases_005.nii.gz"/>
+      <sample
+          filename="coronacases_006.nii.gz"/>
+      <sample
+          filename="coronacases_007.nii.gz"/>
+      <sample
+          filename="coronacases_008.nii.gz"/>
+      <sample
+          filename="coronacases_009.nii.gz"/>
+      <sample
+          filename="coronacases_010.nii.gz"/>
+    </subset>
+  </dataset>
+  <optimization_task
+      name="Genetic Algorithms"
+      description="Tarea de optimización mediante el uso de algoritmos genéticos">
+    <performance_metric
+        name="Jaccard Index"
+        baseline="0.9738"/>
+    <performance_metric
+        name="Dice Coefficient"
+        type="DICE"
+        baseline="0.9866"/>
+    <performance_metric
+        name="SAM Score"
+        type="SAM_SCORE"/>
+    <foundation_model
+        name="vit_b"
+        version="1.0"
+        description="MedSAM ViT-B"
+        checkpointFilepath="/mnt/c/Users/Usuario/PycharmProjects/mismef/model_checkpoints/medsam_vit_b_01ec64.pth"
+        configuration=""/>
+    <optimization_metric
+        name="Sam Score as an optimization metric"
+        type="SAM_SCORE"/>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.0"
+        name="Experiment 1 - coronacases_001">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="Probe:PromptForImage">
+          <point>
+            <coordinates
+                x="347"
+                y="325"/>
+          </point>
+          <point>
+            <coordinates
+                x="166"
+                y="327"/>
+          </point>
+          <point
+              type="NEGATIVE">
+            <coordinates
+                x="251"
+                y="327"/>
+          </point>
+          <bounding_box>
+            <min_coordinates
+                x="102"
+                y="218"/>
+            <max_coordinates
+                x="400"
+                y="437"/>
+          </bounding_box>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="Probe:NoImprovement"/>
+      <stop_condition
+          xsi:type="Probe:TimeLimit"
+          minutesDuration="5.0"/>
+      <stop_condition
+          xsi:type="Probe:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.1"
+        name="Experiment 2 - coronacases_002">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="Probe:PromptForImage">
+          <point>
+            <coordinates
+                x="347"
+                y="325"/>
+          </point>
+          <point>
+            <coordinates
+                x="166"
+                y="327"/>
+          </point>
+          <point
+              type="NEGATIVE">
+            <coordinates
+                x="251"
+                y="327"/>
+          </point>
+          <bounding_box>
+            <min_coordinates
+                x="102"
+                y="218"/>
+            <max_coordinates
+                x="400"
+                y="437"/>
+          </bounding_box>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="Probe:NoImprovement"/>
+    </experiment>
+  </optimization_task>
+  <optimization_task
+      name="Swarm Algorithms"
+      description="Tarea de optimización mediante el uso de algoritmos de enjambres (SWARM)"
+      algorithm="PARTICLE_SWARM">
+    <performance_metric
+        name="Jaccard Index"
+        baseline="0.9738"/>
+    <performance_metric
+        name="Dice Coefficient"
+        type="DICE"
+        baseline="0.9866"/>
+    <performance_metric
+        name="SAM Score"
+        type="SAM_SCORE"/>
+    <foundation_model
+        name="SAM 2 Large"
+        version="2.0"
+        description="MedSAM ViT-h"
+        checkpointFilepath="/mnt/c/Users/Usuario/PycharmProjects/mismef/model_checkpoints/sam2_hiera_l.pt"
+        configuration="sam2_hiera_l.yaml"/>
+    <optimization_metric
+        name="Sam Score as an optimization metric"
+        type="SAM_SCORE"/>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.0"
+        name="Experiment 1 - coronacases_001">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="Probe:PromptForImage">
+          <point>
+            <coordinates
+                x="347"
+                y="325"/>
+          </point>
+          <point>
+            <coordinates
+                x="166"
+                y="327"/>
+          </point>
+          <point
+              type="NEGATIVE">
+            <coordinates
+                x="251"
+                y="327"/>
+          </point>
+          <bounding_box>
+            <min_coordinates
+                x="102"
+                y="218"/>
+            <max_coordinates
+                x="400"
+                y="437"/>
+          </bounding_box>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="Probe:NoImprovement"/>
+      <stop_condition
+          xsi:type="Probe:TimeLimit"
+          minutesDuration="5.0"/>
+      <stop_condition
+          xsi:type="Probe:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+  </optimization_task>
+</Probe:PROBE>

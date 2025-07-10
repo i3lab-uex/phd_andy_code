@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PROBE" nsURI="https://www.example.org/probe" nsPrefix="Probe">
+  <eClassifiers xsi:type="ecore:EClass" name="PROBE">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataset" lowerBound="1"
+        upperBound="-1" eType="#//Dataset" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimization_task" lowerBound="1"
+        upperBound="-1" eType="#//OptimizationTask" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="device" eType="#//DeviceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dataset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subset" lowerBound="1"
+        upperBound="-1" eType="#//Subset" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"
+        defaultValueLiteral="IMAGE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Metric">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MetricType"
+        defaultValueLiteral="JACCARD"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FoundationModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkpointFilepath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ModelType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DeviceType">
+    <eLiterals name="NVIDIA"/>
+    <eLiterals name="INTEL"/>
+    <eLiterals name="CPU"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PromptForImage" eSuperTypes="#//Prompt">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" upperBound="-1"
+        eType="#//Point" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bounding_box" upperBound="-1"
+        eType="#//BoundingBox" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimizationTask">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="performance_metric" lowerBound="1"
+        upperBound="-1" eType="#//Metric" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="foundation_model" lowerBound="1"
+        eType="#//FoundationModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimization_metric" lowerBound="1"
+        eType="#//Metric" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="experiment" lowerBound="1"
+        upperBound="-1" eType="#//Experiment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="#//OptimizationAlgorithm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundingBox">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min_coordinates" lowerBound="1"
+        eType="#//Coordinates" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max_coordinates" lowerBound="1"
+        eType="#//Coordinates" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Point">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PointType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinates" lowerBound="1"
+        eType="#//Coordinates" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prompt" lowerBound="1"
+        eType="#//Prompt" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasImproved" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MetricType">
+    <eLiterals name="JACCARD"/>
+    <eLiterals name="DICE" value="1"/>
+    <eLiterals name="NSD" value="2"/>
+    <eLiterals name="SAM_SCORE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PointType">
+    <eLiterals name="POSITIVE"/>
+    <eLiterals name="NEGATIVE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sample">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extension" eType="#//FileFormatType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sample" lowerBound="1"
+        upperBound="-1" eType="#//Sample" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFolderName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelsFolderName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FileFormatType">
+    <eLiterals name="NIFTI"/>
+    <eLiterals name="DICOM" value="1"/>
+    <eLiterals name="PNG" value="2"/>
+    <eLiterals name="JPG" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="TEXT"/>
+    <eLiterals name="IMAGE" value="1"/>
+    <eLiterals name="AUDIO" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Experiment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initial_state" lowerBound="1"
+        eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sample" lowerBound="1"
+        eType="#//Sample"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stop_condition" lowerBound="1"
+        upperBound="-1" eType="#//StopCondition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ModelType">
+    <eLiterals name="IMAGE_SEGMENTATION"/>
+    <eLiterals name="TEXT_GENERATION" value="1"/>
+    <eLiterals name="AUDIO_SEGMENTATION" value="2"/>
+    <eLiterals name="IMAGE_CLASSIFICATION" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OptimizationAlgorithm">
+    <eLiterals name="GENETIC"/>
+    <eLiterals name="PARTICLE_SWARM" value="1"/>
+    <eLiterals name="ANT_COLONY" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Prompt" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PromptForText" eSuperTypes="#//Prompt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PromptForAudio" eSuperTypes="#//Prompt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StopCondition" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NoImprovement" eSuperTypes="#//StopCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeLimit" eSuperTypes="#//StopCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minutesDuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaxIterations" eSuperTypes="#//StopCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numIterations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Coordinates">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>
