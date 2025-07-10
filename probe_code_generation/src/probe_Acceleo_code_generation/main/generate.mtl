@@ -1,0 +1,355 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('https://www.example.org/probe','http://www.eclipse.org/emf/2002/Ecore')]
+
+[**
+ * The documentation of the template generateElement.
+ * @param aPROBE
+ */]
+[template public generateElement(aPROBE : PROBE)]
+[comment @main/]
+[generatePythonEnumerationClasses(aPROBE.eClass().ePackage)/]
+[generatePythonModelClasses(aPROBE.eClass().ePackage)/]
+[generatePythonApp(aPROBE)/]
+[/template]
+
+
+
+[comment -- =========================================== /]
+[comment -- Python enumeration types classes generation /]
+[comment -- =========================================== /]
+[template public generatePythonEnumerationClasses(m : ecore::EPackage)]
+
+[comment -- =============================== /]
+[comment -- Generate enums (EEnum)          /]
+[comment -- =============================== /]
+[for (e : EEnum | m.eClassifiers->filter(EEnum))]
+    [file ('enumerations/'.concat(e.name.concat('.py')), false, 'UTF-8')]
+# Generated from [m.name/] using Acceleo
+
+from enum import Enum
+
+
+class [e.name/](Enum):
+    """Enumeration of [e.name/]."""
+        [for (literal : EEnumLiteral | e.eLiterals)]
+    [literal.name/] = "[literal.name/]"
+        [/for]
+    [/file]
+[/for]
+
+[/template]
+
+
+
+[comment -- =============================== /]
+[comment -- Python Model classes generation /]
+[comment -- =============================== /]
+[template public generatePythonModelClasses(m : ecore::EPackage)]
+
+[comment -- =============================== /]
+[comment -- Generate classes (EClass)       /]
+[comment -- =============================== /]
+[for (c : ecore::EClass | m.eClassifiers->filter(ecore::EClass))]
+    [file ('model/'.concat(c.name.concat('.py')), false, 'UTF-8')]
+# Generated from [m.name/] using Acceleo
+    [if (c.eAllReferences->exists(r | r.upperBound = -1) or c.eAllAttributes->exists(a | a.upperBound = -1))]
+from typing import List
+    [/if]
+    [for (a : EAttribute | c.eAllAttributes)]
+        [let pyType : String =
+            if a.eType.name = 'EString' then 'str'
+            else if a.eType.name = 'EInt' then 'int'
+            else if a.eType.name = 'EFloat' then 'float'
+            else if a.eType.name = 'EDouble' then 'float'
+            else if a.eType.name = 'EBoolean' or a.eType.name = 'boolean' then 'bool'
+            else a.eType.name
+            endif endif endif endif endif
+        ]
+        [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(pyType))]
+from enumerations.[pyType/] import [pyType/]
+        [/if]
+        [/let]
+    [/for]
+    [for (r : EReference | c.eAllReferences)]
+        [let pyType : String =
+            if r.eType.name = 'EString' then 'str'
+            else if r.eType.name = 'EInt' then 'int'
+            else if r.eType.name = 'EFloat' then 'float'
+            else if r.eType.name = 'EDouble' then 'float'
+            else if r.eType.name = 'EBoolean' or r.eType.name = 'boolean' then 'bool'
+            else r.eType.name
+            endif endif endif endif endif
+        ]
+        [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(pyType))]
+from model.[pyType/] import [pyType/]
+        [/if]
+        [/let]
+    [/for]
+    [if (c.abstract and c.eSuperTypes->isEmpty())]
+from abc import ABC
+    [/if]
+    [if (c.name = 'PROBE')]
+from model.Experiment import Experiment
+
+
+def _simulate_experiment(task: OptimizationTask, experiment: Experiment) -> str:
+    """
+    Simulates the execution of an experiment. This is a placeholder function for future injection.
+    :return: Status message of the simulation
+    """
+    output = ['['/][']'/]
+    output.append(f"   • Simulating experiment: {experiment.name}...")
+    output.append(f"     → Using model: {task.foundation_model.name} ({task.foundation_model.type})")
+    output.append(f"     → Optimizing metric: {task.optimization_metric.name}")
+    output.append(f"     → Sample: {experiment.sample.filename}")
+    output.append(f"     → Stop Conditions: {['['/]type(c).__name__ for c in experiment.stop_condition[']'/]}")
+    output.append(f"     ✓ Simulation complete.")
+    return "\n".join(output)
+
+
+class [c.name/]:
+    """Root container for device, datasets and optimization tasks."""
+
+    def __init__(self
+    [for (a : EAttribute | c.eAllAttributes)]
+        [let pyType : String =
+            if a.eType.name = 'EString' then 'str'
+            else if a.eType.name = 'EInt' then 'int'
+            else if a.eType.name = 'EFloat' then 'float'
+            else if a.eType.name = 'EDouble' then 'float'
+            else if a.eType.name = 'EBoolean' or a.eType.name = 'boolean' then 'bool'
+            else a.eType.name
+            endif endif endif endif endif], [a.name/]: [pyType/][/let]
+    [/for]
+    [for (r : EReference | c.eAllReferences)]
+        [let pyType : String =
+            if r.eType.name = 'EString' then 'str'
+            else if r.eType.name = 'EInt' then 'int'
+            else if r.eType.name = 'EFloat' then 'float'
+            else if r.eType.name = 'EDouble' then 'float'
+            else if r.eType.name = 'EBoolean' or r.eType.name = 'boolean' then 'bool'
+            else r.eType.name
+            endif endif endif endif endif]
+            [if (r.upperBound = -1)], [r.name/]: List['['/][pyType/][']'/]
+            [else], [r.name/]: [pyType/]
+            [/if]
+        [/let]
+    [/for]):
+        """
+    [for (a : EAttribute | c.eAllAttributes)]
+        :param [a.name/]: [a.name/] of the PROBE
+    [/for]
+    [for (r : EReference | c.eAllReferences)]
+        :param [r.name/]: [r.name/] of the PROBE
+    [/for]
+        """
+    [for (a : EAttribute | c.eAllAttributes)]
+        self.[a.name/] = [a.name/]
+    [/for]
+    [for (r : EReference | c.eAllReferences)]
+        self.[r.name/] = [r.name/]
+    [/for]
+
+    def get_experiments_for_task(self, task_name: str) -> List['['/]str[']'/]:
+        for task in self.optimization_task:
+            if task.name == task_name:
+                return ['['/]exp.name for exp in task.experiment[']'/]
+        return ['['/][']'/]
+
+    def run_all_experiments_for_task(self, task_name: str) -> str:
+        for task in self.optimization_task:
+            if task.name == task_name:
+                output = ['['/]f"▶ Running all experiments for task: {task.name}"[']'/]
+                for experiment in task.experiment:
+                    output.append(_simulate_experiment(task, experiment))
+                return "\n".join(output)
+        return f"⚠ Task '{task_name}' not found."
+
+    def run_single_experiment(self, task_name: str, experiment_name: str) -> str:
+        for task in self.optimization_task:
+            if task.name == task_name:
+                for experiment in task.experiment:
+                    if experiment.name == experiment_name:
+                        return _simulate_experiment(task, experiment)
+                return f"⚠ Experiment '{experiment_name}' not found in task '{task_name}'"
+        return f"⚠ Task '{task_name}' not found."
+
+    [else]
+[comment -- specific imports for superclasses -- /]
+        [for (s : ecore::EClass | c.eSuperTypes)]
+            [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(s.name))]
+from model.[s.name/] import [s.name/]
+            [/if]
+        [/for]
+
+
+        [if (not c.eSuperTypes->isEmpty())]
+class [c.name/]([c.eSuperTypes->first().name/]):
+        [else]
+            [if (c.abstract)]
+class [c.name/](ABC):
+            [else]
+class [c.name/]:
+            [/if]
+        [/if]
+    """[if (c.abstract)]Abstract base class for[else]Represents a[/if] [c.name/] object."""
+        [if (c.abstract or (c.eAllAttributes->isEmpty() and c.eAllReferences->isEmpty()))]
+    pass
+        [else]
+    def __init__(self
+            [for (a : EAttribute | c.eAllAttributes)]
+                [let pyType : String =
+                    if a.eType.name = 'EString' then 'str'
+                    else if a.eType.name = 'EInt' then 'int'
+                    else if a.eType.name = 'EFloat' then 'float'
+                    else if a.eType.name = 'EDouble' then 'float'
+                    else if a.eType.name = 'EBoolean' or a.eType.name = 'boolean' then 'bool'
+                    else a.eType.name
+                    endif endif endif endif endif], [a.name/]: [pyType/][if (a.name = 'baseline')] = None[/if][/let]
+            [/for]
+            [for (r : EReference | c.eAllReferences)]
+                [let pyType : String =
+                    if r.eType.name = 'EString' then 'str'
+                    else if r.eType.name = 'EInt' then 'int'
+                    else if r.eType.name = 'EFloat' then 'float'
+                    else if r.eType.name = 'EDouble' then 'float'
+                    else if r.eType.name = 'EBoolean' or r.eType.name = 'boolean' then 'bool'
+                    else r.eType.name
+                    endif endif endif endif endif]
+                    [if (r.upperBound = -1)], [r.name/]: List['['/][pyType/][']'/]
+                    [else], [r.name/]: [pyType/]
+                    [/if][/let]
+            [/for]):
+        """
+            [for (a : EAttribute | c.eAllAttributes)]
+        :param [a.name/]: [a.name/] of the [c.name/]
+            [/for]
+            [for (r : EReference | c.eAllReferences)]
+        :param [r.name/]: [r.name/] of the [c.name/]
+            [/for]
+        """
+            [for (a : EAttribute | c.eAllAttributes)]
+        self.[a.name/] = [a.name/]
+            [/for]
+            [for (r : EReference | c.eAllReferences)]
+        self.[r.name/] = [r.name/]
+            [/for]
+        [/if]
+    [/if]
+    [/file]
+[/for]
+[/template]
+
+
+[comment -- ================================================= /]
+[comment -- probe_demo.py: Python main application generation /]
+[comment -- ================================================= /]
+[template public generatePythonApp(aPROBE : PROBE)]
+
+[file ('probe_demo.py', false, 'UTF-8')]
+# Generated instance model for ProbeMM
+from probe_interface import ProbeInterface
+    [for (e : EEnum | aPROBE.eClass().ePackage.eClassifiers->filter(ecore::EEnum))]
+from enumerations.[e.name/] import [e.name/]
+    [/for]
+    [for (c : EClass | aPROBE.eClass().ePackage.eClassifiers->filter(ecore::EClass))]
+from model.[c.name/] import [c.name/]
+    [/for]
+
+# Processing device
+processing_device = DeviceType.[aPROBE.device/]
+
+# Build datasets
+datasets = ['['/]
+    [for (d : Dataset | aPROBE.dataset) separator(',\n')]
+    Dataset(
+        name="[d.name/]",
+        description="[d.description/]",
+        type=DataType.[d.type/],
+        subset=['['/]
+        [for (subset : Subset | d.subset) separator(',\n')]
+            Subset(
+                name="[subset.name/]",
+                path="[subset.path/]",
+                dataFolderName="[subset.dataFolderName/]",
+                labelsFolderName="[subset.labelsFolderName/]",
+                sample=['['/]
+                [for (sample : Sample | subset.sample) separator(',\n')]
+                    Sample(
+                        filename="[sample.filename/]",
+                        extension=FileFormatType.[sample.extension/]
+                    )[/for]
+                [']'/]
+            )[/for]
+        [']'/]
+    )[/for]
+[']'/]
+
+# Build optimization tasks
+optimization_task = ['['/]
+[for (ot : OptimizationTask | aPROBE.optimization_task) separator(',\n')]
+    OptimizationTask(
+        name="[ot.name/]",
+        description="[ot.description/]",
+        algorithm=OptimizationAlgorithm.[ot.algorithm/],
+        foundation_model=FoundationModel(
+            name="[ot.foundation_model.name/]",
+            version=[ot.foundation_model.version/],
+            description="[ot.foundation_model.description/]",
+            checkpointFilepath="[ot.foundation_model.checkpointFilepath/]",
+            configuration="[ot.foundation_model.configuration/]",
+            type=ModelType.[ot.foundation_model.type/]
+        ),
+        experiment=['['/]
+    [for (exp : Experiment | ot.experiment) separator(',\n')]
+		[let initial_state : State = exp.initial_state.oclAsType(State)]
+            Experiment(
+                name="[exp.name/]",
+                initial_state=State(
+                    description="[initial_state.description/]",
+                    hasImproved=[if (initial_state.hasImproved)]True[else]False[/if],
+                    prompt=[if (initial_state.prompt.oclIsTypeOf(PromptForImage))]PromptForImage(
+                        bounding_box=[if (initial_state.prompt.oclAsType(PromptForImage).bounding_box)<>null]['['/][for (bb : BoundingBox | initial_state.prompt.oclAsType(PromptForImage).bounding_box.oclAsType(BoundingBox)) separator(', ')]BoundingBox(min_coordinates=Coordinates(x=[bb.min_coordinates.x/], y=[bb.min_coordinates.y/]), max_coordinates=Coordinates(x=[bb.max_coordinates.x/], y=[bb.max_coordinates.y/]))[/for][']'/][else]None[/if],
+                        point=[if (initial_state.prompt.oclAsType(PromptForImage).point)<>null]['['/][for (p : Point | initial_state.prompt.oclAsType(PromptForImage).point.oclAsType(Point)) separator(', ')]Point(type=PointType.[p.type/], coordinates=Coordinates(x=[p.coordinates.x/], y=[p.coordinates.y/]))[/for][']'/][else]None[/if]
+                    )
+                    [elseif (exp.initial_state.prompt.oclIsTypeOf(PromptForText))]PromptForText()
+                    [elseif (exp.initial_state.prompt.oclIsTypeOf(PromptForAudio))]PromptForAudio()
+                    [else]None[/if]
+                ),
+                stop_condition=['['/][for (sc : StopCondition | exp.stop_condition) separator(', ')][if (sc.oclIsTypeOf(TimeLimit))]TimeLimit(minutesDuration=[sc.oclAsType(TimeLimit).minutesDuration/])[elseif (sc.oclIsTypeOf(MaxIterations))]MaxIterations(numIterations=[sc.oclAsType(MaxIterations).numIterations/])[elseif (sc.oclIsTypeOf(NoImprovement))]NoImprovement()[else]None[/if][/for][']'/],
+                sample=Sample(
+                    filename="[exp.sample.filename/]",
+                    extension=FileFormatType.[exp.sample.extension/]
+                )
+            )
+		[/let]
+    [/for]
+        [']'/],
+        optimization_metric=Metric(name="[ot.optimization_metric.name/]", type=MetricType.[ot.optimization_metric.type/]),
+        performance_metric=['['/]
+    [for (metric : Metric | ot.performance_metric) separator(',\n')]
+            Metric(name="[metric.name/]", type=MetricType.[metric.type/],
+   )[/for]
+    [']'/]
+    )
+[/for]
+[']'/]
+
+# Build the PROBE instance
+probe = PROBE(
+    device=processing_device,
+    dataset=datasets,
+    optimization_task=optimization_task
+)
+
+
+if __name__ == "__main__":
+    # Create and launch the interface
+    interface = ProbeInterface(probe)
+    interface.launch()
+
+[/file]
+[/template]
