@@ -8,10 +8,20 @@ To work with this project, you need to install the Eclipse IDE for Java Develope
 
 1. Open Eclipse IDE.
 2. Go to `File` > `Import...`.
-3. Select `Existing Projects into Workspace` under the `General` category.
+3. Select `Projects from Folder or Archive` and click `Next`.
+4. Browse to the location of this project and select the `probe` folder and click `Finish`.
+5. (Optional) If not done yet, right-click on the project in the Project Explorer and select `Configure` > `Convert to Modelling Project`.
 
 ## 2. Metamodel and Model definition
 
+You can appreciate the metamodel of the PROBE project in the following image:
+
+![Probe Metamodel](metamodel/images/ProbeMM.png)
+
+The metamodel is defined in the `probe.ecore` file, and the graphical visualization is provided in the `probe.aird` file. The example model instance is located in the `model` folder as `PROBE_coronacases_optimization.xmi`.
+In the following image, you can see the graphical representation of the probe example model:
+
+![Probe Metamodel](../resources/images/probe_model.png)
 
 ## Project Structure
 
