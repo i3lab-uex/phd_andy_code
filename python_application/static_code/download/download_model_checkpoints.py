@@ -2,9 +2,10 @@ import os
 from urllib.request import urlretrieve
 import time
 import math
-from image_segmentation.model.SegModel import SegModel
 import gdown
 from huggingface_hub import hf_hub_download
+
+from python_application.static_code.model.SegModel import SegModel
 
 MODEL_CHECKPOINTS_DIR = './model_checkpoints'
 

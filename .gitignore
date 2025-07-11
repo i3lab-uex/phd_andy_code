@@ -5,3 +5,7 @@
 
 # Ignore all files in the .vscode directory
 .vscode/
+
+# Ignore all files in the .model_checkpoints directory
+.model_checkpoints/
+.model_checkpoints/*

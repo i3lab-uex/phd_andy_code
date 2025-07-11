@@ -84,7 +84,7 @@ from enumerations.[pyType/] import [pyType/]
             endif endif endif endif endif
         ]
         [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(pyType))]
-from probe_code_generation.generated_code.model.[pyType/] import [pyType/]
+from model.[pyType/] import [pyType/]
         [/if]
         [/let]
     [/for]
@@ -92,7 +92,7 @@ from probe_code_generation.generated_code.model.[pyType/] import [pyType/]
 from abc import ABC
     [/if]
     [if (c.name = 'PROBE')]
-from probe_code_generation.generated_code.model.Experiment import Experiment
+from model.Experiment import Experiment
 
 
 def _simulate_experiment(task: OptimizationTask, experiment: Experiment) -> str:
@@ -181,7 +181,7 @@ class [c.name/]:
 [comment -- specific imports for superclasses -- /]
         [for (s : ecore::EClass | c.eSuperTypes)]
             [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(s.name))]
-from probe_code_generation.generated_code.model.[s.name/] import [s.name/]
+from model.[s.name/] import [s.name/]
             [/if]
         [/for]
 
@@ -256,7 +256,7 @@ from python_application.static_code.probe_interface import ProbeInterface
 from enumerations.[e.name/] import [e.name/]
     [/for]
     [for (c : EClass | aPROBE.eClass().ePackage.eClassifiers->filter(ecore::EClass))]
-from probe_code_generation.generated_code.model.[c.name/] import [c.name/]
+from model.[c.name/] import [c.name/]
     [/for]
 
 # Processing device

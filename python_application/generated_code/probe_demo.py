@@ -1,4 +1,5 @@
 # Generated instance model for ProbeMM
+from python_application.static_code.probe_interface import ProbeInterface
 from enumerations.DeviceType import DeviceType
 from enumerations.MetricType import MetricType
 from enumerations.PointType import PointType
@@ -26,7 +27,6 @@ from model.NoImprovement import NoImprovement
 from model.TimeLimit import TimeLimit
 from model.MaxIterations import MaxIterations
 from model.Coordinates import Coordinates
-from python_application.static_code.probe_interface import ProbeInterface
 
 # Processing device
 processing_device = DeviceType.NVIDIA
@@ -199,3 +199,4 @@ if __name__ == "__main__":
     # Create and launch the interface
     interface = ProbeInterface(probe)
     interface.launch()
+
