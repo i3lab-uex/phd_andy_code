@@ -19,5 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: probe_Acceleo_code_generation.main
+Export-Package: probe_Acceleo_code_generation,
+ probe_Acceleo_code_generation.main
 

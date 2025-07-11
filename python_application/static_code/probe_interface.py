@@ -1,5 +1,5 @@
 import gradio as gr
-from model.PROBE import PROBE
+from python_application.generated_code.model.PROBE import PROBE
 
 class ProbeInterface:
     def __init__(self, probe: PROBE):

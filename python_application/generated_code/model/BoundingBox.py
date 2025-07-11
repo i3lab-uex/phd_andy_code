@@ -1,7 +1,5 @@
 # Generated from PROBE using Acceleo
-from model.Coordinates import Coordinates
-from model.Coordinates import Coordinates
-
+from probe_code_generation.generated_code.model.Coordinates import Coordinates
 
 class BoundingBox:
     """Represents a BoundingBox object."""
