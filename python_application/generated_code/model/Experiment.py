@@ -1,8 +1,8 @@
 # Generated from PROBE using Acceleo
 from typing import List
-from model.State import State
-from model.Sample import Sample
-from model.StopCondition import StopCondition
+from python_application.generated_code.model.State import State
+from python_application.generated_code.model.Sample import Sample
+from python_application.generated_code.model.StopCondition import StopCondition
 
 
 class Experiment:

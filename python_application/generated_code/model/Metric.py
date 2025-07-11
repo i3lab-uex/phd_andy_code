@@ -1,5 +1,5 @@
 # Generated from PROBE using Acceleo
-from enumerations.MetricType import MetricType
+from python_application.generated_code.enumerations.MetricType import MetricType
 
 
 class Metric:

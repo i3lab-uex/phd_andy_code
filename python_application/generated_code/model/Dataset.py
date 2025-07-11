@@ -1,7 +1,7 @@
 # Generated from PROBE using Acceleo
 from typing import List
-from enumerations.DataType import DataType
-from model.Subset import Subset
+from python_application.generated_code.enumerations.DataType import DataType
+from python_application.generated_code.model.Subset import Subset
 
 
 class Dataset:

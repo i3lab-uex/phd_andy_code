@@ -25,6 +25,9 @@
 [comment -- =============================== /]
 [comment -- Generate enums (EEnum)          /]
 [comment -- =============================== /]
+[file ('enumerations/__init__.py', false, 'UTF-8')]
+[/file]
+
 [for (e : EEnum | m.eClassifiers->filter(EEnum))]
     [file ('enumerations/'.concat(e.name.concat('.py')), false, 'UTF-8')]
 # Generated from [m.name/] using Acceleo
@@ -52,6 +55,9 @@ class [e.name/](Enum):
 [comment -- =============================== /]
 [comment -- Generate classes (EClass)       /]
 [comment -- =============================== /]
+[file ('model/__init__.py', false, 'UTF-8')]
+[/file]
+
 [for (c : ecore::EClass | m.eClassifiers->filter(ecore::EClass))]
     [file ('model/'.concat(c.name.concat('.py')), false, 'UTF-8')]
 # Generated from [m.name/] using Acceleo
@@ -69,7 +75,7 @@ from typing import List
             endif endif endif endif endif
         ]
         [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(pyType))]
-from enumerations.[pyType/] import [pyType/]
+from python_application.generated_code.enumerations.[pyType/] import [pyType/]
         [/if]
         [/let]
     [/for]
@@ -84,7 +90,7 @@ from enumerations.[pyType/] import [pyType/]
             endif endif endif endif endif
         ]
         [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(pyType))]
-from model.[pyType/] import [pyType/]
+from python_application.generated_code.model.[pyType/] import [pyType/]
         [/if]
         [/let]
     [/for]
@@ -92,7 +98,7 @@ from model.[pyType/] import [pyType/]
 from abc import ABC
     [/if]
     [if (c.name = 'PROBE')]
-from model.Experiment import Experiment
+from python_application.generated_code.model.Experiment import Experiment
 
 
 def _simulate_experiment(task: OptimizationTask, experiment: Experiment) -> str:
@@ -181,7 +187,7 @@ class [c.name/]:
 [comment -- specific imports for superclasses -- /]
         [for (s : ecore::EClass | c.eSuperTypes)]
             [if (not Sequence{'str', 'int', 'float', 'bool'}->includes(s.name))]
-from model.[s.name/] import [s.name/]
+from python_application.generated_code.model.[s.name/] import [s.name/]
             [/if]
         [/for]
 
@@ -195,7 +201,7 @@ class [c.name/](ABC):
 class [c.name/]:
             [/if]
         [/if]
-    """[if (c.abstract)]Abstract base class for[else]Represents a[/if] [c.name/] object."""
+    """[if (c.abstract)]Abstract base class for [else]Represents [/if]a [c.name/] object."""
         [if (c.abstract or (c.eAllAttributes->isEmpty() and c.eAllReferences->isEmpty()))]
     pass
         [else]
@@ -253,10 +259,10 @@ class [c.name/]:
 # Generated instance model for ProbeMM
 from python_application.static_code.probe_interface import ProbeInterface
     [for (e : EEnum | aPROBE.eClass().ePackage.eClassifiers->filter(ecore::EEnum))]
-from enumerations.[e.name/] import [e.name/]
+from python_application.generated_code.enumerations.[e.name/] import [e.name/]
     [/for]
     [for (c : EClass | aPROBE.eClass().ePackage.eClassifiers->filter(ecore::EClass))]
-from model.[c.name/] import [c.name/]
+from python_application.generated_code.model.[c.name/] import [c.name/]
     [/for]
 
 # Processing device

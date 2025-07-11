@@ -4,6 +4,12 @@ This project contains the Eclipse EMF project with the `probe.ecore` metamodel a
 
 ## 1. Workspace Configuration
 
+To work with this project, you need to install the Eclipse IDE for Java Developers and the Eclipse Modeling Tools package. You can download it from the [Eclipse Downloads page](https://www.eclipse.org/downloads/). After installing Eclipse, you can import this project into your workspace by following these steps:
+
+1. Open Eclipse IDE.
+2. Go to `File` > `Import...`.
+3. Select `Existing Projects into Workspace` under the `General` category.
+
 ## 2. Metamodel and Model definition
 
 

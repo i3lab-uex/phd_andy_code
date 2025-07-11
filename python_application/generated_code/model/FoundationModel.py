@@ -1,5 +1,5 @@
 # Generated from PROBE using Acceleo
-from enumerations.ModelType import ModelType
+from python_application.generated_code.enumerations.ModelType import ModelType
 
 
 class FoundationModel:

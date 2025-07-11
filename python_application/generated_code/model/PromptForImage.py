@@ -1,8 +1,8 @@
 # Generated from PROBE using Acceleo
 from typing import List
-from model.Point import Point
-from model.BoundingBox import BoundingBox
-from model.Prompt import Prompt
+from python_application.generated_code.model.Point import Point
+from python_application.generated_code.model.BoundingBox import BoundingBox
+from python_application.generated_code.model.Prompt import Prompt
 
 
 class PromptForImage(Prompt):

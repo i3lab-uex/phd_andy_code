@@ -1,5 +1,5 @@
 # Generated from PROBE using Acceleo
-from enumerations.FileFormatType import FileFormatType
+from python_application.generated_code.enumerations.FileFormatType import FileFormatType
 
 
 class Sample:

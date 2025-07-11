@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package probe_Acceleo_code_generation;
+package probe_code_generation;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

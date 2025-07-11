@@ -1,9 +1,9 @@
 # Generated from PROBE using Acceleo
 from typing import List
-from enumerations.DeviceType import DeviceType
-from model.Dataset import Dataset
-from model.OptimizationTask import OptimizationTask
-from model.Experiment import Experiment
+from python_application.generated_code.enumerations.DeviceType import DeviceType
+from python_application.generated_code.model.Dataset import Dataset
+from python_application.generated_code.model.OptimizationTask import OptimizationTask
+from python_application.generated_code.model.Experiment import Experiment
 
 
 def _simulate_experiment(task: OptimizationTask, experiment: Experiment) -> str:

@@ -1,5 +1,5 @@
 # Generated from PROBE using Acceleo
-from model.Prompt import Prompt
+from python_application.generated_code.model.Prompt import Prompt
 
 
 class State:

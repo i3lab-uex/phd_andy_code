@@ -1,5 +1,5 @@
 # Generated from PROBE using Acceleo
-from model.StopCondition import StopCondition
+from python_application.generated_code.model.StopCondition import StopCondition
 
 
 class NoImprovement(StopCondition):

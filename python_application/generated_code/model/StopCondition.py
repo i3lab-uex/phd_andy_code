@@ -3,5 +3,5 @@ from abc import ABC
 
 
 class StopCondition(ABC):
-    """Abstract base class for StopCondition object."""
+    """Abstract base class for a StopCondition object."""
     pass

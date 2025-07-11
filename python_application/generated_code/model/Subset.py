@@ -1,6 +1,6 @@
 # Generated from PROBE using Acceleo
 from typing import List
-from model.Sample import Sample
+from python_application.generated_code.model.Sample import Sample
 
 
 class Subset:

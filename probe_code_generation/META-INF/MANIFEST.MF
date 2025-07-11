@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Probe_Acceleo_code_generation Module Runtime Plug-in
 Bundle-SymbolicName: probe_code_generation
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: probe_Acceleo_code_generation.Activator
+Bundle-Activator: probe_code_generation.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime, 
  org.eclipse.emf.ecore, 
@@ -19,6 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: probe_Acceleo_code_generation,
- probe_Acceleo_code_generation.main
+Export-Package: probe_code_generation,
+ probe_code_generation.main
 

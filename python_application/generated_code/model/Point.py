@@ -1,6 +1,6 @@
 # Generated from PROBE using Acceleo
-from enumerations.PointType import PointType
-from model.Coordinates import Coordinates
+from python_application.generated_code.enumerations.PointType import PointType
+from python_application.generated_code.model.Coordinates import Coordinates
 
 
 class Point:

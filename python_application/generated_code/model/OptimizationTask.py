@@ -1,10 +1,10 @@
 # Generated from PROBE using Acceleo
 from typing import List
-from enumerations.OptimizationAlgorithm import OptimizationAlgorithm
-from model.Metric import Metric
-from model.FoundationModel import FoundationModel
-from model.Metric import Metric
-from model.Experiment import Experiment
+from python_application.generated_code.enumerations.OptimizationAlgorithm import OptimizationAlgorithm
+from python_application.generated_code.model.Metric import Metric
+from python_application.generated_code.model.FoundationModel import FoundationModel
+from python_application.generated_code.model.Metric import Metric
+from python_application.generated_code.model.Experiment import Experiment
 
 
 class OptimizationTask:
