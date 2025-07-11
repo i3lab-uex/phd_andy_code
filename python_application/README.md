@@ -1,22 +1,8 @@
-# [Thesis Title]
+# Python Application for PROBE Project
 
-This project contains the code projects for the thesis titled "[Thesis Title]". The code is organized into the following directories, each one corresponding to a different project nature:
-
-- `probe` - Contains the Eclipse EMF project with the `probe.ecore` metamodel and its graphical clas diagram visualization `probe.aird` and its model xml instance file `probe/model/PROBE_coronacases_optimization.xmi`.
-
-
-- `probe_code_generation` - Contains the Acceleo code generation project with the code transformations in the mtl file `probe_code_generation/src/probe_Acceleo_code_generation/main/generate.mtl`.
-
-
-- `python_application` - Contains the Python application that uses the generated code from Acceleo and the static one. The main script is located at `python_application/probe_demo.py`.
+This project contains the Python application that uses the generated code from the Acceleo project. The main script is located at `python_application/probe_demo.py`.
 
 ## 1. Requirements
-
-### 1.1 Requirements for the EMF and Acceleo projects:
-
-- Eclipse IDE with EMF and Acceleo plugins installed.
-
-### 1.2 Requirements for the Python application:
 
 - Python 3.10
 - Cuda 12.1.0
@@ -88,7 +74,7 @@ Change what you need for your platform.
 
 > **Note:** If you no longer need the Conda environment, just deactivate it with `conda deactivate` and delete it with `conda remove -n probe --all --yes`.
 
-### SAM 1 Installation
+### 2.1 SAM 1 Installation
 
 - [Install SAM 1][sam_installation]: to install SAM 1 version, execute the following command, based on the [official installation instructions][sam_installation].
 
@@ -98,7 +84,7 @@ Change what you need for your platform.
 
     [sam_installation]: https://github.com/facebookresearch/segment-anything/?tab=readme-ov-file#installation "SAM 1 Installation"
 
-### SAM 2 Installation
+### 2.2 SAM 2 Installation
 
 - [Install SAM 2][sam2_installation]: to install the SAM 2 version, execute the following command, based on the [official installation instructions][sam2_installation].
 
@@ -139,7 +125,7 @@ Change what you need for your platform.
   [sam2_installation]: https://github.com/facebookresearch/segment-anything-2/?tab=readme-ov-file#installation "SAM 2 Installation"
   [warning_web_page]: https://github.com/facebookresearch/segment-anything-2/blob/main/INSTALL.md#building-the-sam-2-cuda-extension "Building the SAM 2 CUDA extension"
 
-## Use the PROBE GUI demo
+## 3. Use the PROBE GUI demo
 
 To use the PROBE GUI demo, execute the python script **probe_demo.py** from the root folder of this project:
 
@@ -153,50 +139,23 @@ The project is structured as follows:
 
 ```
 phd2_code/
-├── probe/                             # Eclipse EMF project
-│   ├── metamodel/
-│   │   ├── images/                    # Images used in the metamodel
-│   │   ├── probe.aird                 # Graphical visualization
-│   │   └── probe.ecore                # Metamodel definition
-│   ├── model/                         # Model folder
-│   │   └── PROBE_coronacases_optimization.xmi  # Example model
-│   └── README.md                      # Project documentation
 │
-├── probe_code_generation/             # Acceleo code generation project
-│   ├── src/
-│   │   └── probe_Acceleo_code_generation/
-│   │       └── main/
-│   │           └── generate.mtl       # Code transformations
-│   └── README.md                      # Project documentation
-│
-├── python_application/                # Python application
-│   ├── generated_code/                # Generated code from Acceleo
-│   │   ├── enumerations/              # Enumerations
-│   │   ├── model/                     # Model classes
-│   │   └── probe_demo.py              # Main script for the demo
-│   │
-│   ├── static_code/                   # Static code
-│   │   ├── download/                  # Download scripts
-│   │   ├── model/                     # Model definitions
-│   │   ├── genetic_algorithm/         # Genetic algorithm implementation
-│   │   └── probe_interface/           # Interface for the PROBE GUI
-│   └── README.md                      # Project documentation
-│   
-├── resources/                         # Resources folder
-│   └── images/                        # Images used in the project
-│
-├── .gitignore                         # Git ignore file
-├── README.md                          # General repository documentation
-├── requirements.txt                   # Python package requirements
-└── TODO                               # Project license
+└── python_application/            # Python application
+    │
+    ├── generated_code/            # Generated code from Acceleo
+    │   ├── enumerations/          # Enumerations
+    │   ├── model/                 # Model classes
+    │   └── probe_demo.py          # Main script for the demo
+    │
+    ├── static_code/               # Static code
+    │   ├── download/              # Download scripts
+    │   ├── model/                 # Model definitions
+    │   ├── genetic_algorithm/     # Genetic algorithm implementation
+    │   └── probe_interface/       # Interface for the PROBE GUI
+    │
+    └── README.md                  # Project documentation
 ```
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Authors
-
-This project was developed by [Juan Diego Gutierrez Gallardo](https://github.com/andyuex) in collaboration with [Carlos Breuer Carrasco](https://github.com/carlosbc24) as part of Juan Diego's PhD thesis at the University of Extremadura, Spain.
-
-If you have any questions or suggestions, feel free to contact us.
