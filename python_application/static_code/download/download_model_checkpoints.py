@@ -31,7 +31,7 @@ def download_model_checkpoint_with_progress(url: str, local_filename: str):
 
     params:
     :param url: URL of the file to download
-    :param local_filename: Local path to save the downloaded file
+    :param local_filename: the local path to save the downloaded file
     """
 
     def show_progress(block_num: int, block_size: int, total_size: int):
@@ -191,7 +191,7 @@ def download_medsam2_model_checkpoints():
 
 
 def main():
-    # Create folder for the model checkpoints, if it doesn't exist
+    # Create folder for the model checkpoints if it doesn't exist
     os.makedirs(MODEL_CHECKPOINTS_DIR, exist_ok=True)
 
     # Download the model checkpoints for SAM
