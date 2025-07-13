@@ -125,7 +125,15 @@ Change what you need for your platform.
   [sam2_installation]: https://github.com/facebookresearch/segment-anything-2/?tab=readme-ov-file#installation "SAM 2 Installation"
   [warning_web_page]: https://github.com/facebookresearch/segment-anything-2/blob/main/INSTALL.md#building-the-sam-2-cuda-extension "Building the SAM 2 CUDA extension"
 
-## 3. Use the PROBE GUI demo
+## 3. Download Covid-19 Dataset
+
+To download the Covid-19 dataset, execute the python script **download_covid_dataset.py** from the root folder of this project:
+
+```shell
+python -m python_application.static_code.download.download_covid_dataset
+```
+
+## 4. Use the PROBE GUI demo
 
 To use the PROBE GUI demo, execute the python script **probe_demo.py** from the root folder of this project:
 
