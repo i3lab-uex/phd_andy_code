@@ -5,8 +5,6 @@ import math
 import gdown
 from huggingface_hub import hf_hub_download
 
-from python_application.static_code.model.SegModel import SegModel
-
 MODEL_CHECKPOINTS_DIR = './model_checkpoints'
 
 
@@ -68,18 +66,15 @@ def download_model_checkpoint_with_progress(url: str, local_filename: str):
     print()  # End the line after download
 
 
-def _download_model_with_check(model_urls, sam_model, model_type, download_func):
+def _download_model_with_check(model_urls, model_type, download_func):
     """
     Helper function to handle common model download logic
 
     :param model_urls: Dictionary of model names and their URLs/IDs
-    :param sam_model: Specific model to download (optional)
     :param model_type: Type of model (e.g., 'SAM', 'SAM-2', 'MedSAM')
     :param download_func: Function to use for downloading
     """
     for model_name, url in model_urls.items():
-        if sam_model is not None and sam_model.name not in model_name:
-            continue
 
         local_path = os.path.join(MODEL_CHECKPOINTS_DIR, model_name)
         if not os.path.exists(local_path):
@@ -90,11 +85,9 @@ def _download_model_with_check(model_urls, sam_model, model_type, download_func)
             print(f"{model_type} {model_name} model has already been downloaded. Skipping download.")
 
 
-def download_sam_model_checkpoints(sam_model: SegModel = None):
+def download_sam_model_checkpoints():
     """
     Download the model checkpoints for SAM model
-
-    :param sam_model: SAM model to download
     """
     model_urls = {
         "sam_vit_b_01ec64.pth": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth",
@@ -104,14 +97,12 @@ def download_sam_model_checkpoints(sam_model: SegModel = None):
         "sam_vit_h_4b8939.pth": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth",
         # SAM-ViT-H
     }
-    _download_model_with_check(model_urls, sam_model, "SAM", download_model_checkpoint_with_progress)
+    _download_model_with_check(model_urls, "SAM", download_model_checkpoint_with_progress)
 
 
-def download_sam2_model_checkpoints(sam_model: SegModel = None):
+def download_sam2_model_checkpoints():
     """
     Download the model checkpoints for SAM2 model
-
-    :param sam_model: SAM-2 specific model to download
     :return:
     """
     model_urls = {
@@ -132,14 +123,12 @@ def download_sam2_model_checkpoints(sam_model: SegModel = None):
         # SAM2.1-Hiera-Large
         "sam2p1_hiera_l.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt",
     }
-    _download_model_with_check(model_urls, sam_model, "SAM-2", download_model_checkpoint_with_progress)
+    _download_model_with_check(model_urls, "SAM-2", download_model_checkpoint_with_progress)
 
 
-def download_medsam_model_checkpoints(sam_model: SegModel = None):
+def download_medsam_model_checkpoints():
     """
     Download the model checkpoints for MedSAM model
-
-    :param sam_model: MedSAM specific model to download
     """
     model_urls = {
         # MedSAM-ViT-B
@@ -151,7 +140,7 @@ def download_medsam_model_checkpoints(sam_model: SegModel = None):
     def download_from_gdrive(drive_id, local_path):
         gdown.download(f"https://drive.google.com/uc?id={drive_id}", local_path, quiet=False)
 
-    _download_model_with_check(model_urls, sam_model, "MedSAM", download_from_gdrive)
+    _download_model_with_check(model_urls, "MedSAM", download_from_gdrive)
 
 
 def download_medsam2_model_checkpoints():
@@ -191,7 +180,7 @@ def download_medsam2_model_checkpoints():
 
 
 def main():
-    # Create folder for the model checkpoints if it doesn't exist
+    # Create a folder for the model checkpoints if it doesn't exist
     os.makedirs(MODEL_CHECKPOINTS_DIR, exist_ok=True)
 
     # Download the model checkpoints for SAM
