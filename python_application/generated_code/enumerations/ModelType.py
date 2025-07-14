@@ -5,6 +5,7 @@ from enum import Enum
 
 class ModelType(Enum):
     """Enumeration of ModelType."""
+
     IMAGE_SEGMENTATION = "IMAGE_SEGMENTATION"
     TEXT_GENERATION = "TEXT_GENERATION"
     AUDIO_SEGMENTATION = "AUDIO_SEGMENTATION"

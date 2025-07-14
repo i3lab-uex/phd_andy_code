@@ -4,7 +4,7 @@ import math
 import gdown
 from urllib.request import urlretrieve
 
-MODEL_CHECKPOINTS_DIR = './model_checkpoints'
+MODEL_CHECKPOINTS_DIR = "./model_checkpoints"
 
 
 def format_size(size: int) -> str:
@@ -14,7 +14,7 @@ def format_size(size: int) -> str:
     params:
     :param size: The size in bytes to format
     """
-    units = ['B', 'KB', 'MB', 'GB', 'TB']
+    units = ["B", "KB", "MB", "GB", "TB"]
     index = 0
     while size >= 1024 and index < len(units) - 1:
         size /= 1024
@@ -53,12 +53,15 @@ def download_model_checkpoint_with_progress(url: str, local_filename: str):
         progress_bar_length = 50
         done_length = int(progress_bar_length * progress / 100)
         remaining_length = progress_bar_length - done_length
-        progress_bar = '=' * done_length + '>' + '.' * remaining_length
+        progress_bar = "=" * done_length + ">" + "." * remaining_length
 
-        print(f"\r[{progress_bar}] {progress}% "
-              f"({format_size(downloaded)}/{format_size(total_size)}, "
-              f"Speed: {format_size(speed)}/s, "
-              f"Time Remaining: {remaining_time_str}        ", end='')
+        print(
+            f"\r[{progress_bar}] {progress}% "
+            f"({format_size(downloaded)}/{format_size(total_size)}, "
+            f"Speed: {format_size(speed)}/s, "
+            f"Time Remaining: {remaining_time_str}        ",
+            end="",
+        )
 
     start_time = time.time()
     urlretrieve(url, local_filename, reporthook=show_progress)
@@ -81,7 +84,9 @@ def _download_model_with_check(model_urls, model_type, download_func):
             download_func(url, local_path)
             print(f"{model_type} {model_name} model download has been completed.")
         else:
-            print(f"{model_type} {model_name} model has already been downloaded. Skipping download.")
+            print(
+                f"{model_type} {model_name} model has already been downloaded. Skipping download."
+            )
 
 
 def download_sam_model_checkpoints():
@@ -96,7 +101,9 @@ def download_sam_model_checkpoints():
         "sam_vit_h_4b8939.pth": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth",
         # SAM-ViT-H
     }
-    _download_model_with_check(model_urls, "SAM", download_model_checkpoint_with_progress)
+    _download_model_with_check(
+        model_urls, "SAM", download_model_checkpoint_with_progress
+    )
 
 
 def download_sam2_model_checkpoints():
@@ -114,7 +121,9 @@ def download_sam2_model_checkpoints():
         # SAM2-Hiera-Large
         "sam2_hiera_l.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt",
     }
-    _download_model_with_check(model_urls, "SAM-2", download_model_checkpoint_with_progress)
+    _download_model_with_check(
+        model_urls, "SAM-2", download_model_checkpoint_with_progress
+    )
 
 
 def download_medsam_model_checkpoints():
@@ -125,11 +134,13 @@ def download_medsam_model_checkpoints():
         # MedSAM-ViT-B
         "medsam_vit_b_01ec64.pth": "1UAmWL88roYR7wKlnApw5Bcuzf2iQgk6_",
         # LiteMedSAM-ViT-B
-        "lite_medsam.pth": "18Zed-TUTsmr2zc5CHUWd5Tu13nb6vq6z"
+        "lite_medsam.pth": "18Zed-TUTsmr2zc5CHUWd5Tu13nb6vq6z",
     }
 
     def download_from_gdrive(drive_id, local_path):
-        gdown.download(f"https://drive.google.com/uc?id={drive_id}", local_path, quiet=False)
+        gdown.download(
+            f"https://drive.google.com/uc?id={drive_id}", local_path, quiet=False
+        )
 
     _download_model_with_check(model_urls, "MedSAM", download_from_gdrive)
 

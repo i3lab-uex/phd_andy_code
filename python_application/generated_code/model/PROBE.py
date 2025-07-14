@@ -13,10 +13,14 @@ def _simulate_experiment(task: OptimizationTask, experiment: Experiment) -> str:
     """
     output = []
     output.append(f"   • Simulating experiment: {experiment.name}...")
-    output.append(f"     → Using model: {task.foundation_model.name} ({task.foundation_model.type})")
+    output.append(
+        f"     → Using model: {task.foundation_model.name} ({task.foundation_model.type})"
+    )
     output.append(f"     → Optimizing metric: {task.optimization_metric.name}")
     output.append(f"     → Sample: {experiment.sample.filename}")
-    output.append(f"     → Stop Conditions: {[type(c).__name__ for c in experiment.stop_condition]}")
+    output.append(
+        f"     → Stop Conditions: {[type(c).__name__ for c in experiment.stop_condition]}"
+    )
     output.append(f"     ✓ Simulation complete.")
     return "\n".join(output)
 
@@ -24,10 +28,12 @@ def _simulate_experiment(task: OptimizationTask, experiment: Experiment) -> str:
 class PROBE:
     """Root container for device, datasets and optimization tasks."""
 
-    def __init__(self
-, device: DeviceType, dataset: List[Dataset]
-, optimization_task: List[OptimizationTask]
-):
+    def __init__(
+        self,
+        device: DeviceType,
+        dataset: List[Dataset],
+        optimization_task: List[OptimizationTask],
+    ):
         """
         :param device: device of the PROBE
         :param dataset: dataset of the PROBE
@@ -58,6 +64,7 @@ class PROBE:
                 for experiment in task.experiment:
                     if experiment.name == experiment_name:
                         return _simulate_experiment(task, experiment)
-                return f"⚠ Experiment '{experiment_name}' not found in task '{task_name}'"
+                return (
+                    f"⚠ Experiment '{experiment_name}' not found in task '{task_name}'"
+                )
         return f"⚠ Task '{task_name}' not found."
-

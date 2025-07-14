@@ -1,17 +1,16 @@
-from typing import Tuple
-
 import numpy as np
+from typing import Tuple
 
 
 def compare_original_and_predicted_masks(
-        original_mask: np.array, predicted_mask: np.array
+    original_mask: np.array, predicted_mask: np.array
 ) -> Tuple[float, float]:
     """
     Compares the original segmentation mask with the one predicted. Returns a
     tuple with the Jaccard index and the Dice coefficient.
 
-    :param original_mask: original segmentation mask.
-    :param predicted_mask: predicted segmentation mask.
+    :param original_mask: Original segmentation mask.
+    :param predicted_mask: Predicted segmentation mask.
 
     :return: Jaccard index and the Dice coefficient of the masks provided.
     """
@@ -29,14 +28,14 @@ def compare_original_and_predicted_masks(
 
 
 def compare_original_and_predicted_masks_mod_jaccard(
-        original_mask_as_bool: np.array, predicted_mask: np.array
+    original_mask_as_bool: np.array, predicted_mask: np.array
 ) -> float:
     """
     Compares the original segmentation mask with the one predicted using a modified
 
     params:
     :param original_mask_as_bool: original segmentation mask as a boolean array.
-    :param predicted_mask: predicted segmentation mask as a boolean array.
+    :param predicted_mask: Predicted segmentation mask as a boolean array.
 
     :return: Jaccard index of the masks provided.
     """
@@ -48,13 +47,15 @@ def compare_original_and_predicted_masks_mod_jaccard(
     return jaccard
 
 
-def compare_original_and_predicted_masks_mod_dice(original_mask_as_bool: np.array, predicted_mask: np.array) -> float:
+def compare_original_and_predicted_masks_mod_dice(
+    original_mask_as_bool: np.array, predicted_mask: np.array
+) -> float:
     """
     Compares the original segmentation mask with the one predicted using a modified
 
     params:
     :param original_mask_as_bool: original segmentation mask as a boolean array.
-    :param predicted_mask: predicted segmentation mask as a boolean array.
+    :param predicted_mask: Predicted segmentation mask as a boolean array.
 
     :return: Dice coefficient of the masks provided.
     """
