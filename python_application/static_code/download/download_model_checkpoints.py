@@ -114,14 +114,6 @@ def download_sam2_model_checkpoints():
         "sam2_hiera_b_plus.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_base_plus.pt",
         # SAM2-Hiera-Large
         "sam2_hiera_l.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt",
-        # SAM2.1-Hiera-Tiny
-        "sam2p1_hiera_t.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
-        # SAM2.1-Hiera-Small
-        "sam2p1_hiera_s.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_small.pt",
-        # SAM2.1-Hiera-Base+
-        "sam2p1_hiera_b_plus.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_base_plus.pt",
-        # SAM2.1-Hiera-Large
-        "sam2p1_hiera_l.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt",
     }
     _download_model_with_check(model_urls, "SAM-2", download_model_checkpoint_with_progress)
 
