@@ -1,9 +1,8 @@
 import os
-from urllib.request import urlretrieve
 import time
 import math
 import gdown
-from huggingface_hub import hf_hub_download
+from urllib.request import urlretrieve
 
 MODEL_CHECKPOINTS_DIR = './model_checkpoints'
 
@@ -135,42 +134,6 @@ def download_medsam_model_checkpoints():
     _download_model_with_check(model_urls, "MedSAM", download_from_gdrive)
 
 
-def download_medsam2_model_checkpoints():
-    # List of model filenames
-    wanglab_model_files = [
-        "MedSAM2_2411.pt",
-        "MedSAM2_US_Heart.pt",
-        "MedSAM2_MRI_LiverLesion.pt",
-        "MedSAM2_CTLesion.pt",
-        "MedSAM2_latest.pt"
-    ]
-
-    jiayuanz3_model_files = [
-        "MedSAM2_pretrain.pth"
-    ]
-
-    # Download all models
-    for model_file in wanglab_model_files:
-        local_path = os.path.join(MODEL_CHECKPOINTS_DIR, model_file)
-        hf_hub_download(
-            repo_id="wanglab/MedSAM2",
-            filename=model_file,
-            local_dir=MODEL_CHECKPOINTS_DIR,
-            local_dir_use_symlinks=False
-        )
-        print(f"Downloaded {model_file} to {local_path}")
-
-    for model_file in jiayuanz3_model_files:
-        local_path = os.path.join(MODEL_CHECKPOINTS_DIR, model_file)
-        hf_hub_download(
-            repo_id="jiayuanz3/MedSAM2_pretrain",
-            filename=model_file,
-            local_dir=MODEL_CHECKPOINTS_DIR,
-            local_dir_use_symlinks=False
-        )
-        print(f"Downloaded {model_file} to {local_path}")
-
-
 def main():
     # Create a folder for the model checkpoints if it doesn't exist
     os.makedirs(MODEL_CHECKPOINTS_DIR, exist_ok=True)
@@ -183,9 +146,6 @@ def main():
 
     # Download the model checkpoints for SAM-2
     download_sam2_model_checkpoints()
-
-    # Download the model checkpoints for MedSAM2
-    download_medsam2_model_checkpoints()
 
 
 if __name__ == "__main__":
