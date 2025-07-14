@@ -135,7 +135,7 @@ python -m python_application.static_code.download.download_covid_dataset
 
 ## 4. Generate Code from Acceleo
 
-Generate python code from Acceleo following the instrucctions in the [Acceleo project README](../probe_code_generation/README.md).
+Generate python code from Acceleo following the instructions in the [Acceleo project README](../probe_code_generation/README.md).
 
 ## 5. (Optional) Apply PEP-8 Formatting to Python Application using Black
 
@@ -178,4 +178,4 @@ phd2_code/
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
