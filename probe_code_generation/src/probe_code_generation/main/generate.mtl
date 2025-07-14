@@ -255,6 +255,9 @@ class [c.name/]:
 [comment -- ================================================= /]
 [template public generatePythonApp(aPROBE : PROBE)]
 
+[file ('__init__.py', false, 'UTF-8')]
+[/file]
+
 [file ('probe_demo.py', false, 'UTF-8')]
 # Generated instance model for ProbeMM
 from python_application.static_code.probe_interface import ProbeInterface
