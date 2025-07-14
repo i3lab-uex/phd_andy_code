@@ -133,7 +133,19 @@ To download the Covid-19 dataset, execute the python script **download_covid_dat
 python -m python_application.static_code.download.download_covid_dataset
 ```
 
-## 4. Use the PROBE GUI demo
+## 4. Generate Code from Acceleo
+
+Generate python code from Acceleo following the instrucctions in the [Acceleo project README](../probe_code_generation/README.md).
+
+## 5. (Optional) Apply PEP-8 Formatting to Python Application using Black
+
+To apply PEP-8 formatting to the Python application using Black, execute the following command from the root folder of this project:
+
+```shell
+black python_application
+```
+
+## 6. Use the PROBE GUI demo
 
 To use the PROBE GUI demo, execute the python script **probe_demo.py** from the root folder of this project:
 
