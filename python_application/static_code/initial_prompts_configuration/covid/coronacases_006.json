@@ -1,0 +1,6077 @@
+[
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 16,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 222,
+                    "column": 310
+                },
+                "bottom_right_corner": {
+                    "row": 232,
+                    "column": 374
+                }
+            },
+            "points": [
+                {
+                    "row": 225,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 227,
+                    "column": 342,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 17,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 222,
+                    "column": 300
+                },
+                "bottom_right_corner": {
+                    "row": 236,
+                    "column": 375
+                }
+            },
+            "points": [
+                {
+                    "row": 226,
+                    "column": 362,
+                    "label": 1
+                },
+                {
+                    "row": 229,
+                    "column": 337,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 18,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 222,
+                    "column": 295
+                },
+                "bottom_right_corner": {
+                    "row": 241,
+                    "column": 381
+                }
+            },
+            "points": [
+                {
+                    "row": 227,
+                    "column": 364,
+                    "label": 1
+                },
+                {
+                    "row": 231,
+                    "column": 338,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 19,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 222,
+                    "column": 295
+                },
+                "bottom_right_corner": {
+                    "row": 242,
+                    "column": 381
+                }
+            },
+            "points": [
+                {
+                    "row": 227,
+                    "column": 362,
+                    "label": 1
+                },
+                {
+                    "row": 232,
+                    "column": 338,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 20,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 222,
+                    "column": 291
+                },
+                "bottom_right_corner": {
+                    "row": 249,
+                    "column": 383
+                }
+            },
+            "points": [
+                {
+                    "row": 228,
+                    "column": 364,
+                    "label": 1
+                },
+                {
+                    "row": 235,
+                    "column": 337,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 21,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 221,
+                    "column": 290
+                },
+                "bottom_right_corner": {
+                    "row": 256,
+                    "column": 387
+                }
+            },
+            "points": [
+                {
+                    "row": 229,
+                    "column": 343,
+                    "label": 1
+                },
+                {
+                    "row": 238,
+                    "column": 338,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 22,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 220,
+                    "column": 187
+                },
+                "bottom_right_corner": {
+                    "row": 262,
+                    "column": 391
+                }
+            },
+            "points": [
+                {
+                    "row": 230,
+                    "column": 343,
+                    "label": 1
+                },
+                {
+                    "row": 227,
+                    "column": 201,
+                    "label": 1
+                },
+                {
+                    "row": 241,
+                    "column": 289,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 23,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 218,
+                    "column": 167
+                },
+                "bottom_right_corner": {
+                    "row": 264,
+                    "column": 392
+                }
+            },
+            "points": [
+                {
+                    "row": 232,
+                    "column": 318,
+                    "label": 1
+                },
+                {
+                    "row": 227,
+                    "column": 201,
+                    "label": 1
+                },
+                {
+                    "row": 241,
+                    "column": 279,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 24,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 218,
+                    "column": 154
+                },
+                "bottom_right_corner": {
+                    "row": 269,
+                    "column": 399
+                }
+            },
+            "points": [
+                {
+                    "row": 234,
+                    "column": 309,
+                    "label": 1
+                },
+                {
+                    "row": 228,
+                    "column": 202,
+                    "label": 1
+                },
+                {
+                    "row": 243,
+                    "column": 276,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 25,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 150
+                },
+                "bottom_right_corner": {
+                    "row": 272,
+                    "column": 402
+                }
+            },
+            "points": [
+                {
+                    "row": 234,
+                    "column": 312,
+                    "label": 1
+                },
+                {
+                    "row": 227,
+                    "column": 200,
+                    "label": 1
+                },
+                {
+                    "row": 243,
+                    "column": 276,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 26,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 143
+                },
+                "bottom_right_corner": {
+                    "row": 275,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 236,
+                    "column": 310,
+                    "label": 1
+                },
+                {
+                    "row": 228,
+                    "column": 200,
+                    "label": 1
+                },
+                {
+                    "row": 245,
+                    "column": 276,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 27,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 141
+                },
+                "bottom_right_corner": {
+                    "row": 278,
+                    "column": 414
+                }
+            },
+            "points": [
+                {
+                    "row": 237,
+                    "column": 312,
+                    "label": 1
+                },
+                {
+                    "row": 229,
+                    "column": 200,
+                    "label": 1
+                },
+                {
+                    "row": 246,
+                    "column": 277,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 28,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 140
+                },
+                "bottom_right_corner": {
+                    "row": 281,
+                    "column": 411
+                }
+            },
+            "points": [
+                {
+                    "row": 238,
+                    "column": 317,
+                    "label": 1
+                },
+                {
+                    "row": 230,
+                    "column": 201,
+                    "label": 1
+                },
+                {
+                    "row": 248,
+                    "column": 275,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 29,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 134
+                },
+                "bottom_right_corner": {
+                    "row": 283,
+                    "column": 417
+                }
+            },
+            "points": [
+                {
+                    "row": 239,
+                    "column": 313,
+                    "label": 1
+                },
+                {
+                    "row": 231,
+                    "column": 201,
+                    "label": 1
+                },
+                {
+                    "row": 249,
+                    "column": 275,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 30,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 132
+                },
+                "bottom_right_corner": {
+                    "row": 287,
+                    "column": 419
+                }
+            },
+            "points": [
+                {
+                    "row": 240,
+                    "column": 315,
+                    "label": 1
+                },
+                {
+                    "row": 231,
+                    "column": 198,
+                    "label": 1
+                },
+                {
+                    "row": 250,
+                    "column": 275,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 31,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 129
+                },
+                "bottom_right_corner": {
+                    "row": 288,
+                    "column": 420
+                }
+            },
+            "points": [
+                {
+                    "row": 241,
+                    "column": 320,
+                    "label": 1
+                },
+                {
+                    "row": 232,
+                    "column": 199,
+                    "label": 1
+                },
+                {
+                    "row": 252,
+                    "column": 274,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 32,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 126
+                },
+                "bottom_right_corner": {
+                    "row": 290,
+                    "column": 422
+                }
+            },
+            "points": [
+                {
+                    "row": 243,
+                    "column": 317,
+                    "label": 1
+                },
+                {
+                    "row": 233,
+                    "column": 200,
+                    "label": 1
+                },
+                {
+                    "row": 252,
+                    "column": 274,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 33,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 123
+                },
+                "bottom_right_corner": {
+                    "row": 293,
+                    "column": 423
+                }
+            },
+            "points": [
+                {
+                    "row": 244,
+                    "column": 317,
+                    "label": 1
+                },
+                {
+                    "row": 235,
+                    "column": 199,
+                    "label": 1
+                },
+                {
+                    "row": 254,
+                    "column": 273,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 34,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 119
+                },
+                "bottom_right_corner": {
+                    "row": 294,
+                    "column": 426
+                }
+            },
+            "points": [
+                {
+                    "row": 245,
+                    "column": 320,
+                    "label": 1
+                },
+                {
+                    "row": 235,
+                    "column": 199,
+                    "label": 1
+                },
+                {
+                    "row": 255,
+                    "column": 272,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 35,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 113
+                },
+                "bottom_right_corner": {
+                    "row": 296,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 246,
+                    "column": 320,
+                    "label": 1
+                },
+                {
+                    "row": 235,
+                    "column": 198,
+                    "label": 1
+                },
+                {
+                    "row": 256,
+                    "column": 270,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 36,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 110
+                },
+                "bottom_right_corner": {
+                    "row": 297,
+                    "column": 429
+                }
+            },
+            "points": [
+                {
+                    "row": 248,
+                    "column": 318,
+                    "label": 1
+                },
+                {
+                    "row": 236,
+                    "column": 198,
+                    "label": 1
+                },
+                {
+                    "row": 256,
+                    "column": 269,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 37,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 107
+                },
+                "bottom_right_corner": {
+                    "row": 299,
+                    "column": 430
+                }
+            },
+            "points": [
+                {
+                    "row": 249,
+                    "column": 326,
+                    "label": 1
+                },
+                {
+                    "row": 237,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 257,
+                    "column": 268,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 38,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 107
+                },
+                "bottom_right_corner": {
+                    "row": 301,
+                    "column": 432
+                }
+            },
+            "points": [
+                {
+                    "row": 250,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 238,
+                    "column": 197,
+                    "label": 1
+                },
+                {
+                    "row": 258,
+                    "column": 269,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 39,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 107
+                },
+                "bottom_right_corner": {
+                    "row": 303,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 251,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 239,
+                    "column": 197,
+                    "label": 1
+                },
+                {
+                    "row": 259,
+                    "column": 270,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 40,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 99
+                },
+                "bottom_right_corner": {
+                    "row": 305,
+                    "column": 434
+                }
+            },
+            "points": [
+                {
+                    "row": 252,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 240,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 260,
+                    "column": 266,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 41,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 100
+                },
+                "bottom_right_corner": {
+                    "row": 308,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 253,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 241,
+                    "column": 196,
+                    "label": 1
+                },
+                {
+                    "row": 262,
+                    "column": 266,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 42,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 96
+                },
+                "bottom_right_corner": {
+                    "row": 317,
+                    "column": 435
+                }
+            },
+            "points": [
+                {
+                    "row": 254,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 241,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 266,
+                    "column": 265,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 43,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 93
+                },
+                "bottom_right_corner": {
+                    "row": 439,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 259,
+                    "column": 349,
+                    "label": 1
+                },
+                {
+                    "row": 243,
+                    "column": 196,
+                    "label": 1
+                },
+                {
+                    "row": 327,
+                    "column": 263,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 44,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 90
+                },
+                "bottom_right_corner": {
+                    "row": 438,
+                    "column": 434
+                }
+            },
+            "points": [
+                {
+                    "row": 263,
+                    "column": 350,
+                    "label": 1
+                },
+                {
+                    "row": 244,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 326,
+                    "column": 262,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 45,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 89
+                },
+                "bottom_right_corner": {
+                    "row": 439,
+                    "column": 434
+                }
+            },
+            "points": [
+                {
+                    "row": 266,
+                    "column": 351,
+                    "label": 1
+                },
+                {
+                    "row": 244,
+                    "column": 193,
+                    "label": 1
+                },
+                {
+                    "row": 327,
+                    "column": 261,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 46,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 83
+                },
+                "bottom_right_corner": {
+                    "row": 441,
+                    "column": 434
+                }
+            },
+            "points": [
+                {
+                    "row": 271,
+                    "column": 318,
+                    "label": 1
+                },
+                {
+                    "row": 246,
+                    "column": 194,
+                    "label": 1
+                },
+                {
+                    "row": 328,
+                    "column": 258,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 47,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 446,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 275,
+                    "column": 353,
+                    "label": 1
+                },
+                {
+                    "row": 247,
+                    "column": 188,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 259,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 48,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 448,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 259,
+                    "column": 317,
+                    "label": 1
+                },
+                {
+                    "row": 247,
+                    "column": 188,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 259,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 49,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 83
+                },
+                "bottom_right_corner": {
+                    "row": 451,
+                    "column": 434
+                }
+            },
+            "points": [
+                {
+                    "row": 262,
+                    "column": 316,
+                    "label": 1
+                },
+                {
+                    "row": 248,
+                    "column": 186,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 258,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 50,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 452,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 252,
+                    "column": 347,
+                    "label": 1
+                },
+                {
+                    "row": 250,
+                    "column": 187,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 259,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 51,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 452,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 254,
+                    "column": 347,
+                    "label": 1
+                },
+                {
+                    "row": 250,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 259,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 52,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 433
+                }
+            },
+            "points": [
+                {
+                    "row": 256,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 251,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 259,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 53,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 432
+                }
+            },
+            "points": [
+                {
+                    "row": 293,
+                    "column": 355,
+                    "label": 1
+                },
+                {
+                    "row": 253,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 258,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 54,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 84
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 432
+                }
+            },
+            "points": [
+                {
+                    "row": 296,
+                    "column": 355,
+                    "label": 1
+                },
+                {
+                    "row": 253,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 258,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 55,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 84
+                },
+                "bottom_right_corner": {
+                    "row": 457,
+                    "column": 432
+                }
+            },
+            "points": [
+                {
+                    "row": 299,
+                    "column": 355,
+                    "label": 1
+                },
+                {
+                    "row": 254,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 258,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 56,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 82
+                },
+                "bottom_right_corner": {
+                    "row": 457,
+                    "column": 432
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 355,
+                    "label": 1
+                },
+                {
+                    "row": 255,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 257,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 57,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 457,
+                    "column": 430
+                }
+            },
+            "points": [
+                {
+                    "row": 302,
+                    "column": 355,
+                    "label": 1
+                },
+                {
+                    "row": 256,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 58,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 457,
+                    "column": 430
+                }
+            },
+            "points": [
+                {
+                    "row": 304,
+                    "column": 355,
+                    "label": 1
+                },
+                {
+                    "row": 257,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 59,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 457,
+                    "column": 430
+                }
+            },
+            "points": [
+                {
+                    "row": 306,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 258,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 60,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 81
+                },
+                "bottom_right_corner": {
+                    "row": 460,
+                    "column": 429
+                }
+            },
+            "points": [
+                {
+                    "row": 307,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 263,
+                    "column": 161,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 61,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 78
+                },
+                "bottom_right_corner": {
+                    "row": 460,
+                    "column": 429
+                }
+            },
+            "points": [
+                {
+                    "row": 309,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 265,
+                    "column": 162,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 62,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 429
+                }
+            },
+            "points": [
+                {
+                    "row": 310,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 268,
+                    "column": 162,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 63,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 311,
+                    "column": 353,
+                    "label": 1
+                },
+                {
+                    "row": 274,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 64,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 313,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 278,
+                    "column": 192,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 65,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 314,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 281,
+                    "column": 194,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 66,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 79
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 298,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 285,
+                    "column": 198,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 67,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 212,
+                    "column": 79
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 303,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 288,
+                    "column": 200,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 68,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 212,
+                    "column": 79
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 303,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 252,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 69,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 212,
+                    "column": 80
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 428
+                }
+            },
+            "points": [
+                {
+                    "row": 312,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 254,
+                    "column": 165,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 70,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 79
+                },
+                "bottom_right_corner": {
+                    "row": 464,
+                    "column": 429
+                }
+            },
+            "points": [
+                {
+                    "row": 306,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 255,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 71,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 81
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 429
+                }
+            },
+            "points": [
+                {
+                    "row": 304,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 256,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 72,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 81
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 304,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 257,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 73,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 81
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 302,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 260,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 74,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 82
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 261,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 75,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 82
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 303,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 262,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 76,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 82
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 427
+                }
+            },
+            "points": [
+                {
+                    "row": 303,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 265,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 77,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 83
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 426
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 266,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 78,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 83
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 426
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 322,
+                    "column": 170,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 79,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 83
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 426
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 324,
+                    "column": 170,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 80,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 426
+                }
+            },
+            "points": [
+                {
+                    "row": 300,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 326,
+                    "column": 170,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 81,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 425
+                }
+            },
+            "points": [
+                {
+                    "row": 300,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 329,
+                    "column": 156,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 82,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 425
+                }
+            },
+            "points": [
+                {
+                    "row": 302,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 158,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 83,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 425
+                }
+            },
+            "points": [
+                {
+                    "row": 305,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 156,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 84,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 424
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 286,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 85,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 424
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 289,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 86,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 424
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 87,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 423
+                }
+            },
+            "points": [
+                {
+                    "row": 299,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 88,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 423
+                }
+            },
+            "points": [
+                {
+                    "row": 299,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 89,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 423
+                }
+            },
+            "points": [
+                {
+                    "row": 299,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 90,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 462,
+                    "column": 423
+                }
+            },
+            "points": [
+                {
+                    "row": 299,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 338,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 91,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 87
+                },
+                "bottom_right_corner": {
+                    "row": 461,
+                    "column": 422
+                }
+            },
+            "points": [
+                {
+                    "row": 297,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 92,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 212,
+                    "column": 87
+                },
+                "bottom_right_corner": {
+                    "row": 461,
+                    "column": 422
+                }
+            },
+            "points": [
+                {
+                    "row": 297,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 93,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 211,
+                    "column": 88
+                },
+                "bottom_right_corner": {
+                    "row": 460,
+                    "column": 423
+                }
+            },
+            "points": [
+                {
+                    "row": 335,
+                    "column": 359,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 94,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 213,
+                    "column": 88
+                },
+                "bottom_right_corner": {
+                    "row": 459,
+                    "column": 422
+                }
+            },
+            "points": [
+                {
+                    "row": 298,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 95,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 88
+                },
+                "bottom_right_corner": {
+                    "row": 459,
+                    "column": 422
+                }
+            },
+            "points": [
+                {
+                    "row": 305,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 96,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 88
+                },
+                "bottom_right_corner": {
+                    "row": 459,
+                    "column": 422
+                }
+            },
+            "points": [
+                {
+                    "row": 335,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 165,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 97,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 90
+                },
+                "bottom_right_corner": {
+                    "row": 456,
+                    "column": 423
+                }
+            },
+            "points": [
+                {
+                    "row": 335,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 165,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 256,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 98,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 90
+                },
+                "bottom_right_corner": {
+                    "row": 456,
+                    "column": 421
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 165,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 99,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 90
+                },
+                "bottom_right_corner": {
+                    "row": 456,
+                    "column": 421
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 165,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 100,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 217,
+                    "column": 90
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 421
+                }
+            },
+            "points": [
+                {
+                    "row": 335,
+                    "column": 358,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 165,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 101,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 217,
+                    "column": 91
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 420
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 102,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 217,
+                    "column": 91
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 420
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 103,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 91
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 419
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 104,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 91
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 419
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 105,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 91
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 419
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 106,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 92
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 418
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 357,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 107,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 91
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 417
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 108,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 91
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 417
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 109,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 92
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 417
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 356,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 163,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 110,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 93
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 416
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 111,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 92
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 416
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 164,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 112,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 93
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 416
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 354,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 165,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 113,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 454,
+                    "column": 416
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 353,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 114,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 453,
+                    "column": 415
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 352,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 115,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 453,
+                    "column": 415
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 352,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 166,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 116,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 221,
+                    "column": 93
+                },
+                "bottom_right_corner": {
+                    "row": 453,
+                    "column": 415
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 351,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 117,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 221,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 452,
+                    "column": 415
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 351,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 118,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 221,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 452,
+                    "column": 413
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 351,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 119,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 221,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 452,
+                    "column": 413
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 351,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 120,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 223,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 451,
+                    "column": 413
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 350,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 337,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 121,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 223,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 449,
+                    "column": 412
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 349,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 122,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 223,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 449,
+                    "column": 412
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 349,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 167,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 123,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 223,
+                    "column": 95
+                },
+                "bottom_right_corner": {
+                    "row": 449,
+                    "column": 412
+                }
+            },
+            "points": [
+                {
+                    "row": 334,
+                    "column": 349,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 168,
+                    "label": 1
+                },
+                {
+                    "row": 336,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 124,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 223,
+                    "column": 95
+                },
+                "bottom_right_corner": {
+                    "row": 447,
+                    "column": 412
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 168,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 125,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 223,
+                    "column": 95
+                },
+                "bottom_right_corner": {
+                    "row": 447,
+                    "column": 412
+                }
+            },
+            "points": [
+                {
+                    "row": 333,
+                    "column": 348,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 168,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 126,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 224,
+                    "column": 94
+                },
+                "bottom_right_corner": {
+                    "row": 446,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 347,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 169,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 252,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 127,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 224,
+                    "column": 95
+                },
+                "bottom_right_corner": {
+                    "row": 445,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 347,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 169,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 252,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 128,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 224,
+                    "column": 96
+                },
+                "bottom_right_corner": {
+                    "row": 445,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 347,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 170,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 129,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 224,
+                    "column": 96
+                },
+                "bottom_right_corner": {
+                    "row": 445,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 347,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 170,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 130,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 225,
+                    "column": 96
+                },
+                "bottom_right_corner": {
+                    "row": 443,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 346,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 170,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 131,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 225,
+                    "column": 97
+                },
+                "bottom_right_corner": {
+                    "row": 443,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 346,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 171,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 132,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 225,
+                    "column": 97
+                },
+                "bottom_right_corner": {
+                    "row": 443,
+                    "column": 410
+                }
+            },
+            "points": [
+                {
+                    "row": 331,
+                    "column": 345,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 171,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 133,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 226,
+                    "column": 98
+                },
+                "bottom_right_corner": {
+                    "row": 443,
+                    "column": 409
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 345,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 171,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 134,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 226,
+                    "column": 99
+                },
+                "bottom_right_corner": {
+                    "row": 442,
+                    "column": 408
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 344,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 171,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 135,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 226,
+                    "column": 99
+                },
+                "bottom_right_corner": {
+                    "row": 442,
+                    "column": 408
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 344,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 171,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 136,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 228,
+                    "column": 101
+                },
+                "bottom_right_corner": {
+                    "row": 442,
+                    "column": 408
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 343,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 172,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 137,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 229,
+                    "column": 101
+                },
+                "bottom_right_corner": {
+                    "row": 442,
+                    "column": 408
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 342,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 172,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 138,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 229,
+                    "column": 101
+                },
+                "bottom_right_corner": {
+                    "row": 441,
+                    "column": 407
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 341,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 173,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 139,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 229,
+                    "column": 101
+                },
+                "bottom_right_corner": {
+                    "row": 441,
+                    "column": 407
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 341,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 173,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 140,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 231,
+                    "column": 102
+                },
+                "bottom_right_corner": {
+                    "row": 440,
+                    "column": 406
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 340,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 174,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 141,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 231,
+                    "column": 102
+                },
+                "bottom_right_corner": {
+                    "row": 439,
+                    "column": 404
+                }
+            },
+            "points": [
+                {
+                    "row": 331,
+                    "column": 339,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 174,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 142,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 231,
+                    "column": 102
+                },
+                "bottom_right_corner": {
+                    "row": 439,
+                    "column": 404
+                }
+            },
+            "points": [
+                {
+                    "row": 331,
+                    "column": 339,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 174,
+                    "label": 1
+                },
+                {
+                    "row": 335,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 143,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 230,
+                    "column": 104
+                },
+                "bottom_right_corner": {
+                    "row": 437,
+                    "column": 404
+                }
+            },
+            "points": [
+                {
+                    "row": 375,
+                    "column": 337,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 174,
+                    "label": 1
+                },
+                {
+                    "row": 333,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 144,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 232,
+                    "column": 105
+                },
+                "bottom_right_corner": {
+                    "row": 436,
+                    "column": 402
+                }
+            },
+            "points": [
+                {
+                    "row": 331,
+                    "column": 337,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 174,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 145,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 232,
+                    "column": 105
+                },
+                "bottom_right_corner": {
+                    "row": 436,
+                    "column": 402
+                }
+            },
+            "points": [
+                {
+                    "row": 373,
+                    "column": 337,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 174,
+                    "label": 1
+                },
+                {
+                    "row": 334,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 146,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 232,
+                    "column": 105
+                },
+                "bottom_right_corner": {
+                    "row": 433,
+                    "column": 402
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 335,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 175,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 147,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 233,
+                    "column": 106
+                },
+                "bottom_right_corner": {
+                    "row": 432,
+                    "column": 400
+                }
+            },
+            "points": [
+                {
+                    "row": 332,
+                    "column": 334,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 175,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 148,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 233,
+                    "column": 107
+                },
+                "bottom_right_corner": {
+                    "row": 431,
+                    "column": 399
+                }
+            },
+            "points": [
+                {
+                    "row": 331,
+                    "column": 333,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 175,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 149,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 234,
+                    "column": 107
+                },
+                "bottom_right_corner": {
+                    "row": 431,
+                    "column": 399
+                }
+            },
+            "points": [
+                {
+                    "row": 331,
+                    "column": 333,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 175,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 150,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 236,
+                    "column": 108
+                },
+                "bottom_right_corner": {
+                    "row": 428,
+                    "column": 398
+                }
+            },
+            "points": [
+                {
+                    "row": 330,
+                    "column": 332,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 176,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 151,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 236,
+                    "column": 109
+                },
+                "bottom_right_corner": {
+                    "row": 427,
+                    "column": 397
+                }
+            },
+            "points": [
+                {
+                    "row": 330,
+                    "column": 331,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 176,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 152,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 236,
+                    "column": 109
+                },
+                "bottom_right_corner": {
+                    "row": 427,
+                    "column": 397
+                }
+            },
+            "points": [
+                {
+                    "row": 330,
+                    "column": 331,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 176,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 153,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 238,
+                    "column": 110
+                },
+                "bottom_right_corner": {
+                    "row": 425,
+                    "column": 396
+                }
+            },
+            "points": [
+                {
+                    "row": 330,
+                    "column": 331,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 177,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 154,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 239,
+                    "column": 111
+                },
+                "bottom_right_corner": {
+                    "row": 425,
+                    "column": 395
+                }
+            },
+            "points": [
+                {
+                    "row": 329,
+                    "column": 330,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 178,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 155,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 239,
+                    "column": 111
+                },
+                "bottom_right_corner": {
+                    "row": 425,
+                    "column": 395
+                }
+            },
+            "points": [
+                {
+                    "row": 329,
+                    "column": 330,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 178,
+                    "label": 1
+                },
+                {
+                    "row": 332,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 156,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 239,
+                    "column": 113
+                },
+                "bottom_right_corner": {
+                    "row": 423,
+                    "column": 394
+                }
+            },
+            "points": [
+                {
+                    "row": 329,
+                    "column": 329,
+                    "label": 1
+                },
+                {
+                    "row": 329,
+                    "column": 178,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 157,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 240,
+                    "column": 114
+                },
+                "bottom_right_corner": {
+                    "row": 423,
+                    "column": 393
+                }
+            },
+            "points": [
+                {
+                    "row": 328,
+                    "column": 328,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 179,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 158,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 240,
+                    "column": 116
+                },
+                "bottom_right_corner": {
+                    "row": 422,
+                    "column": 392
+                }
+            },
+            "points": [
+                {
+                    "row": 328,
+                    "column": 327,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 180,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 159,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 240,
+                    "column": 116
+                },
+                "bottom_right_corner": {
+                    "row": 422,
+                    "column": 392
+                }
+            },
+            "points": [
+                {
+                    "row": 328,
+                    "column": 327,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 180,
+                    "label": 1
+                },
+                {
+                    "row": 331,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 160,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 241,
+                    "column": 118
+                },
+                "bottom_right_corner": {
+                    "row": 420,
+                    "column": 391
+                }
+            },
+            "points": [
+                {
+                    "row": 328,
+                    "column": 326,
+                    "label": 1
+                },
+                {
+                    "row": 329,
+                    "column": 180,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 161,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 242,
+                    "column": 120
+                },
+                "bottom_right_corner": {
+                    "row": 418,
+                    "column": 390
+                }
+            },
+            "points": [
+                {
+                    "row": 327,
+                    "column": 325,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 181,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 162,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 242,
+                    "column": 120
+                },
+                "bottom_right_corner": {
+                    "row": 418,
+                    "column": 390
+                }
+            },
+            "points": [
+                {
+                    "row": 327,
+                    "column": 325,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 181,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 163,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 244,
+                    "column": 122
+                },
+                "bottom_right_corner": {
+                    "row": 415,
+                    "column": 388
+                }
+            },
+            "points": [
+                {
+                    "row": 327,
+                    "column": 323,
+                    "label": 1
+                },
+                {
+                    "row": 330,
+                    "column": 181,
+                    "label": 1
+                },
+                {
+                    "row": 329,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 164,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 244,
+                    "column": 123
+                },
+                "bottom_right_corner": {
+                    "row": 414,
+                    "column": 386
+                }
+            },
+            "points": [
+                {
+                    "row": 326,
+                    "column": 323,
+                    "label": 1
+                },
+                {
+                    "row": 329,
+                    "column": 181,
+                    "label": 1
+                },
+                {
+                    "row": 329,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 165,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 244,
+                    "column": 123
+                },
+                "bottom_right_corner": {
+                    "row": 413,
+                    "column": 386
+                }
+            },
+            "points": [
+                {
+                    "row": 326,
+                    "column": 323,
+                    "label": 1
+                },
+                {
+                    "row": 329,
+                    "column": 181,
+                    "label": 1
+                },
+                {
+                    "row": 328,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 166,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 245,
+                    "column": 124
+                },
+                "bottom_right_corner": {
+                    "row": 409,
+                    "column": 383
+                }
+            },
+            "points": [
+                {
+                    "row": 326,
+                    "column": 322,
+                    "label": 1
+                },
+                {
+                    "row": 327,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 327,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 167,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 247,
+                    "column": 126
+                },
+                "bottom_right_corner": {
+                    "row": 407,
+                    "column": 382
+                }
+            },
+            "points": [
+                {
+                    "row": 325,
+                    "column": 321,
+                    "label": 1
+                },
+                {
+                    "row": 327,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 327,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 168,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 247,
+                    "column": 127
+                },
+                "bottom_right_corner": {
+                    "row": 405,
+                    "column": 380
+                }
+            },
+            "points": [
+                {
+                    "row": 325,
+                    "column": 321,
+                    "label": 1
+                },
+                {
+                    "row": 325,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 326,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 169,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 247,
+                    "column": 128
+                },
+                "bottom_right_corner": {
+                    "row": 402,
+                    "column": 380
+                }
+            },
+            "points": [
+                {
+                    "row": 323,
+                    "column": 321,
+                    "label": 1
+                },
+                {
+                    "row": 323,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 324,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 170,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 248,
+                    "column": 129
+                },
+                "bottom_right_corner": {
+                    "row": 398,
+                    "column": 377
+                }
+            },
+            "points": [
+                {
+                    "row": 323,
+                    "column": 320,
+                    "label": 1
+                },
+                {
+                    "row": 322,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 323,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 171,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 248,
+                    "column": 131
+                },
+                "bottom_right_corner": {
+                    "row": 396,
+                    "column": 375
+                }
+            },
+            "points": [
+                {
+                    "row": 322,
+                    "column": 320,
+                    "label": 1
+                },
+                {
+                    "row": 321,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 322,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 172,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 248,
+                    "column": 131
+                },
+                "bottom_right_corner": {
+                    "row": 395,
+                    "column": 375
+                }
+            },
+            "points": [
+                {
+                    "row": 321,
+                    "column": 320,
+                    "label": 1
+                },
+                {
+                    "row": 320,
+                    "column": 182,
+                    "label": 1
+                },
+                {
+                    "row": 321,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 173,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 250,
+                    "column": 133
+                },
+                "bottom_right_corner": {
+                    "row": 391,
+                    "column": 372
+                }
+            },
+            "points": [
+                {
+                    "row": 320,
+                    "column": 319,
+                    "label": 1
+                },
+                {
+                    "row": 319,
+                    "column": 183,
+                    "label": 1
+                },
+                {
+                    "row": 320,
+                    "column": 252,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 174,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 250,
+                    "column": 136
+                },
+                "bottom_right_corner": {
+                    "row": 390,
+                    "column": 371
+                }
+            },
+            "points": [
+                {
+                    "row": 320,
+                    "column": 319,
+                    "label": 1
+                },
+                {
+                    "row": 318,
+                    "column": 183,
+                    "label": 1
+                },
+                {
+                    "row": 320,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 175,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 250,
+                    "column": 136
+                },
+                "bottom_right_corner": {
+                    "row": 388,
+                    "column": 371
+                }
+            },
+            "points": [
+                {
+                    "row": 319,
+                    "column": 320,
+                    "label": 1
+                },
+                {
+                    "row": 312,
+                    "column": 183,
+                    "label": 1
+                },
+                {
+                    "row": 319,
+                    "column": 253,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 176,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 250,
+                    "column": 140
+                },
+                "bottom_right_corner": {
+                    "row": 385,
+                    "column": 369
+                }
+            },
+            "points": [
+                {
+                    "row": 317,
+                    "column": 319,
+                    "label": 1
+                },
+                {
+                    "row": 309,
+                    "column": 185,
+                    "label": 1
+                },
+                {
+                    "row": 317,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 177,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 252,
+                    "column": 141
+                },
+                "bottom_right_corner": {
+                    "row": 383,
+                    "column": 367
+                }
+            },
+            "points": [
+                {
+                    "row": 317,
+                    "column": 318,
+                    "label": 1
+                },
+                {
+                    "row": 307,
+                    "column": 186,
+                    "label": 1
+                },
+                {
+                    "row": 317,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 178,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 253,
+                    "column": 143
+                },
+                "bottom_right_corner": {
+                    "row": 381,
+                    "column": 365
+                }
+            },
+            "points": [
+                {
+                    "row": 317,
+                    "column": 317,
+                    "label": 1
+                },
+                {
+                    "row": 307,
+                    "column": 187,
+                    "label": 1
+                },
+                {
+                    "row": 317,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 179,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 253,
+                    "column": 146
+                },
+                "bottom_right_corner": {
+                    "row": 373,
+                    "column": 364
+                }
+            },
+            "points": [
+                {
+                    "row": 313,
+                    "column": 316,
+                    "label": 1
+                },
+                {
+                    "row": 305,
+                    "column": 188,
+                    "label": 1
+                },
+                {
+                    "row": 313,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 180,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 256,
+                    "column": 150
+                },
+                "bottom_right_corner": {
+                    "row": 360,
+                    "column": 360
+                }
+            },
+            "points": [
+                {
+                    "row": 308,
+                    "column": 315,
+                    "label": 1
+                },
+                {
+                    "row": 304,
+                    "column": 189,
+                    "label": 1
+                },
+                {
+                    "row": 308,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 181,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 256,
+                    "column": 151
+                },
+                "bottom_right_corner": {
+                    "row": 359,
+                    "column": 359
+                }
+            },
+            "points": [
+                {
+                    "row": 306,
+                    "column": 314,
+                    "label": 1
+                },
+                {
+                    "row": 304,
+                    "column": 189,
+                    "label": 1
+                },
+                {
+                    "row": 307,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 182,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 256,
+                    "column": 153
+                },
+                "bottom_right_corner": {
+                    "row": 355,
+                    "column": 356
+                }
+            },
+            "points": [
+                {
+                    "row": 304,
+                    "column": 312,
+                    "label": 1
+                },
+                {
+                    "row": 303,
+                    "column": 190,
+                    "label": 1
+                },
+                {
+                    "row": 305,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 183,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 259,
+                    "column": 159
+                },
+                "bottom_right_corner": {
+                    "row": 350,
+                    "column": 355
+                }
+            },
+            "points": [
+                {
+                    "row": 304,
+                    "column": 312,
+                    "label": 1
+                },
+                {
+                    "row": 300,
+                    "column": 190,
+                    "label": 1
+                },
+                {
+                    "row": 304,
+                    "column": 257,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 184,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 259,
+                    "column": 161
+                },
+                "bottom_right_corner": {
+                    "row": 350,
+                    "column": 353
+                }
+            },
+            "points": [
+                {
+                    "row": 303,
+                    "column": 311,
+                    "label": 1
+                },
+                {
+                    "row": 300,
+                    "column": 191,
+                    "label": 1
+                },
+                {
+                    "row": 304,
+                    "column": 257,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 185,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 259,
+                    "column": 165
+                },
+                "bottom_right_corner": {
+                    "row": 345,
+                    "column": 350
+                }
+            },
+            "points": [
+                {
+                    "row": 301,
+                    "column": 310,
+                    "label": 1
+                },
+                {
+                    "row": 297,
+                    "column": 193,
+                    "label": 1
+                },
+                {
+                    "row": 302,
+                    "column": 257,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 186,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 262,
+                    "column": 169
+                },
+                "bottom_right_corner": {
+                    "row": 343,
+                    "column": 347
+                }
+            },
+            "points": [
+                {
+                    "row": 302,
+                    "column": 310,
+                    "label": 1
+                },
+                {
+                    "row": 297,
+                    "column": 194,
+                    "label": 1
+                },
+                {
+                    "row": 302,
+                    "column": 258,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 187,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 262,
+                    "column": 172
+                },
+                "bottom_right_corner": {
+                    "row": 338,
+                    "column": 341
+                }
+            },
+            "points": [
+                {
+                    "row": 300,
+                    "column": 308,
+                    "label": 1
+                },
+                {
+                    "row": 295,
+                    "column": 194,
+                    "label": 1
+                },
+                {
+                    "row": 300,
+                    "column": 256,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 188,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 262,
+                    "column": 173
+                },
+                "bottom_right_corner": {
+                    "row": 337,
+                    "column": 339
+                }
+            },
+            "points": [
+                {
+                    "row": 300,
+                    "column": 307,
+                    "label": 1
+                },
+                {
+                    "row": 296,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 299,
+                    "column": 256,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 189,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 264,
+                    "column": 175
+                },
+                "bottom_right_corner": {
+                    "row": 334,
+                    "column": 334
+                }
+            },
+            "points": [
+                {
+                    "row": 299,
+                    "column": 306,
+                    "label": 1
+                },
+                {
+                    "row": 295,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 299,
+                    "column": 254,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 190,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 266,
+                    "column": 181
+                },
+                "bottom_right_corner": {
+                    "row": 327,
+                    "column": 329
+                }
+            },
+            "points": [
+                {
+                    "row": 297,
+                    "column": 306,
+                    "label": 1
+                },
+                {
+                    "row": 298,
+                    "column": 201,
+                    "label": 1
+                },
+                {
+                    "row": 296,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 191,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 267,
+                    "column": 182
+                },
+                "bottom_right_corner": {
+                    "row": 326,
+                    "column": 328
+                }
+            },
+            "points": [
+                {
+                    "row": 297,
+                    "column": 305,
+                    "label": 1
+                },
+                {
+                    "row": 297,
+                    "column": 200,
+                    "label": 1
+                },
+                {
+                    "row": 296,
+                    "column": 255,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 192,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 269,
+                    "column": 189
+                },
+                "bottom_right_corner": {
+                    "row": 321,
+                    "column": 324
+                }
+            },
+            "points": [
+                {
+                    "row": 294,
+                    "column": 304,
+                    "label": 1
+                },
+                {
+                    "row": 297,
+                    "column": 199,
+                    "label": 1
+                },
+                {
+                    "row": 295,
+                    "column": 256,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 193,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 270,
+                    "column": 287
+                },
+                "bottom_right_corner": {
+                    "row": 323,
+                    "column": 322
+                }
+            },
+            "points": [
+                {
+                    "row": 297,
+                    "column": 305,
+                    "label": 1
+                },
+                {
+                    "row": 296,
+                    "column": 304,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 194,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 272,
+                    "column": 289
+                },
+                "bottom_right_corner": {
+                    "row": 316,
+                    "column": 319
+                }
+            },
+            "points": [
+                {
+                    "row": 294,
+                    "column": 304,
+                    "label": 1
+                },
+                {
+                    "row": 294,
+                    "column": 304,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_coronacases_006.npz",
+        "masks_file_path": "working_data/covid/masks_coronacases_006.npz",
+        "slice_number": 195,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 283,
+                    "column": 289
+                },
+                "bottom_right_corner": {
+                    "row": 312,
+                    "column": 317
+                }
+            },
+            "points": [
+                {
+                    "row": 297,
+                    "column": 302,
+                    "label": 1
+                },
+                {
+                    "row": 297,
+                    "column": 303,
+                    "label": 0
+                }
+            ]
+        }
+    }
+]

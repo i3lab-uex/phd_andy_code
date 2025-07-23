@@ -1,0 +1,1007 @@
+[
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 10,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 420,
+                    "column": 168
+                },
+                "bottom_right_corner": {
+                    "row": 488,
+                    "column": 278
+                }
+            },
+            "points": [
+                {
+                    "row": 456,
+                    "column": 257,
+                    "label": 1
+                },
+                {
+                    "row": 454,
+                    "column": 223,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 11,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 107
+                },
+                "bottom_right_corner": {
+                    "row": 490,
+                    "column": 491
+                }
+            },
+            "points": [
+                {
+                    "row": 487,
+                    "column": 430,
+                    "label": 1
+                },
+                {
+                    "row": 423,
+                    "column": 274,
+                    "label": 1
+                },
+                {
+                    "row": 354,
+                    "column": 299,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 12,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 220,
+                    "column": 85
+                },
+                "bottom_right_corner": {
+                    "row": 490,
+                    "column": 523
+                }
+            },
+            "points": [
+                {
+                    "row": 485,
+                    "column": 448,
+                    "label": 1
+                },
+                {
+                    "row": 477,
+                    "column": 189,
+                    "label": 1
+                },
+                {
+                    "row": 355,
+                    "column": 304,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 13,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 221,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 492,
+                    "column": 538
+                }
+            },
+            "points": [
+                {
+                    "row": 233,
+                    "column": 456,
+                    "label": 1
+                },
+                {
+                    "row": 472,
+                    "column": 191,
+                    "label": 1
+                },
+                {
+                    "row": 356,
+                    "column": 312,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 14,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 216,
+                    "column": 86
+                },
+                "bottom_right_corner": {
+                    "row": 492,
+                    "column": 543
+                }
+            },
+            "points": [
+                {
+                    "row": 246,
+                    "column": 472,
+                    "label": 1
+                },
+                {
+                    "row": 462,
+                    "column": 193,
+                    "label": 1
+                },
+                {
+                    "row": 354,
+                    "column": 314,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 15,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 87
+                },
+                "bottom_right_corner": {
+                    "row": 492,
+                    "column": 541
+                }
+            },
+            "points": [
+                {
+                    "row": 468,
+                    "column": 440,
+                    "label": 1
+                },
+                {
+                    "row": 453,
+                    "column": 193,
+                    "label": 1
+                },
+                {
+                    "row": 353,
+                    "column": 314,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 16,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 89
+                },
+                "bottom_right_corner": {
+                    "row": 492,
+                    "column": 540
+                }
+            },
+            "points": [
+                {
+                    "row": 270,
+                    "column": 465,
+                    "label": 1
+                },
+                {
+                    "row": 444,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 353,
+                    "column": 314,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 17,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 217,
+                    "column": 92
+                },
+                "bottom_right_corner": {
+                    "row": 493,
+                    "column": 541
+                }
+            },
+            "points": [
+                {
+                    "row": 357,
+                    "column": 463,
+                    "label": 1
+                },
+                {
+                    "row": 433,
+                    "column": 197,
+                    "label": 1
+                },
+                {
+                    "row": 355,
+                    "column": 316,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 18,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 92
+                },
+                "bottom_right_corner": {
+                    "row": 490,
+                    "column": 541
+                }
+            },
+            "points": [
+                {
+                    "row": 357,
+                    "column": 464,
+                    "label": 1
+                },
+                {
+                    "row": 422,
+                    "column": 197,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 316,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 19,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 214,
+                    "column": 93
+                },
+                "bottom_right_corner": {
+                    "row": 490,
+                    "column": 540
+                }
+            },
+            "points": [
+                {
+                    "row": 358,
+                    "column": 463,
+                    "label": 1
+                },
+                {
+                    "row": 351,
+                    "column": 190,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 316,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 20,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 215,
+                    "column": 95
+                },
+                "bottom_right_corner": {
+                    "row": 489,
+                    "column": 538
+                }
+            },
+            "points": [
+                {
+                    "row": 358,
+                    "column": 459,
+                    "label": 1
+                },
+                {
+                    "row": 351,
+                    "column": 192,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 316,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 21,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 218,
+                    "column": 98
+                },
+                "bottom_right_corner": {
+                    "row": 487,
+                    "column": 536
+                }
+            },
+            "points": [
+                {
+                    "row": 357,
+                    "column": 457,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 194,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 317,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 22,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 99
+                },
+                "bottom_right_corner": {
+                    "row": 486,
+                    "column": 535
+                }
+            },
+            "points": [
+                {
+                    "row": 357,
+                    "column": 454,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 195,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 317,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 23,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 219,
+                    "column": 100
+                },
+                "bottom_right_corner": {
+                    "row": 484,
+                    "column": 534
+                }
+            },
+            "points": [
+                {
+                    "row": 356,
+                    "column": 449,
+                    "label": 1
+                },
+                {
+                    "row": 351,
+                    "column": 198,
+                    "label": 1
+                },
+                {
+                    "row": 351,
+                    "column": 317,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 24,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 220,
+                    "column": 102
+                },
+                "bottom_right_corner": {
+                    "row": 481,
+                    "column": 532
+                }
+            },
+            "points": [
+                {
+                    "row": 359,
+                    "column": 446,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 200,
+                    "label": 1
+                },
+                {
+                    "row": 350,
+                    "column": 317,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 25,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 226,
+                    "column": 106
+                },
+                "bottom_right_corner": {
+                    "row": 476,
+                    "column": 530
+                }
+            },
+            "points": [
+                {
+                    "row": 358,
+                    "column": 443,
+                    "label": 1
+                },
+                {
+                    "row": 353,
+                    "column": 199,
+                    "label": 1
+                },
+                {
+                    "row": 351,
+                    "column": 318,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 26,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 232,
+                    "column": 108
+                },
+                "bottom_right_corner": {
+                    "row": 472,
+                    "column": 529
+                }
+            },
+            "points": [
+                {
+                    "row": 359,
+                    "column": 440,
+                    "label": 1
+                },
+                {
+                    "row": 355,
+                    "column": 202,
+                    "label": 1
+                },
+                {
+                    "row": 352,
+                    "column": 318,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 27,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 234,
+                    "column": 112
+                },
+                "bottom_right_corner": {
+                    "row": 469,
+                    "column": 524
+                }
+            },
+            "points": [
+                {
+                    "row": 361,
+                    "column": 442,
+                    "label": 1
+                },
+                {
+                    "row": 354,
+                    "column": 205,
+                    "label": 1
+                },
+                {
+                    "row": 351,
+                    "column": 318,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 28,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 237,
+                    "column": 118
+                },
+                "bottom_right_corner": {
+                    "row": 466,
+                    "column": 519
+                }
+            },
+            "points": [
+                {
+                    "row": 362,
+                    "column": 438,
+                    "label": 1
+                },
+                {
+                    "row": 354,
+                    "column": 207,
+                    "label": 1
+                },
+                {
+                    "row": 351,
+                    "column": 318,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 29,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 248,
+                    "column": 122
+                },
+                "bottom_right_corner": {
+                    "row": 463,
+                    "column": 516
+                }
+            },
+            "points": [
+                {
+                    "row": 363,
+                    "column": 436,
+                    "label": 1
+                },
+                {
+                    "row": 357,
+                    "column": 212,
+                    "label": 1
+                },
+                {
+                    "row": 355,
+                    "column": 319,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 30,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 253,
+                    "column": 133
+                },
+                "bottom_right_corner": {
+                    "row": 461,
+                    "column": 510
+                }
+            },
+            "points": [
+                {
+                    "row": 366,
+                    "column": 433,
+                    "label": 1
+                },
+                {
+                    "row": 359,
+                    "column": 217,
+                    "label": 1
+                },
+                {
+                    "row": 357,
+                    "column": 321,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 31,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 257,
+                    "column": 140
+                },
+                "bottom_right_corner": {
+                    "row": 455,
+                    "column": 503
+                }
+            },
+            "points": [
+                {
+                    "row": 382,
+                    "column": 432,
+                    "label": 1
+                },
+                {
+                    "row": 359,
+                    "column": 222,
+                    "label": 1
+                },
+                {
+                    "row": 356,
+                    "column": 321,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 32,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 274,
+                    "column": 150
+                },
+                "bottom_right_corner": {
+                    "row": 452,
+                    "column": 491
+                }
+            },
+            "points": [
+                {
+                    "row": 380,
+                    "column": 420,
+                    "label": 1
+                },
+                {
+                    "row": 361,
+                    "column": 227,
+                    "label": 1
+                },
+                {
+                    "row": 363,
+                    "column": 320,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 33,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 299,
+                    "column": 160
+                },
+                "bottom_right_corner": {
+                    "row": 446,
+                    "column": 483
+                }
+            },
+            "points": [
+                {
+                    "row": 382,
+                    "column": 421,
+                    "label": 1
+                },
+                {
+                    "row": 369,
+                    "column": 236,
+                    "label": 1
+                },
+                {
+                    "row": 372,
+                    "column": 321,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 34,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 309,
+                    "column": 176
+                },
+                "bottom_right_corner": {
+                    "row": 439,
+                    "column": 475
+                }
+            },
+            "points": [
+                {
+                    "row": 382,
+                    "column": 418,
+                    "label": 1
+                },
+                {
+                    "row": 372,
+                    "column": 242,
+                    "label": 1
+                },
+                {
+                    "row": 374,
+                    "column": 325,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 35,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 317,
+                    "column": 191
+                },
+                "bottom_right_corner": {
+                    "row": 429,
+                    "column": 463
+                }
+            },
+            "points": [
+                {
+                    "row": 379,
+                    "column": 413,
+                    "label": 1
+                },
+                {
+                    "row": 373,
+                    "column": 245,
+                    "label": 1
+                },
+                {
+                    "row": 373,
+                    "column": 327,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 36,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 323,
+                    "column": 208
+                },
+                "bottom_right_corner": {
+                    "row": 416,
+                    "column": 446
+                }
+            },
+            "points": [
+                {
+                    "row": 378,
+                    "column": 412,
+                    "label": 1
+                },
+                {
+                    "row": 369,
+                    "column": 257,
+                    "label": 1
+                },
+                {
+                    "row": 369,
+                    "column": 327,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 37,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 336,
+                    "column": 224
+                },
+                "bottom_right_corner": {
+                    "row": 402,
+                    "column": 431
+                }
+            },
+            "points": [
+                {
+                    "row": 375,
+                    "column": 407,
+                    "label": 1
+                },
+                {
+                    "row": 368,
+                    "column": 264,
+                    "label": 1
+                },
+                {
+                    "row": 369,
+                    "column": 327,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 38,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 341,
+                    "column": 247
+                },
+                "bottom_right_corner": {
+                    "row": 389,
+                    "column": 306
+                }
+            },
+            "points": [
+                {
+                    "row": 364,
+                    "column": 271,
+                    "label": 1
+                },
+                {
+                    "row": 365,
+                    "column": 276,
+                    "label": 0
+                }
+            ]
+        }
+    },
+    {
+        "image_file_path": "working_data/covid/image_radiopaedia_29_86490_1.npz",
+        "masks_file_path": "working_data/covid/masks_radiopaedia_29_86490_1.npz",
+        "slice_number": 39,
+        "prompt": {
+            "bounding_box": {
+                "upper_left_corner": {
+                    "row": 347,
+                    "column": 259
+                },
+                "bottom_right_corner": {
+                    "row": 376,
+                    "column": 291
+                }
+            },
+            "points": [
+                {
+                    "row": 362,
+                    "column": 274,
+                    "label": 1
+                },
+                {
+                    "row": 361,
+                    "column": 275,
+                    "label": 0
+                }
+            ]
+        }
+    }
+]
