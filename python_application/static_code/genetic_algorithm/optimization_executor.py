@@ -58,7 +58,9 @@ class OptimizationExecutor:
         self.probe = probe
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.stream_capture = stream_capture
-        self.progress_tracker = ProgressTracker(stream_capture) if stream_capture else None
+        self.progress_tracker = (
+            ProgressTracker(stream_capture) if stream_capture else None
+        )
 
     def _extract_dataset_info(self, task: OptimizationTask) -> Dict[str, str]:
         """

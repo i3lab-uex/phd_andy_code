@@ -166,6 +166,7 @@ class [c.name/]:
         """
         try:
             from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+            from python_application.static_code.utils.log_capture import global_stream_capture
 
             # Find the specified task
             target_task = None
@@ -181,14 +182,17 @@ class [c.name/]:
                     "results": None
                 }
 
-            # Create an executor and run optimization for all experiments
-            executor = OptimizationExecutor(self)
-            results = executor.run_task_optimization(
-                task=target_task,
-                population_size=population_size,
-                seed=seed,
-                use_prompts=False
-            )
+            # Create an executor with stream capture and run optimization for all experiments
+            executor = OptimizationExecutor(self, global_stream_capture)
+
+            # Use context manager to capture all output
+            with global_stream_capture.capture():
+                results = executor.run_task_optimization(
+                    task=target_task,
+                    population_size=population_size,
+                    seed=seed,
+                    use_prompts=False,
+                )
 
             return {
                 "status": "success",
@@ -225,6 +229,7 @@ class [c.name/]:
         """
         try:
             from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+            from python_application.static_code.utils.log_capture import global_stream_capture
 
             # Find the specified task and experiment
             target_task = None
@@ -253,15 +258,18 @@ class [c.name/]:
                     "results": None
                 }
 
-            # Create an executor and run optimization for a specific experiment
-            executor = OptimizationExecutor(self)
-            results = executor.run_single_experiment_optimization(
-                task=target_task,
-                experiment=target_experiment,
-                population_size=population_size,
-                seed=seed,
-                use_prompts=False
-            )
+            # Create an executor with stream capture and run optimization for a specific experiment
+            executor = OptimizationExecutor(self, global_stream_capture)
+
+            # Use context manager to capture all output
+            with global_stream_capture.capture():
+                results = executor.run_single_experiment_optimization(
+                    task=target_task,
+                    experiment=target_experiment,
+                    population_size=population_size,
+                    seed=seed,
+                    use_prompts=False,
+                )
 
             return {
                 "status": "success",
@@ -298,6 +306,7 @@ class [c.name/]:
         """
         try:
             from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+            from python_application.static_code.utils.log_capture import global_stream_capture
 
             # Find the specified task
             target_task = None
@@ -321,15 +330,18 @@ class [c.name/]:
                     "results": None
                 }
 
-            # Create an executor and run optimization for all experiments with prompts
-            executor = OptimizationExecutor(self)
-            results = executor.run_task_optimization(
-                task=target_task,
-                population_size=population_size,
-                seed=seed,
-                use_prompts=True,
-                prompts_path=prompts_path
-            )
+            # Create an executor with stream capture and run optimization for all experiments with prompts
+            executor = OptimizationExecutor(self, global_stream_capture)
+
+            # Use context manager to capture all output
+            with global_stream_capture.capture():
+                results = executor.run_task_optimization(
+                    task=target_task,
+                    population_size=population_size,
+                    seed=seed,
+                    use_prompts=True,
+                    prompts_path=prompts_path,
+                )
 
             return {
                 "status": "success",
@@ -368,6 +380,7 @@ class [c.name/]:
         """
         try:
             from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+            from python_application.static_code.utils.log_capture import global_stream_capture
 
             # Find the specified task and experiment
             target_task = None
@@ -404,16 +417,19 @@ class [c.name/]:
                     "results": None
                 }
 
-            # Create an executor and run optimization for a specific experiment with prompts
-            executor = OptimizationExecutor(self)
-            results = executor.run_single_experiment_optimization(
-                task=target_task,
-                experiment=target_experiment,
-                population_size=population_size,
-                seed=seed,
-                use_prompts=True,
-                prompts_path=prompts_path
-            )
+            # Create an executor with log capture and run optimization for a specific experiment with prompts
+            executor = OptimizationExecutor(self, global_stream_capture)
+
+            # Use context manager to capture all output
+            with global_stream_capture.capture():
+                results = executor.run_single_experiment_optimization(
+                    task=target_task,
+                    experiment=target_experiment,
+                    population_size=population_size,
+                    seed=seed,
+                    use_prompts=True,
+                    prompts_path=prompts_path,
+                )
 
             return {
                 "status": "success",
@@ -511,6 +527,7 @@ class [c.name/]:
 
 [file ('probe_demo.py', false, 'UTF-8')]
 # Generated instance model for ProbeMM
+import os
 from python_application.static_code.probe_interface import ProbeInterface
     [for (e : EEnum | aPROBE.eClass().ePackage.eClassifiers->filter(ecore::EEnum))]
 from python_application.generated_code.enumerations.[e.name/] import [e.name/]
@@ -533,7 +550,7 @@ datasets = ['['/]
         [for (subset : Subset | d.subset) separator(',\n')]
             Subset(
                 name="[subset.name/]",
-                path="[subset.path/]",
+                path=os.path.join(os.getcwd(), "[subset.path/]"),
                 dataFolderName="[subset.dataFolderName/]",
                 labelsFolderName="[subset.labelsFolderName/]",
                 sample=['['/]
@@ -559,7 +576,7 @@ optimization_task = ['['/]
             name="[ot.foundation_model.name/]",
             version=[ot.foundation_model.version/],
             description="[ot.foundation_model.description/]",
-            checkpointFilepath="[ot.foundation_model.checkpointFilepath/]",
+            checkpointFilepath=os.path.join(os.getcwd(), "[ot.foundation_model.checkpointFilepath/]"),
             configuration="[ot.foundation_model.configuration/]",
             type=ModelType.[ot.foundation_model.type/]
         ),

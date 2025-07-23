@@ -1,4 +1,5 @@
 # Generated instance model for ProbeMM
+import os
 from python_application.static_code.probe_interface import ProbeInterface
 from python_application.generated_code.enumerations.DeviceType import DeviceType
 from python_application.generated_code.enumerations.MetricType import MetricType
@@ -42,7 +43,7 @@ datasets = [
         subset=[
             Subset(
                 name="trainingSet",
-                path="/home/carlosbc24/PycharmProjects/phd2_code/datasets/covid",
+                path=os.path.join(os.getcwd(), "datasets/covid"),
                 dataFolderName="COVID-19-CT-Seg_20cases",
                 labelsFolderName="Lung_Mask",
                 sample=[
@@ -102,7 +103,9 @@ optimization_task = [
             name="vit_h",
             version=1.0,
             description="SAM ViT-H",
-            checkpointFilepath="/home/carlosbc24/PycharmProjects/phd2_code/model_checkpoints/sam_vit_h_4b8939.pth",
+            checkpointFilepath=os.path.join(
+                os.getcwd(), "model_checkpoints/sam_vit_h_4b8939.pth"
+            ),
             configuration="",
             type=ModelType.IMAGE_SEGMENTATION,
         ),
@@ -204,7 +207,9 @@ optimization_task = [
             name="vit_b",
             version=1.0,
             description="MedSAM ViT-B",
-            checkpointFilepath="/home/carlosbc24/PycharmProjects/phd2_code/model_checkpoints/medsam_vit_b_01ec64.pth",
+            checkpointFilepath=os.path.join(
+                os.getcwd(), "model_checkpoints/medsam_vit_b_01ec64.pth"
+            ),
             configuration="",
             type=ModelType.IMAGE_SEGMENTATION,
         ),

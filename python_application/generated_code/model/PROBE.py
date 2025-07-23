@@ -49,7 +49,9 @@ class PROBE:
             from python_application.static_code.genetic_algorithm.optimization_executor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import global_stream_capture
+            from python_application.static_code.utils.log_capture import (
+                global_stream_capture,
+            )
 
             # Find the specified task
             target_task = None
@@ -119,7 +121,9 @@ class PROBE:
             from python_application.static_code.genetic_algorithm.optimization_executor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import global_stream_capture
+            from python_application.static_code.utils.log_capture import (
+                global_stream_capture,
+            )
 
             # Find the specified task and experiment
             target_task = None
@@ -203,7 +207,9 @@ class PROBE:
             from python_application.static_code.genetic_algorithm.optimization_executor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import global_stream_capture
+            from python_application.static_code.utils.log_capture import (
+                global_stream_capture,
+            )
 
             # Find the specified task
             target_task = None
@@ -284,7 +290,9 @@ class PROBE:
             from python_application.static_code.genetic_algorithm.optimization_executor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import global_stream_capture
+            from python_application.static_code.utils.log_capture import (
+                global_stream_capture,
+            )
 
             # Find the specified task and experiment
             target_task = None
