@@ -62,7 +62,7 @@ class [e.name/](Enum):
     [file ('model/'.concat(c.name.concat('.py')), false, 'UTF-8')]
 # Generated from [m.name/] using Acceleo
     [if (c.eAllReferences->exists(r | r.upperBound = -1) or c.eAllAttributes->exists(a | a.upperBound = -1))]
-from typing import List
+from typing import List[if (c.name = 'PROBE')], Dict, Any[/if]
     [/if]
     [for (a : EAttribute | c.eAllAttributes)]
         [let pyType : String =
@@ -98,26 +98,15 @@ from python_application.generated_code.model.[pyType/] import [pyType/]
 from abc import ABC
     [/if]
     [if (c.name = 'PROBE')]
-from python_application.generated_code.model.Experiment import Experiment
-
-
-def _simulate_experiment(task: OptimizationTask, experiment: Experiment) -> str:
-    """
-    Simulates the execution of an experiment. This is a placeholder function for future injection.
-    :return: Status message of the simulation
-    """
-    output = ['['/][']'/]
-    output.append(f"   • Simulating experiment: {experiment.name}...")
-    output.append(f"     → Using model: {task.foundation_model.name} ({task.foundation_model.type})")
-    output.append(f"     → Optimizing metric: {task.optimization_metric.name}")
-    output.append(f"     → Sample: {experiment.sample.filename}")
-    output.append(f"     → Stop Conditions: {['['/]type(c).__name__ for c in experiment.stop_condition[']'/]}")
-    output.append(f"     ✓ Simulation complete.")
-    return "\n".join(output)
+import os
 
 
 class [c.name/]:
-    """Root container for device, datasets and optimization tasks."""
+    """
+    Represents a PROBE instance for running optimization tasks.
+    This class provides methods to run optimization tasks using genetic algorithms
+    and prompts, allowing for both whole task optimization and specific experiment optimization.
+    """
 
     def __init__(self
     [for (a : EAttribute | c.eAllAttributes)]
@@ -145,6 +134,9 @@ class [c.name/]:
         [/let]
     [/for]):
         """
+        Initialize a PROBE instance.
+
+        Params:  
     [for (a : EAttribute | c.eAllAttributes)]
         :param [a.name/]: [a.name/] of the PROBE
     [/for]
@@ -159,29 +151,288 @@ class [c.name/]:
         self.[r.name/] = [r.name/]
     [/for]
 
-    def get_experiments_for_task(self, task_name: str) -> List['['/]str[']'/]:
-        for task in self.optimization_task:
-            if task.name == task_name:
-                return ['['/]exp.name for exp in task.experiment[']'/]
-        return ['['/][']'/]
+    def run_optimization_whole_task(self, task_name: str, population_size: int = 100,
+                                    seed: int = 1) -> Dict['['/]str, Any[']'/]:
+        """
+        Run SAM optimization for all experiments in a task using PROBE configuration.
 
-    def run_all_experiments_for_task(self, task_name: str) -> str:
-        for task in self.optimization_task:
-            if task.name == task_name:
-                output = ['['/]f"▶ Running all experiments for task: {task.name}"[']'/]
-                for experiment in task.experiment:
-                    output.append(_simulate_experiment(task, experiment))
-                return "\n".join(output)
-        return f"⚠ Task '{task_name}' not found."
+        Args:
+            task_name (str): Name of the optimization task
+            population_size (int, optional): Population size for genetic algorithm. Defaults to 100.
+            seed (int, optional): Random seed for reproducibility. Defaults to 1.
 
-    def run_single_experiment(self, task_name: str, experiment_name: str) -> str:
-        for task in self.optimization_task:
-            if task.name == task_name:
-                for experiment in task.experiment:
-                    if experiment.name == experiment_name:
-                        return _simulate_experiment(task, experiment)
-                return f"⚠ Experiment '{experiment_name}' not found in task '{task_name}'"
-        return f"⚠ Task '{task_name}' not found."
+        Returns:
+            Dict['['/]str, Any[']'/]: Experiment results including metrics and execution time
+        """
+        try:
+            from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+
+            # Find the specified task
+            target_task = None
+            for task in self.optimization_task:
+                if task.name == task_name:
+                    target_task = task
+                    break
+
+            if not target_task:
+                return {
+                    "status": "error",
+                    "message": f"Task '{task_name}' not found",
+                    "results": None
+                }
+
+            # Create an executor and run optimization for all experiments
+            executor = OptimizationExecutor(self)
+            results = executor.run_task_optimization(
+                task=target_task,
+                population_size=population_size,
+                seed=seed,
+                use_prompts=False
+            )
+
+            return {
+                "status": "success",
+                "message": f"Optimization completed for task '{task_name}'",
+                "results": results
+            }
+
+        except ImportError as e:
+            return {
+                "status": "error",
+                "message": f"Failed to import optimization modules: {e}",
+                "results": None
+            }
+        except Exception as e:
+            return {
+                "status": "error",
+                "message": f"Experiment execution failed: {e}",
+                "results": None
+            }
+
+    def run_optimization_using_task_experiment(self, task_name: str, experiment_name: str,
+                                               population_size: int = 100, seed: int = 1) -> Dict['['/]str, Any[']'/]:
+        """
+        Run SAM optimization for a specific experiment using PROBE configuration.
+
+        Args:
+            task_name (str): Name of the optimization task
+            experiment_name (str): Name of the specific experiment
+            population_size (int, optional): Population size for genetic algorithm. Defaults to 100.
+            seed (int, optional): Random seed for reproducibility. Defaults to 1.
+
+        Returns:
+            Dict['['/]str, Any[']'/]: Experiment results including metrics and execution time
+        """
+        try:
+            from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+
+            # Find the specified task and experiment
+            target_task = None
+            target_experiment = None
+
+            for task in self.optimization_task:
+                if task.name == task_name:
+                    target_task = task
+                    for experiment in task.experiment:
+                        if experiment.name == experiment_name:
+                            target_experiment = experiment
+                            break
+                    break
+
+            if not target_task:
+                return {
+                    "status": "error",
+                    "message": f"Task '{task_name}' not found",
+                    "results": None
+                }
+
+            if not target_experiment:
+                return {
+                    "status": "error",
+                    "message": f"Experiment '{experiment_name}' not found in task '{task_name}'",
+                    "results": None
+                }
+
+            # Create an executor and run optimization for a specific experiment
+            executor = OptimizationExecutor(self)
+            results = executor.run_single_experiment_optimization(
+                task=target_task,
+                experiment=target_experiment,
+                population_size=population_size,
+                seed=seed,
+                use_prompts=False
+            )
+
+            return {
+                "status": "success",
+                "message": f"Optimization completed for experiment '{experiment_name}'",
+                "results": results
+            }
+
+        except ImportError as e:
+            return {
+                "status": "error",
+                "message": f"Failed to import optimization modules: {e}",
+                "results": None
+            }
+        except Exception as e:
+            return {
+                "status": "error",
+                "message": f"Experiment execution failed: {e}",
+                "results": None
+            }
+
+    def run_prompt_optimization_whole_task(self, task_name: str, prompts_path: str,
+                                           population_size: int = 100, seed: int = 1) -> Dict['['/]str, Any[']'/]:
+        """
+        Run SAM optimization for all experiments in a task using prompts from JSON files.
+
+        Args:
+            task_name (str): Name of the optimization task
+            prompts_path (str): Path to the directory containing JSON prompt files
+            population_size (int, optional): Population size for genetic algorithm. Defaults to 100.
+            seed (int, optional): Random seed for reproducibility. Defaults to 1.
+
+        Returns:
+            Dict['['/]str, Any[']'/]: Experiment results including metrics and execution time
+        """
+        try:
+            from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+
+            # Find the specified task
+            target_task = None
+            for task in self.optimization_task:
+                if task.name == task_name:
+                    target_task = task
+                    break
+
+            if not target_task:
+                return {
+                    "status": "error",
+                    "message": f"Task '{task_name}' not found",
+                    "results": None
+                }
+
+            # Validate prompts path
+            if not os.path.exists(prompts_path):
+                return {
+                    "status": "error",
+                    "message": f"Prompts path does not exist: {prompts_path}",
+                    "results": None
+                }
+
+            # Create an executor and run optimization for all experiments with prompts
+            executor = OptimizationExecutor(self)
+            results = executor.run_task_optimization(
+                task=target_task,
+                population_size=population_size,
+                seed=seed,
+                use_prompts=True,
+                prompts_path=prompts_path
+            )
+
+            return {
+                "status": "success",
+                "message": f"Prompt-based optimization completed for task '{task_name}'",
+                "results": results
+            }
+
+        except ImportError as e:
+            return {
+                "status": "error",
+                "message": f"Failed to import optimization modules: {e}",
+                "results": None
+            }
+        except Exception as e:
+            return {
+                "status": "error",
+                "message": f"Experiment execution failed: {e}",
+                "results": None
+            }
+
+    def run_prompt_optimization_using_task_experiment(self, task_name: str, experiment_name: str,
+                                                      prompts_path: str, population_size: int = 100,
+                                                      seed: int = 1) -> Dict['['/]str, Any[']'/]:
+        """
+        Run SAM optimization for a specific experiment using prompts from JSON files.
+
+        Args:
+            task_name (str): Name of the optimization task
+            experiment_name (str): Name of the specific experiment
+            prompts_path (str): Path to the directory containing JSON prompt files
+            population_size (int, optional): Population size for genetic algorithm. Defaults to 100.
+            seed (int, optional): Random seed for reproducibility. Defaults to 1.
+
+        Returns:
+            Dict['['/]str, Any[']'/]: Experiment results including metrics and execution time
+        """
+        try:
+            from python_application.static_code.genetic_algorithm.optimization_executor import OptimizationExecutor
+
+            # Find the specified task and experiment
+            target_task = None
+            target_experiment = None
+
+            for task in self.optimization_task:
+                if task.name == task_name:
+                    target_task = task
+                    for experiment in task.experiment:
+                        if experiment.name == experiment_name:
+                            target_experiment = experiment
+                            break
+                    break
+
+            if not target_task:
+                return {
+                    "status": "error",
+                    "message": f"Task '{task_name}' not found",
+                    "results": None
+                }
+
+            if not target_experiment:
+                return {
+                    "status": "error",
+                    "message": f"Experiment '{experiment_name}' not found in task '{task_name}'",
+                    "results": None
+                }
+
+            # Validate prompts path
+            if not os.path.exists(prompts_path):
+                return {
+                    "status": "error",
+                    "message": f"Prompts path does not exist: {prompts_path}",
+                    "results": None
+                }
+
+            # Create an executor and run optimization for a specific experiment with prompts
+            executor = OptimizationExecutor(self)
+            results = executor.run_single_experiment_optimization(
+                task=target_task,
+                experiment=target_experiment,
+                population_size=population_size,
+                seed=seed,
+                use_prompts=True,
+                prompts_path=prompts_path
+            )
+
+            return {
+                "status": "success",
+                "message": f"Prompt-based optimization completed for experiment '{experiment_name}'",
+                "results": results
+            }
+
+        except ImportError as e:
+            return {
+                "status": "error",
+                "message": f"Failed to import optimization modules: {e}",
+                "results": None
+            }
+        except Exception as e:
+            return {
+                "status": "error",
+                "message": f"Experiment execution failed: {e}",
+                "results": None
+            }
 
     [else]
 [comment -- specific imports for superclasses -- /]
