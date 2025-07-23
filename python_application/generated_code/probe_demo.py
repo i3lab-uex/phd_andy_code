@@ -42,7 +42,7 @@ datasets = [
         subset=[
             Subset(
                 name="trainingSet",
-                path="/mnt/c/Users/Usuario/PycharmProjects/mismef/datasets/covid",
+                path="/home/carlosbc24/PycharmProjects/phd2_code/datasets/covid",
                 dataFolderName="COVID-19-CT-Seg_20cases",
                 labelsFolderName="Lung_Mask",
                 sample=[
@@ -102,7 +102,7 @@ optimization_task = [
             name="vit_h",
             version=1.0,
             description="SAM ViT-H",
-            checkpointFilepath="/mnt/c/Users/Usuario/PycharmProjects/mismef/model_checkpoints/sam_vit_h_4b8939.pth",
+            checkpointFilepath="/home/carlosbc24/PycharmProjects/phd2_code/model_checkpoints/sam_vit_h_4b8939.pth",
             configuration="",
             type=ModelType.IMAGE_SEGMENTATION,
         ),
@@ -204,7 +204,7 @@ optimization_task = [
             name="vit_b",
             version=1.0,
             description="MedSAM ViT-B",
-            checkpointFilepath="/mnt/c/Users/Usuario/PycharmProjects/mismef/model_checkpoints/medsam_vit_b_01ec64.pth",
+            checkpointFilepath="/home/carlosbc24/PycharmProjects/phd2_code/model_checkpoints/medsam_vit_b_01ec64.pth",
             configuration="",
             type=ModelType.IMAGE_SEGMENTATION,
         ),
