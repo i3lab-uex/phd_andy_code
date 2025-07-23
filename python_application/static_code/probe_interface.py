@@ -1,8 +1,32 @@
+import os
+
 import gradio as gr
 import threading
 import time
 from python_application.generated_code.model.PROBE import PROBE
 from python_application.static_code.utils.log_capture import global_stream_capture
+
+
+def toggle_prompts_visibility(use_prompts: bool):
+    """
+    Toggle visibility of prompts directory field based on checkbox state.
+
+    Args:
+        use_prompts (bool): Whether to use custom prompts
+
+    Returns:
+        gr.Textbox: Updated textbox with visibility state
+    """
+    return gr.Textbox(
+        label="Prompts Directory Path",
+        info="Directory containing JSON prompt files",
+        visible=use_prompts,
+        interactive=True,
+        value=os.path.join(
+            os.getcwd(),
+            "python_application/static_code/initial_prompts_configuration/covid",
+        ),
+    )
 
 
 class ProbeInterface:
@@ -146,24 +170,6 @@ class ProbeInterface:
                 value=experiment_names[0] if experiment_names else None,
             )
         return gr.Dropdown(choices=[], value="")
-
-    def toggle_prompts_visibility(self, use_prompts: bool):
-        """
-        Toggle visibility of prompts directory field based on checkbox state.
-
-        Args:
-            use_prompts (bool): Whether to use custom prompts
-
-        Returns:
-            gr.Textbox: Updated textbox with visibility state
-        """
-        return gr.Textbox(
-            label="Prompts Directory Path",
-            info="Directory containing JSON prompt files",
-            visible=use_prompts,
-            interactive=True,
-            value="/home/carlosbc24/PycharmProjects/phd2_code/python_application/static_code/initial_prompts_configuration/covid",
-        )
 
     def run_task_optimization(
         self, task_name: str, population_size: int, seed: int
@@ -433,13 +439,16 @@ Check the output directory for detailed results and visualizations."""
 
         # Run optimization in a separate thread and stream logs
         import threading
+
         result_container = {"result": None, "error": None}
 
         def run_optimization():
             try:
                 if use_prompts:
                     if not prompts_path or prompts_path.strip() == "":
-                        result_container["error"] = "❌ Error: Please specify the prompts directory path when using custom initial prompts."
+                        result_container["error"] = (
+                            "❌ Error: Please specify the prompts directory path when using custom initial prompts."
+                        )
                         return
                     result_container["result"] = self.run_prompt_task_optimization(
                         task_name, prompts_path, population_size, seed
@@ -501,16 +510,25 @@ Check the output directory for detailed results and visualizations."""
 
         # Run optimization in a separate thread and stream logs
         import threading
+
         result_container = {"result": None, "error": None}
 
         def run_optimization():
             try:
                 if use_prompts:
                     if not prompts_path or prompts_path.strip() == "":
-                        result_container["error"] = "❌ Error: Please specify the prompts directory path when using custom initial prompts."
+                        result_container["error"] = (
+                            "❌ Error: Please specify the prompts directory path when using custom initial prompts."
+                        )
                         return
-                    result_container["result"] = self.run_prompt_experiment_optimization(
-                        task_name, experiment_name, prompts_path, population_size, seed
+                    result_container["result"] = (
+                        self.run_prompt_experiment_optimization(
+                            task_name,
+                            experiment_name,
+                            prompts_path,
+                            population_size,
+                            seed,
+                        )
                     )
                 else:
                     result_container["result"] = self.run_experiment_optimization(
@@ -578,7 +596,7 @@ Check the output directory for detailed results and visualizations."""
                         lines=15,
                         max_lines=20,
                         interactive=False,
-                        autoscroll=False
+                        autoscroll=False,
                     )
 
                     status_output = gr.Textbox(
@@ -661,7 +679,10 @@ Check the output directory for detailed results and visualizations."""
                             )
                             probe_prompts_path = gr.Textbox(
                                 label="Prompts Directory Absolute Path",
-                                value="/home/carlosbc24/PycharmProjects/phd2_code/python_application/static_code/initial_prompts_configuration/covid",
+                                value=os.path.join(
+                                    os.getcwd(),
+                                    "python_application/static_code/initial_prompts_configuration/covid",
+                                ),
                                 info="Directory containing JSON prompt files",
                                 visible=False,
                                 interactive=True,
@@ -683,7 +704,7 @@ Check the output directory for detailed results and visualizations."""
                         lines=20,
                         max_lines=30,
                         interactive=False,
-                        autoscroll=False
+                        autoscroll=False,
                     )
 
                     # Event handlers for PROBE-based optimization with streaming
@@ -703,7 +724,7 @@ Check the output directory for detailed results and visualizations."""
                             probe_seed,
                         ],
                         outputs=probe_output,
-                        show_progress="full"
+                        show_progress="full",
                     )
 
                     probe_run_exp_btn.click(
@@ -717,11 +738,11 @@ Check the output directory for detailed results and visualizations."""
                             probe_seed,
                         ],
                         outputs=probe_output,
-                        show_progress="full"
+                        show_progress="full",
                     )
 
                     use_prompts_checkbox.change(
-                        self.toggle_prompts_visibility,
+                        toggle_prompts_visibility,
                         inputs=[use_prompts_checkbox],
                         outputs=[probe_prompts_path],
                     )
