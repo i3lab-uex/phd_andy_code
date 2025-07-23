@@ -9,18 +9,14 @@ import random
 import torch
 import numpy as np
 import nibabel as nib
-from typing import Dict, Any, List, Optional, Union, TYPE_CHECKING
+from typing import Dict, Any, List, Optional
 from pymoo.optimize import minimize
 from pymoo.algorithms.soo.nonconvex.ga import GA
 from segment_anything import sam_model_registry, SamPredictor
 
-# Use TYPE_CHECKING to avoid circular import
-if TYPE_CHECKING:
-    from python_application.generated_code.model.PROBE import PROBE
-
+from python_application.generated_code.model.PROBE import PROBE
 from python_application.generated_code.model.OptimizationTask import OptimizationTask
 from python_application.generated_code.model.Experiment import Experiment
-from python_application.generated_code.model.Dataset import Dataset
 from python_application.generated_code.enumerations.PointType import PointType
 from python_application.static_code.genetic_algorithm.sam_optimization_utils import (
     SAMOptimizationProblem,

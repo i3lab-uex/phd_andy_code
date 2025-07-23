@@ -43,6 +43,11 @@ class ProbeInterface:
         self.task_names = [ot.name for ot in probe.optimization_task]
         self.interface = self._build_interface()
 
+        # Control variables for optimization execution
+        self.optimization_running = False
+        self.stop_optimization = False
+        self.current_thread = None
+
         # Setup log capture callback for real-time updates
         self.current_output_textbox = None
         global_stream_capture.set_update_callback(self._update_output_callback)
@@ -418,6 +423,29 @@ Check the output directory for detailed results and visualizations."""
                 task_name, experiment_name, population_size, seed
             )
 
+    def stop_current_optimization(self):
+        """
+        Stop the currently running optimization.
+
+        Returns:
+            tuple: Updated button states and status message
+        """
+        if self.optimization_running:
+            self.stop_optimization = True
+            return (
+                gr.Button("🚀 Run Whole Task", variant="primary", interactive=True),
+                gr.Button("⚡ Run Single Experiment", variant="secondary", interactive=True),
+                gr.Button("⏹️ Stop Optimization", variant="stop", interactive=False),
+                "🛑 Optimization stopped by user request. The system is ready for new operations."
+            )
+        else:
+            return (
+                gr.Button("🚀 Run Whole Task", variant="primary", interactive=True),
+                gr.Button("⚡ Run Single Experiment", variant="secondary", interactive=True),
+                gr.Button("⏹️ Stop Optimization", variant="stop", interactive=False),
+                "ℹ️ No optimization is currently running."
+            )
+
     def run_unified_task_optimization_with_progress(
         self,
         task_name: str,
@@ -427,10 +455,14 @@ Check the output directory for detailed results and visualizations."""
         seed: int,
     ):
         """
-        Run unified optimization with real-time progress updates.
+        Run unified optimization with real-time progress updates and stop control.
 
         This is a generator function that yields progress updates.
         """
+        # Set optimization state
+        self.optimization_running = True
+        self.stop_optimization = False
+
         # Clear previous logs
         global_stream_capture.clear_output()
 
@@ -440,10 +472,15 @@ Check the output directory for detailed results and visualizations."""
         # Run optimization in a separate thread and stream logs
         import threading
 
-        result_container = {"result": None, "error": None}
+        result_container = {"result": None, "error": None, "stopped": False}
 
         def run_optimization():
             try:
+                # Check for stop signal periodically during optimization
+                if self.stop_optimization:
+                    result_container["stopped"] = True
+                    return
+
                 if use_prompts:
                     if not prompts_path or prompts_path.strip() == "":
                         result_container["error"] = (
@@ -458,26 +495,44 @@ Check the output directory for detailed results and visualizations."""
                         task_name, population_size, seed
                     )
             except Exception as e:
-                result_container["error"] = f"❌ Unexpected error: {str(e)}"
+                if self.stop_optimization:
+                    result_container["stopped"] = True
+                else:
+                    result_container["error"] = f"❌ Unexpected error: {str(e)}"
 
         # Start optimization in background
         opt_thread = threading.Thread(target=run_optimization)
+        self.current_thread = opt_thread
         opt_thread.start()
 
         # Stream logs while optimization is running
         last_output = ""
         while opt_thread.is_alive():
+            if self.stop_optimization:
+                # Give the thread a moment to finish gracefully
+                opt_thread.join(timeout=2.0)
+                break
+
             current_output = global_stream_capture.get_full_output()
             if current_output != last_output:
+                # Append new content
                 yield current_output
                 last_output = current_output
             time.sleep(0.5)  # Update every 500ms
 
         # Wait for thread to complete
-        opt_thread.join()
+        if opt_thread.is_alive():
+            opt_thread.join(timeout=1.0)
+
+        # Reset optimization state
+        self.optimization_running = False
+        self.current_thread = None
 
         # Final output
-        if result_container["error"]:
+        if result_container["stopped"] or self.stop_optimization:
+            final_output = global_stream_capture.get_full_output()
+            yield final_output + "\n\n🛑 **Optimization stopped by user request.**\nSystem is ready for new operations."
+        elif result_container["error"]:
             yield result_container["error"]
         elif result_container["result"]:
             final_output = global_stream_capture.get_full_output()
@@ -498,10 +553,14 @@ Check the output directory for detailed results and visualizations."""
         seed: int,
     ):
         """
-        Run unified experiment optimization with real-time progress updates.
+        Run unified experiment optimization with real-time progress updates and stop control.
 
         This is a generator function that yields progress updates.
         """
+        # Set optimization state
+        self.optimization_running = True
+        self.stop_optimization = False
+
         # Clear previous logs
         global_stream_capture.clear_output()
 
@@ -511,10 +570,15 @@ Check the output directory for detailed results and visualizations."""
         # Run optimization in a separate thread and stream logs
         import threading
 
-        result_container = {"result": None, "error": None}
+        result_container = {"result": None, "error": None, "stopped": False}
 
         def run_optimization():
             try:
+                # Check for stop signal
+                if self.stop_optimization:
+                    result_container["stopped"] = True
+                    return
+
                 if use_prompts:
                     if not prompts_path or prompts_path.strip() == "":
                         result_container["error"] = (
@@ -535,26 +599,44 @@ Check the output directory for detailed results and visualizations."""
                         task_name, experiment_name, population_size, seed
                     )
             except Exception as e:
-                result_container["error"] = f"❌ Unexpected error: {str(e)}"
+                if self.stop_optimization:
+                    result_container["stopped"] = True
+                else:
+                    result_container["error"] = f"❌ Unexpected error: {str(e)}"
 
         # Start optimization in background
         opt_thread = threading.Thread(target=run_optimization)
+        self.current_thread = opt_thread
         opt_thread.start()
 
         # Stream logs while optimization is running
         last_output = ""
         while opt_thread.is_alive():
+            if self.stop_optimization:
+                # Give the thread a moment to finish gracefully
+                opt_thread.join(timeout=2.0)
+                break
+
             current_output = global_stream_capture.get_full_output()
             if current_output != last_output:
+                # Append new content
                 yield current_output
                 last_output = current_output
             time.sleep(0.5)  # Update every 500ms
 
         # Wait for thread to complete
-        opt_thread.join()
+        if opt_thread.is_alive():
+            opt_thread.join(timeout=1.0)
+
+        # Reset optimization state
+        self.optimization_running = False
+        self.current_thread = None
 
         # Final output
-        if result_container["error"]:
+        if result_container["stopped"] or self.stop_optimization:
+            final_output = global_stream_capture.get_full_output()
+            yield final_output + "\n\n🛑 **Optimization stopped by user request.**\nSystem is ready for new operations."
+        elif result_container["error"]:
             yield result_container["error"]
         elif result_container["result"]:
             final_output = global_stream_capture.get_full_output()
@@ -573,7 +655,18 @@ Check the output directory for detailed results and visualizations."""
             gr.Interface: Configured Gradio interface
         """
         with gr.Blocks(
-            title="PROBE - SAM Optimization Interface", theme=gr.themes.Soft()
+            title="PROBE - SAM Optimization Interface",
+            theme=gr.themes.Base(),
+            css="""
+            .output-textbox {
+                height: 500px !important;
+                overflow-y: auto !important;
+            }
+            .output-textbox textarea {
+                height: 500px !important;
+                scroll-behavior: smooth !important;
+            }
+            """
         ) as interface:
             # Header
             gr.Markdown("# 🔬 PROBE - SAM Optimization Interface")
@@ -604,7 +697,6 @@ Check the output directory for detailed results and visualizations."""
                     )
 
                     display_button.click(self.display_probe, outputs=probe_output)
-
                     save_button.click(self.save_logs_to_file, outputs=status_output)
 
                 # PROBE-based Optimization Tab
@@ -660,11 +752,6 @@ Check the output directory for detailed results and visualizations."""
                                 label="Select Experiment (for single experiment runs)",
                                 interactive=True,
                             )
-                            probe_task_dropdown.change(
-                                self.update_experiment_choices,
-                                inputs=probe_task_dropdown,
-                                outputs=probe_experiment_dropdown,
-                            )
 
                     # Optional Prompts Section
                     with gr.Row():
@@ -688,6 +775,7 @@ Check the output directory for detailed results and visualizations."""
                                 interactive=True,
                             )
 
+                    # Control Buttons Section
                     with gr.Row():
                         with gr.Column():
                             gr.Markdown("#### 🚀 Optimization Execution")
@@ -698,24 +786,81 @@ Check the output directory for detailed results and visualizations."""
                                 probe_run_exp_btn = gr.Button(
                                     "⚡ Run Single Experiment", variant="secondary"
                                 )
+                                probe_stop_btn = gr.Button(
+                                    "⏹️ Stop Optimization", variant="stop", interactive=False
+                                )
 
-                    probe_output = gr.Textbox(
-                        label="Optimization Results",
-                        lines=20,
-                        max_lines=30,
-                        interactive=False,
-                        autoscroll=False,
-                    )
+                    # Output Section with enhanced scroll
+                    with gr.Row():
+                        with gr.Column():
+                            probe_output = gr.Textbox(
+                                label="Optimization Results & Logs",
+                                lines=25,
+                                max_lines=25,
+                                interactive=False,
+                                autoscroll=True,
+                                elem_classes=["output-textbox"]
+                            )
 
-                    # Event handlers for PROBE-based optimization with streaming
+                    # Hidden state components for managing button states
+                    optimization_state = gr.State(False)  # Track if optimization is running
+
+                    # Function to update button states when optimization starts
+                    def start_optimization_ui():
+                        return (
+                            gr.Button("🚀 Run Whole Task", variant="primary", interactive=False),
+                            gr.Button("⚡ Run Single Experiment", variant="secondary", interactive=False),
+                            gr.Button("⏹️ Stop Optimization", variant="stop", interactive=True),
+                            True  # optimization_state
+                        )
+
+                    # Function to reset button states when optimization ends
+                    def end_optimization_ui():
+                        return (
+                            gr.Button("🚀 Run Whole Task", variant="primary", interactive=True),
+                            gr.Button("⚡ Run Single Experiment", variant="secondary", interactive=True),
+                            gr.Button("⏹️ Stop Optimization", variant="stop", interactive=False),
+                            False  # optimization_state
+                        )
+
+                    # Enhanced optimization functions that handle UI state
+                    def run_task_with_ui_control(*args):
+                        # Update UI to show optimization is running
+                        self.optimization_running = True
+                        self.stop_optimization = False
+
+                        # Run the optimization with progress updates
+                        for update in self.run_unified_task_optimization_with_progress(*args):
+                            yield update
+
+                        # Reset state when done
+                        self.optimization_running = False
+
+                    def run_experiment_with_ui_control(*args):
+                        # Update UI to show optimization is running
+                        self.optimization_running = True
+                        self.stop_optimization = False
+
+                        # Run the optimization with progress updates
+                        for update in self.run_unified_experiment_optimization_with_progress(*args):
+                            yield update
+
+                        # Reset state when done
+                        self.optimization_running = False
+
+                    # Event handlers
                     probe_task_dropdown.change(
                         self.update_experiment_choices,
                         inputs=probe_task_dropdown,
                         outputs=probe_experiment_dropdown,
                     )
 
-                    probe_run_task_btn.click(
-                        self.run_unified_task_optimization_with_progress,
+                    # Task optimization with UI state management
+                    task_click = probe_run_task_btn.click(
+                        start_optimization_ui,
+                        outputs=[probe_run_task_btn, probe_run_exp_btn, probe_stop_btn, optimization_state]
+                    ).then(
+                        run_task_with_ui_control,
                         inputs=[
                             probe_task_dropdown,
                             use_prompts_checkbox,
@@ -724,11 +869,18 @@ Check the output directory for detailed results and visualizations."""
                             probe_seed,
                         ],
                         outputs=probe_output,
-                        show_progress="full",
+                        show_progress="minimal"
+                    ).then(
+                        end_optimization_ui,
+                        outputs=[probe_run_task_btn, probe_run_exp_btn, probe_stop_btn, optimization_state]
                     )
 
-                    probe_run_exp_btn.click(
-                        self.run_unified_experiment_optimization_with_progress,
+                    # Experiment optimization with UI state management
+                    exp_click = probe_run_exp_btn.click(
+                        start_optimization_ui,
+                        outputs=[probe_run_task_btn, probe_run_exp_btn, probe_stop_btn, optimization_state]
+                    ).then(
+                        run_experiment_with_ui_control,
                         inputs=[
                             probe_task_dropdown,
                             probe_experiment_dropdown,
@@ -738,9 +890,19 @@ Check the output directory for detailed results and visualizations."""
                             probe_seed,
                         ],
                         outputs=probe_output,
-                        show_progress="full",
+                        show_progress="minimal"
+                    ).then(
+                        end_optimization_ui,
+                        outputs=[probe_run_task_btn, probe_run_exp_btn, probe_stop_btn, optimization_state]
                     )
 
+                    # Stop button functionality
+                    probe_stop_btn.click(
+                        self.stop_current_optimization,
+                        outputs=[probe_run_task_btn, probe_run_exp_btn, probe_stop_btn, status_output],
+                    )
+
+                    # Prompts visibility toggle
                     use_prompts_checkbox.change(
                         toggle_prompts_visibility,
                         inputs=[use_prompts_checkbox],
