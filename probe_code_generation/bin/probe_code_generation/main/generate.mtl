@@ -624,6 +624,11 @@ probe = PROBE(
 
 
 if __name__ == "__main__":
+    
+    # Print the starting message
+    print("🚀 Starting PROBE - SAM Optimization Interface...")
+    print("📝 Press Ctrl+C to exit")
+
     # Create and launch the interface
     interface = ProbeInterface(probe)
     interface.launch()

@@ -3088,7 +3088,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;&#xD;&#xA;# Build the PROBE instance&#xD;&#xA;probe = PROBE(&#xD;&#xA;    device=processing_device,&#xD;&#xA;    dataset=datasets,&#xD;&#xA;    optimization_task=optimization_task&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;if __name__ == &quot;__main__&quot;:&#xD;&#xA;    # Create and launch the interface&#xD;&#xA;    interface = ProbeInterface(probe)&#xD;&#xA;    interface.launch()&#xD;&#xA;&#xD;&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;&#xD;&#xA;# Build the PROBE instance&#xD;&#xA;probe = PROBE(&#xD;&#xA;    device=processing_device,&#xD;&#xA;    dataset=datasets,&#xD;&#xA;    optimization_task=optimization_task&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;if __name__ == &quot;__main__&quot;:&#xD;&#xA;    &#xD;&#xA;    # Print the starting message&#xD;&#xA;    print(&quot;🚀 Starting PROBE - SAM Optimization Interface...&quot;)&#xD;&#xA;    print(&quot;📝 Press Ctrl+C to exit&quot;)&#xD;&#xA;&#xD;&#xA;    # Create and launch the interface&#xD;&#xA;    interface = ProbeInterface(probe)&#xD;&#xA;    interface.launch()&#xD;&#xA;&#xD;&#xA;"/>
         <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="probe_demo.py">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </fileUrl>
@@ -7909,7 +7909,7 @@
     </eAnnotations>
     <eAnnotations source="positions.731" references="/0/generatePythonApp">
       <details key="start" value="20834"/>
-      <details key="end" value="26033"/>
+      <details key="end" value="26177"/>
       <details key="line" value="523"/>
     </eAnnotations>
     <eAnnotations source="positions.732" references="/0/generatePythonApp/%">
@@ -7939,7 +7939,7 @@
     </eAnnotations>
     <eAnnotations source="positions.737" references="/0/generatePythonApp/%.3">
       <details key="start" value="20940"/>
-      <details key="end" value="26020"/>
+      <details key="end" value="26164"/>
       <details key="line" value="528"/>
     </eAnnotations>
     <eAnnotations source="positions.738" references="/0/generatePythonApp/%.3/%">
@@ -9634,7 +9634,7 @@
     </eAnnotations>
     <eAnnotations source="positions.1076" references="/0/generatePythonApp/%.3/%.15">
       <details key="start" value="25731"/>
-      <details key="end" value="26013"/>
+      <details key="end" value="26157"/>
       <details key="line" value="617"/>
     </eAnnotations>
     <eAnnotations source="positions.1077" references="/0/generatePythonApp/%.3/%.16">
