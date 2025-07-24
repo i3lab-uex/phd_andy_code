@@ -5,7 +5,7 @@ from PIL import Image
 from pathlib import Path
 from matplotlib import pyplot as plt
 
-from python_application.static_code.download.download_helpers import (
+from python_application.static_code.download.DownloadHelpers import (
     download_file_with_progress,
     extract_zip,
 )

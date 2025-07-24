@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from python_application.static_code.download.download_helpers import (
+from python_application.static_code.download.DownloadHelpers import (
     download_file_with_progress,
     extract_zip,
 )

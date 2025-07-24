@@ -1,15 +1,14 @@
 """
 Log capture utilities for real-time progress monitoring.
-This module provides classes to capture console output and stream it to Gradio interface.
+This module provides classes to capture console output and stream it to the Gradio interface.
 """
 
 import sys
-import threading
 import time
 import queue
-from io import StringIO
-from typing import Callable, Optional, List
+import threading
 from contextlib import contextmanager
+from typing import Callable, Optional, List
 
 
 class StreamCapture:
@@ -27,12 +26,12 @@ class StreamCapture:
 
     def write(self, text):
         """
-        Write text to both original output and capture buffer.
+        Write text to both the original output and capture buffer.
 
         Args:
             text: Text to write
         """
-        # Write to original output first
+        # Write to the original output first
         self.original_stdout.write(text)
         self.original_stdout.flush()
 
@@ -44,7 +43,7 @@ class StreamCapture:
                 if len(self.captured_output) > 1000:
                     self.captured_output = self.captured_output[-1000:]
 
-                # Add to queue for real-time streaming
+                # Add to the queue for real-time streaming
                 self.output_queue.put(text.rstrip())
 
                 # Call the update callback if set
@@ -67,7 +66,7 @@ class StreamCapture:
 
     def get_new_output(self) -> List[str]:
         """
-        Get new output since last call.
+        Get new output since the last call.
 
         Returns:
             List[str]: New output lines
@@ -100,7 +99,7 @@ class StreamCapture:
         Usage:
             with stream_capture.capture():
                 # Code that produces output
-                print("This will be captured")
+                print ("This will be captured")
         """
         if self.is_capturing:
             yield self
@@ -124,17 +123,17 @@ class StreamCapture:
         Set callback function to update Gradio interface.
 
         Args:
-            callback: Function to call when new output is available
+            callback: Function to call when a new output is available
         """
         self.update_callback = callback
 
 
 class ProgressTracker:
-    """Tracks optimization progress and provides structured updates."""
+    """Tracks optimization progress and provide structured updates."""
 
     def __init__(self, stream_capture: Optional[StreamCapture] = None):
         """
-        Initialize progress tracker.
+        Initialize the progress tracker.
 
         Args:
             stream_capture: StreamCapture instance to use
@@ -149,10 +148,10 @@ class ProgressTracker:
 
     def update_stage(self, stage: str):
         """
-        Update current processing stage.
+        Update the current processing stage.
 
         Args:
-            stage: Description of current stage
+            stage: Description of the current stage
         """
         self.current_stage = stage
         message = f"🔄 Stage: {stage}"
@@ -160,10 +159,10 @@ class ProgressTracker:
 
     def update_file(self, filename: str):
         """
-        Update current file being processed.
+        Update the current file being processed.
 
         Args:
-            filename: Name of current file
+            filename: Name of the current file
         """
         self.current_file = filename
         message = f"📁 Processing file: {filename}"
@@ -171,10 +170,10 @@ class ProgressTracker:
 
     def update_slice(self, slice_name: str):
         """
-        Update current slice being processed.
+        Update the current slice being processed.
 
         Args:
-            slice_name: Name of current slice
+            slice_name: Name of the current slice
         """
         self.current_slice = slice_name
         message = f"🖼️ Processing slice: {slice_name}"
@@ -212,19 +211,9 @@ class ProgressTracker:
    ⏱️ Time: {metrics.get('time', 0):.2f}s (Total: {elapsed:.1f}s)"""
         print(message)
 
-    def log_error(self, error_msg: str):
-        """
-        Log an error message.
-
-        Args:
-            error_msg: Error message to log
-        """
-        message = f"❌ Error: {error_msg}"
-        print(message)
-
     def log_final_summary(self, results: dict):
         """
-        Log final summary of optimization.
+        Log a final summary of optimization.
 
         Args:
             results: Dictionary with final results

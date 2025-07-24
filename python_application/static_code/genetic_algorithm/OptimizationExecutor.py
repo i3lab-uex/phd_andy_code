@@ -17,8 +17,7 @@ from segment_anything import sam_model_registry, SamPredictor
 from python_application.generated_code.model.PROBE import PROBE
 from python_application.generated_code.model.OptimizationTask import OptimizationTask
 from python_application.generated_code.model.Experiment import Experiment
-from python_application.generated_code.enumerations.PointType import PointType
-from python_application.static_code.genetic_algorithm.sam_optimization_utils import (
+from python_application.static_code.genetic_algorithm.SAMOptimizationProblem import (
     SAMOptimizationProblem,
     OptimizationCallback,
     process_image_slice,
@@ -31,13 +30,174 @@ from python_application.static_code.genetic_algorithm.sam_optimization_utils imp
 from python_application.static_code.genetic_algorithm.PromptManager import (
     PromptManager,
 )
-from python_application.static_code.metrics.metric_calculation import (
+from python_application.static_code.metrics.MetricCalculation import (
     compare_original_and_predicted_masks,
 )
-from python_application.static_code.utils.log_capture import (
+from python_application.static_code.utils.LogCapture import (
     StreamCapture,
     ProgressTracker,
 )
+
+
+def _get_sample_files(
+    dataset_info: Dict[str, str], experiment: Experiment
+) -> List[str]:
+    """
+    Get list of files to process based on experiment sample configuration.
+
+    Args:
+        dataset_info (Dict[str, str]): Dataset configuration
+        experiment (Experiment): Experiment configuration
+
+    Returns:
+        List[str]: List of file paths to process
+    """
+    import glob
+
+    # If experiment specifies a specific sample, use only that
+    if experiment.sample and experiment.sample.filename:
+        sample_file = f"{dataset_info['images_path']}/{experiment.sample.filename}"
+        if os.path.exists(sample_file):
+            return [sample_file]
+        else:
+            raise FileNotFoundError(f"Sample file not found: {sample_file}")
+
+    # Otherwise, use all files in the dataset
+    if dataset_info["name"] == "Coronacases":
+        files = glob.glob(f"{dataset_info['images_path']}/coronacases_*.nii.gz")
+    else:
+        # Generic pattern for other datasets
+        files = glob.glob(f"{dataset_info['images_path']}/*.nii.gz")
+
+    files.sort()
+    return files
+
+
+def _process_single_slice(
+    image_slice: np.ndarray,
+    mask_slice: np.ndarray,
+    predictor: SamPredictor,
+    prompt_info: Dict[str, Any],
+    task: OptimizationTask,
+    slice_name: str,
+    dataset_info: Dict[str, str],
+    population_size: int,
+    seed: int,
+) -> Dict[str, Any]:
+    """
+    Process a single image slice.
+
+    Args:
+        image_slice (np.ndarray): Image slice data
+        mask_slice (np.ndarray): Mask slice data
+        predictor (SamPredictor): SAM predictor
+        prompt_info (Dict[str, Any]): Prompt information
+        task (OptimizationTask): Optimization task
+        slice_name (str): Name for output files
+        dataset_info (Dict[str, str]): Dataset configuration
+        population_size (int): GA population size
+        seed (int): Random seed
+
+    Returns:
+        Dict[str, Any]: Processing results
+    """
+    start_time = time.time()
+
+    # Check if mask has valid data
+    labels = np.unique(mask_slice)
+    if labels.size <= 1:
+        print(f"Slice {slice_name} has no mask data. Skipping...")
+        return None
+
+    # Process image
+    processed_image = process_image_slice(
+        image_slice, windowing=dataset_info["should_apply_windowing"]
+    )
+    print(f"Processing slice {slice_name} - Image shape: {processed_image.shape}")
+
+    # Setup predictor
+    predictor.set_image(processed_image)
+
+    # Prepare optimization problem
+    original_mask_as_bool = mask_slice != 0
+    objective = task.optimization_metric.name.lower()
+    if "jaccard" in objective:
+        objective = "jaccard"
+    elif "dice" in objective:
+        objective = "dice"
+    else:
+        objective = "score"
+
+    problem = SAMOptimizationProblem(
+        coordinates=prompt_info["coordinates"],
+        input_box=prompt_info["input_box"],
+        predictor=predictor,
+        input_label=prompt_info["input_label"],
+        original_mask_as_bool=original_mask_as_bool,
+        objective=objective,
+        multimask=False,
+        population_size=population_size,
+    )
+
+    # Run optimization
+    algorithm = GA(pop_size=population_size)
+    history_callback = OptimizationCallback()
+
+    result = minimize(
+        problem,
+        algorithm,
+        seed=seed,
+        callback=history_callback,
+        save_history=False,
+        verbose=True,
+    )
+
+    # Calculate metrics
+    best_coordinates = result.X
+    objective_value = float(-result.F)
+
+    jaccard, dice = compare_original_and_predicted_masks(mask_slice, problem.best_mask)
+
+    elapsed_time = time.time() - start_time
+
+    # Save results
+    output_path = dataset_info["output_path"]
+    ensure_output_directory(output_path)
+
+    # Save optimization history
+    history_file = f"{output_path}/{slice_name}_history.txt"
+    save_optimization_history(history_callback, history_file, objective)
+
+    # Create visualization
+    visualization_file = f"{output_path}/{slice_name}_result.pdf"
+    create_visualization(
+        processed_image,
+        problem.best_mask,
+        prompt_info["input_box"],
+        best_coordinates,
+        prompt_info["input_label"],
+        objective,
+        problem.best_score,
+        jaccard,
+        dice,
+        visualization_file,
+    )
+
+    print(
+        f"Slice {slice_name} - Objective: {objective_value:.4f}, "
+        f"Dice: {dice:.4f}, Jaccard: {jaccard:.4f}, "
+        f"Score: {problem.best_score:.4f}, Time: {elapsed_time:.2f}s"
+    )
+
+    return {
+        "slice_name": slice_name,
+        "objective_value": objective_value,
+        "dice": dice,
+        "jaccard": jaccard,
+        "score": problem.best_score,
+        "time": elapsed_time,
+        "coordinates": best_coordinates.tolist(),
+    }
 
 
 class OptimizationExecutor:
@@ -102,219 +262,6 @@ class OptimizationExecutor:
         sam.to(device=self.device)
         return SamPredictor(sam)
 
-    def _extract_experiment_prompts(self, experiment: Experiment) -> Dict[str, Any]:
-        """
-        Extract prompt information from experiment configuration.
-
-        Args:
-            experiment (Experiment): Experiment with prompt configuration
-
-        Returns:
-            Dict[str, Any]: Extracted prompt information
-        """
-        prompt = experiment.initial_state.prompt
-
-        # Extract bounding box
-        if hasattr(prompt, "bounding_box") and prompt.bounding_box:
-            bbox = prompt.bounding_box[0]
-            input_box = np.array(
-                [
-                    bbox.min_coordinates.y,
-                    bbox.min_coordinates.x,
-                    bbox.max_coordinates.y,
-                    bbox.max_coordinates.x,
-                ]
-            )
-        else:
-            raise ValueError("No bounding box found in experiment prompt")
-
-        # Extract points
-        positive_coords = []
-        negative_coords = []
-
-        if hasattr(prompt, "point") and prompt.point:
-            for point in prompt.point:
-                coords = [
-                    point.coordinates.y,
-                    point.coordinates.x,
-                ]  # Note: y,x for consistency
-                if point.type == PointType.POSITIVE:
-                    positive_coords.extend(coords)
-                elif point.type == PointType.NEGATIVE:
-                    negative_coords.extend(coords)
-
-        # Create input labels and coordinates
-        input_label = create_input_labels(positive_coords, negative_coords)
-        coordinates = np.array(positive_coords + negative_coords)
-
-        return {
-            "input_box": input_box,
-            "coordinates": coordinates,
-            "input_label": input_label,
-        }
-
-    def _get_sample_files(
-        self, dataset_info: Dict[str, str], experiment: Experiment
-    ) -> List[str]:
-        """
-        Get list of files to process based on experiment sample configuration.
-
-        Args:
-            dataset_info (Dict[str, str]): Dataset configuration
-            experiment (Experiment): Experiment configuration
-
-        Returns:
-            List[str]: List of file paths to process
-        """
-        import glob
-
-        # If experiment specifies a specific sample, use only that
-        if experiment.sample and experiment.sample.filename:
-            sample_file = f"{dataset_info['images_path']}/{experiment.sample.filename}"
-            if os.path.exists(sample_file):
-                return [sample_file]
-            else:
-                raise FileNotFoundError(f"Sample file not found: {sample_file}")
-
-        # Otherwise, use all files in dataset
-        if dataset_info["name"] == "Coronacases":
-            files = glob.glob(f"{dataset_info['images_path']}/coronacases_*.nii.gz")
-        else:
-            # Generic pattern for other datasets
-            files = glob.glob(f"{dataset_info['images_path']}/*.nii.gz")
-
-        files.sort()
-        return files
-
-    def _process_single_slice(
-        self,
-        image_slice: np.ndarray,
-        mask_slice: np.ndarray,
-        predictor: SamPredictor,
-        prompt_info: Dict[str, Any],
-        task: OptimizationTask,
-        slice_name: str,
-        dataset_info: Dict[str, str],
-        population_size: int,
-        seed: int,
-    ) -> Dict[str, Any]:
-        """
-        Process a single image slice.
-
-        Args:
-            image_slice (np.ndarray): Image slice data
-            mask_slice (np.ndarray): Mask slice data
-            predictor (SamPredictor): SAM predictor
-            prompt_info (Dict[str, Any]): Prompt information
-            task (OptimizationTask): Optimization task
-            slice_name (str): Name for output files
-            dataset_info (Dict[str, str]): Dataset configuration
-            population_size (int): GA population size
-            seed (int): Random seed
-
-        Returns:
-            Dict[str, Any]: Processing results
-        """
-        start_time = time.time()
-
-        # Check if mask has valid data
-        labels = np.unique(mask_slice)
-        if labels.size <= 1:
-            print(f"Slice {slice_name} has no mask data. Skipping...")
-            return None
-
-        # Process image
-        processed_image = process_image_slice(
-            image_slice, windowing=dataset_info["should_apply_windowing"]
-        )
-        print(f"Processing slice {slice_name} - Image shape: {processed_image.shape}")
-
-        # Setup predictor
-        predictor.set_image(processed_image)
-
-        # Prepare optimization problem
-        original_mask_as_bool = mask_slice != 0
-        objective = task.optimization_metric.name.lower()
-        if "jaccard" in objective:
-            objective = "jaccard"
-        elif "dice" in objective:
-            objective = "dice"
-        else:
-            objective = "score"
-
-        problem = SAMOptimizationProblem(
-            coordinates=prompt_info["coordinates"],
-            input_box=prompt_info["input_box"],
-            predictor=predictor,
-            input_label=prompt_info["input_label"],
-            original_mask_as_bool=original_mask_as_bool,
-            objective=objective,
-            multimask=False,
-            population_size=population_size,
-        )
-
-        # Run optimization
-        algorithm = GA(pop_size=population_size)
-        history_callback = OptimizationCallback()
-
-        result = minimize(
-            problem,
-            algorithm,
-            seed=seed,
-            callback=history_callback,
-            save_history=False,
-            verbose=True,
-        )
-
-        # Calculate metrics
-        best_coordinates = result.X
-        objective_value = float(-result.F)
-
-        jaccard, dice = compare_original_and_predicted_masks(
-            mask_slice, problem.best_mask
-        )
-
-        elapsed_time = time.time() - start_time
-
-        # Save results
-        output_path = dataset_info["output_path"]
-        ensure_output_directory(output_path)
-
-        # Save optimization history
-        history_file = f"{output_path}/{slice_name}_history.txt"
-        save_optimization_history(history_callback, history_file, objective)
-
-        # Create visualization
-        visualization_file = f"{output_path}/{slice_name}_result.pdf"
-        create_visualization(
-            processed_image,
-            problem.best_mask,
-            prompt_info["input_box"],
-            best_coordinates,
-            prompt_info["input_label"],
-            objective,
-            problem.best_score,
-            jaccard,
-            dice,
-            visualization_file,
-        )
-
-        print(
-            f"Slice {slice_name} - Objective: {objective_value:.4f}, "
-            f"Dice: {dice:.4f}, Jaccard: {jaccard:.4f}, "
-            f"Score: {problem.best_score:.4f}, Time: {elapsed_time:.2f}s"
-        )
-
-        return {
-            "slice_name": slice_name,
-            "objective_value": objective_value,
-            "dice": dice,
-            "jaccard": jaccard,
-            "score": problem.best_score,
-            "time": elapsed_time,
-            "coordinates": best_coordinates.tolist(),
-        }
-
     def run_single_experiment_optimization(
         self,
         task: OptimizationTask,
@@ -351,7 +298,7 @@ class OptimizationExecutor:
         predictor = self._setup_sam_model(task)
 
         # Get files to process
-        files = self._get_sample_files(dataset_info, experiment)
+        files = _get_sample_files(dataset_info, experiment)
 
         # Setup output
         output_file = f"{dataset_info['output_path']}/{experiment.name}_results.txt"
@@ -406,13 +353,22 @@ class OptimizationExecutor:
                     except Exception as e:
                         error_msg = f"Error loading prompts for {base_name} slice {slice_idx}: {e}"
                         if self.progress_tracker:
-                            self.progress_tracker.log_error(error_msg)
+                            # Log the error in the progress tracker
+                            print(f"❌ Error: {error_msg}")
                         continue
+
                 else:
-                    prompt_info = self._extract_experiment_prompts(experiment)
+                    # Default prompt information if no prompts are used
+                    prompt_info = {
+                        "input_box": np.array(
+                            [0, 0, image_slice.shape[0], image_slice.shape[1]]
+                        ),
+                        "coordinates": np.array([]),
+                        "input_label": create_input_labels([], []),
+                    }
 
                 # Process slice
-                slice_result = self._process_single_slice(
+                slice_result = _process_single_slice(
                     image_slice,
                     mask_slice,
                     predictor,
