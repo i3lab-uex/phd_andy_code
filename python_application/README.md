@@ -147,10 +147,10 @@ black python_application
 
 ## 6. Use the PROBE GUI demo
 
-To use the PROBE GUI demo, execute the python script **probe_demo.py** from the root folder of this project:
+To use the PROBE GUI demo, execute the python script **ProbeDemo.py** from the root folder of this project:
 
 ```shell
-python -m python_application.generated_code.probe_demo
+python -m python_application.generated_code.ProbeDemo
 ```
 
 ## Project Structure

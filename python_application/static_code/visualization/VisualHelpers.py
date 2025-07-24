@@ -19,7 +19,7 @@ def show_mask(mask: torch.Tensor, ax, random_color: bool = False):
         if random_color
         else torch.tensor([30 / 255, 144 / 255, 255 / 255, 0.6])
     )
-    # Ensure mask is a PyTorch tensor.
+    # Ensure the mask is a PyTorch tensor.
     mask = mask if isinstance(mask, torch.Tensor) else torch.tensor(mask)
     # Get mask dimensions.
     h, w = mask.shape[-2:]

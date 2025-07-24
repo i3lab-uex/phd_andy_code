@@ -44,7 +44,7 @@ class PromptManager:
                 f"Incorrect image path in JSON: {data_list[0]['image_file_path']}"
             )
 
-        # Search for specific slice
+        # Search for a specific slice
         slice_data = None
         for element in data_list:
             if element["slice_number"] == slice_num:

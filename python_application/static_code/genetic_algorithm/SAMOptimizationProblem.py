@@ -3,31 +3,22 @@ Common utilities for SAM optimization with genetic algorithms.
 This module contains shared classes and functions between covidExp.py and covidExpPrompts.py.
 """
 
+import os
+import gc
 import warnings
 import numpy as np
 import matplotlib.pyplot as plt
-import os
-import gc
-import time
-import random
-import glob
-import torch
-import nibabel as nib
-from typing import Tuple, List, Dict, Any, Union
 from pymoo.core.problem import Problem
-from pymoo.core.callback import Callback
-from pymoo.termination import get_termination
-from pymoo.algorithms.soo.nonconvex.ga import GA
-from pymoo.optimize import minimize
 from skimage.measure import regionprops
-from segment_anything import sam_model_registry, SamPredictor
+from pymoo.core.callback import Callback
+from segment_anything import SamPredictor
+from typing import Tuple, List, Dict, Any, Union
 
-from python_application.static_code.metrics.metric_calculation import (
+from python_application.static_code.metrics.MetricCalculation import (
     compare_original_and_predicted_masks_mod_jaccard,
     compare_original_and_predicted_masks_mod_dice,
-    compare_original_and_predicted_masks,
 )
-from python_application.static_code.visualization.visual_helpers import (
+from python_application.static_code.visualization.VisualHelpers import (
     show_points,
     show_mask,
     show_box,

@@ -46,10 +46,10 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.optimization_executor import (
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import (
+            from python_application.static_code.utils.LogCapture import (
                 global_stream_capture,
             )
 
@@ -118,10 +118,10 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.optimization_executor import (
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import (
+            from python_application.static_code.utils.LogCapture import (
                 global_stream_capture,
             )
 
@@ -204,10 +204,10 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.optimization_executor import (
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import (
+            from python_application.static_code.utils.LogCapture import (
                 global_stream_capture,
             )
 
@@ -287,10 +287,10 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.optimization_executor import (
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
                 OptimizationExecutor,
             )
-            from python_application.static_code.utils.log_capture import (
+            from python_application.static_code.utils.LogCapture import (
                 global_stream_capture,
             )
 
@@ -361,3 +361,169 @@ class PROBE:
                 "message": f"Experiment execution failed: {e}",
                 "results": None,
             }
+
+    def display_probe(self) -> str:
+        """
+        Display the complete PROBE configuration.
+
+        Returns:
+            str: Formatted string with PROBE information
+        """
+        output = [f"🖥️ Device: {self.device}"]
+
+        for ds in self.dataset:
+            output.append(f"\n📂 Dataset: {ds.name} - {ds.description} ({ds.type})")
+            for ss in ds.subset:
+                output.append(f"  📁 Subset: {ss.name}, Path: {ss.path}")
+                output.append(
+                    f"    Data folder: {ss.dataFolderName}, Labels folder: {ss.labelsFolderName}"
+                )
+                output.append(f"    Samples ({len(ss.sample)} total):")
+                for sp in ss.sample:
+                    output.append(
+                        f"      🖼️ Sample: {sp.filename} (Format: {sp.extension})"
+                    )
+
+        for i, ot in enumerate(self.optimization_task):
+            output.append(
+                f"\n🚀 Optimization Task {i + 1}: {ot.name} - {ot.description}"
+            )
+            output.append(f"  🔬 Algorithm: {ot.algorithm}")
+            output.append(
+                f"  🤖 Foundation Model: {ot.foundation_model.name} ({ot.foundation_model.type}) "
+                f"v{ot.foundation_model.version}"
+            )
+            output.append(
+                f"    📁 Checkpoint: {ot.foundation_model.checkpointFilepath}"
+            )
+            output.append(f"    ⚙️ Configuration: {ot.foundation_model.configuration}")
+            if (
+                hasattr(ot.foundation_model, "description")
+                and ot.foundation_model.description
+            ):
+                output.append(f"    📝 Description: {ot.foundation_model.description}")
+
+            output.append(
+                f"  🎯 Optimization Metric: {ot.optimization_metric.name} ({ot.optimization_metric.type})"
+            )
+            output.append(
+                f"  📊 Performance Metrics ({len(ot.performance_metric)} total):"
+            )
+            for m in ot.performance_metric:
+                output.append(f"    - {m.name}")
+
+            output.append(f"  🧪 Experiments ({len(ot.experiment)} total):")
+            for e in ot.experiment:
+                output.append(f"    ▶ Experiment: {e.name}")
+                output.append(
+                    f"      🏁 Initial State: {e.initial_state.description} (Improved: {e.initial_state.hasImproved})"
+                )
+                output.append(
+                    f"      💬 Prompt Type: {type(e.initial_state.prompt).__name__}"
+                )
+
+                # Detailed prompt information
+                if (
+                    hasattr(e.initial_state.prompt, "bounding_box")
+                    and e.initial_state.prompt.bounding_box
+                ):
+                    output.append(
+                        f"        📦 Bounding Boxes ({len(e.initial_state.prompt.bounding_box)} total):"
+                    )
+                    for idx, box in enumerate(e.initial_state.prompt.bounding_box):
+                        if (
+                            hasattr(box, "x")
+                            and hasattr(box, "y")
+                            and hasattr(box, "width")
+                            and hasattr(box, "height")
+                        ):
+                            output.append(
+                                f"          Box {idx + 1}: x={box.x}, y={box.y}, w={box.width}, h={box.height}"
+                            )
+                        else:
+                            output.append(
+                                f"          Box {idx + 1}: {type(box).__name__}"
+                            )
+
+                if (
+                    hasattr(e.initial_state.prompt, "point")
+                    and e.initial_state.prompt.point
+                ):
+                    output.append(
+                        f"        📍 Points ({len(e.initial_state.prompt.point)} total):"
+                    )
+                    for idx, point in enumerate(e.initial_state.prompt.point):
+                        point_info = f"          Point {idx + 1}: Type={point.type}"
+                        if hasattr(point, "x") and hasattr(point, "y"):
+                            point_info += f", x={point.x}, y={point.y}"
+                        if hasattr(point, "label"):
+                            point_info += f", label={point.label}"
+                        output.append(point_info)
+
+                output.append(
+                    f"      ⏹️ Stop Conditions ({len(e.stop_condition)} total):"
+                )
+                for idx, sc in enumerate(e.stop_condition):
+                    condition_info = f"        {idx + 1}. {type(sc).__name__}"
+                    # Add specific details for different stop condition types
+                    if hasattr(sc, "minutesDuration"):
+                        condition_info += f" (Duration: {sc.minutesDuration} minutes)"
+                    elif hasattr(sc, "numIterations"):
+                        condition_info += f" (Max iterations: {sc.numIterations})"
+                    elif hasattr(sc, "threshold") and hasattr(sc, "metric"):
+                        condition_info += (
+                            f" (Threshold: {sc.threshold}, Metric: {sc.metric})"
+                        )
+                    output.append(condition_info)
+
+                output.append(
+                    f"      🖼️ Sample: {e.sample.filename} ({e.sample.extension})"
+                )
+
+        return "\n".join(output)
+
+    def save_logs_to_file(self, custom_content: str = None) -> str:
+        """
+        Save PROBE logs to a file in logs/probe_configurations/ directory with incremental numbering.
+
+        Args:
+            custom_content (str, optional): Custom content to save. If None, uses display_probe() output.
+
+        Returns:
+            str: Confirmation message with the file path
+        """
+        import os
+        from datetime import datetime
+
+        # Create logs directory structure
+        logs_dir = os.path.join("logs", "probe_configurations")
+        os.makedirs(logs_dir, exist_ok=True)
+
+        # Find the next available number
+        counter = 1
+        while True:
+            filename = f"probe_config{counter}.txt"
+            filepath = os.path.join(logs_dir, filename)
+            if not os.path.exists(filepath):
+                break
+            counter += 1
+
+        # Get content to save
+        if custom_content is not None:
+            content = custom_content
+        else:
+            content = self.display_probe()
+
+        # Add timestamp header
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        header = f"PROBE Configuration - Generated on {timestamp}\n"
+        header += "=" * 60 + "\n\n"
+        full_content = header + content
+
+        # Save file
+        try:
+            with open(filepath, "w", encoding="utf-8") as f:
+                f.write(full_content)
+            return f"✅ Configuration saved successfully to {filepath}"
+        except Exception as e:
+            return f"❌ Error saving configuration: {str(e)}"
