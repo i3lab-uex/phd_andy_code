@@ -14,14 +14,6 @@ model_checkpoints/*
 datasets/
 datasets/*
 
-#Ignore sam2_configs directory
-sam2_configs/
-sam2_configs/*
-
-# Ignore the segment-anything-2 directory
-segment-anything-2/
-segment-anything-2/*
-
 # Ignore output directory
 output/
 output/*

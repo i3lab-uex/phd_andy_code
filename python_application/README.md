@@ -7,7 +7,7 @@ This project contains the Python application that uses the generated code from t
 - Python 3.10
 - Cuda 12.1.0
 - Torch 2.5.0
-- SAM and SAM2 Installation
+- SAM Installation
 - Required Python packages (see `requirements.txt`)
 
 ## 2. Workspace Configuration
@@ -41,7 +41,7 @@ Change what you need for your platform.
     This step will prevent you from retrieving libraries from the conda or pip caches, which may be incompatible with the project's requirements.
     If you are sure that the libraries in the cache are compatible, you can skip this step.
 
-4. [Install CUDA][cuda_installation] specific version to use SAM 1 and SAM 2:
+4. [Install CUDA][cuda_installation] specific version to use SAM:
 
     ```shell
     conda install nvidia/label/cuda-12.1.0::cuda --yes
@@ -61,10 +61,10 @@ Change what you need for your platform.
     pip install -r requirements.txt
     ```
 
-7. Execute the python script **image_segmentation/download/download_model_checkpoints.py** to get SAM's (SAM 1 and SAM 2) model checkpoints:
+7. Execute the python script **python_application/static_code/download/DownloadModelCheckpoints.py** to get SAM's model checkpoints:
 
     ```shell
-    python -m python_application.static_code.download.download_model_checkpoints
+    python -m python_application/static_code/download/DownloadModelCheckpoints
     ```
    
 8. Configure PyCharm.
@@ -74,63 +74,22 @@ Change what you need for your platform.
 
 > **Note:** If you no longer need the Conda environment, just deactivate it with `conda deactivate` and delete it with `conda remove -n probe --all --yes`.
 
-### 2.1 SAM 1 Installation
+### 2.1 SAM Installation
 
-- [Install SAM 1][sam_installation]: to install SAM 1 version, execute the following command, based on the [official installation instructions][sam_installation].
+- [Install SAM][sam_installation]: to install SAM version, execute the following command, based on the [official installation instructions][sam_installation].
 
     ```shell
     pip install git+https://github.com/facebookresearch/segment-anything.git
     ```
 
-    [sam_installation]: https://github.com/facebookresearch/segment-anything/?tab=readme-ov-file#installation "SAM 1 Installation"
-
-### 2.2 SAM 2 Installation
-
-- [Install SAM 2][sam2_installation]: to install the SAM 2 version, execute the following command, based on the [official installation instructions][sam2_installation].
-
-  - Via SSH: you need a public SSH key in your GitHub account.
-
-    ```shell
-    git clone git@github.com:facebookresearch/segment-anything-2.git
-    cd segment-anything-2
-    pip install .
-    pip install ".[demo]"
-    ```
-
-  - Via HTTPS: you don't need a public SSH key in your GitHub account.
-
-    ```shell
-    git clone https://github.com/facebookresearch/segment-anything-2.git
-    cd segment-anything-2
-    pip install .
-    pip install ".[demo]"
-    ```
-
-    > **Note**: In the previous steps, I understand that the second **pip** does the same as the first but installs more stuff.
-    I'm not sure, so I leave them both.
-    During the video prediction process, a warning appears:
-    Skipping the post-processing step due to the error above. You can still use SAM 2 ignoring the error above, although some post-processing functionality may be limited.
-
-    [sam2_installation]: https://github.com/facebookresearch/segment-anything-2/?tab=readme-ov-file#installation "SAM 2 Installation"
-
-  - Copy SAM 2 configuration profiles to the root folder of this project:
-    
-    ```shell
-    cd ..
-    mkdir sam2_configs
-    cp segment-anything-2/sam2/configs/sam2/* sam2_configs
-    cp segment-anything-2/sam2/configs/sam2.1/* sam2_configs
-     ```
-
-  [sam2_installation]: https://github.com/facebookresearch/segment-anything-2/?tab=readme-ov-file#installation "SAM 2 Installation"
-  [warning_web_page]: https://github.com/facebookresearch/segment-anything-2/blob/main/INSTALL.md#building-the-sam-2-cuda-extension "Building the SAM 2 CUDA extension"
+    [sam_installation]: https://github.com/facebookresearch/segment-anything/?tab=readme-ov-file#installation "SAM Installation"
 
 ## 3. Download Covid-19 Dataset
 
-To download the Covid-19 dataset, execute the python script **download_covid_dataset.py** from the root folder of this project:
+To download the Covid-19 dataset, execute the python script **python_application/static_code/download/DownloadCovidDataset.py** from the root folder of this project:
 
 ```shell
-python -m python_application.static_code.download.download_covid_dataset
+python -m python_application/static_code/download/DownloadCovidDataset
 ```
 
 ## 4. Generate Code from Acceleo

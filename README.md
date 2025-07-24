@@ -8,7 +8,7 @@ This project contains the code projects for the thesis titled "[Thesis Title]". 
 - `probe_code_generation` - Contains the Acceleo code generation project with the code transformations in the mtl file `probe_code_generation/src/probe_Acceleo_code_generation/main/generate.mtl`.
 
 
-- `python_application` - Contains the Python application that uses the generated code from Acceleo and the static one. The main script is located at `python_application/probe_demo.py`.
+- `python_application` - Contains the Python application that uses the generated code from Acceleo and the static one. The main script is located at `python_application/ProbeDemo.py`.
 
 > **Note:** The project instructions are provided in the respective `README.md` files within each project directory.
 
@@ -62,9 +62,3 @@ phd2_code/
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Authors
-
-This project was developed by [Juan Diego Gutierrez Gallardo](https://github.com/andyuex) in collaboration with [Carlos Breuer Carrasco](https://github.com/carlosbc24) as part of Juan Diego's PhD thesis at the University of Extremadura, Spain.
-
-If you have any questions or suggestions, feel free to contact us.
