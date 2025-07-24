@@ -106,26 +106,6 @@ def download_sam_model_checkpoints():
     )
 
 
-def download_sam2_model_checkpoints():
-    """
-    Download the model checkpoints for SAM2 model
-    :return:
-    """
-    model_urls = {
-        # SAM2-Hiera-Tiny
-        "sam2_hiera_t.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_tiny.pt",
-        # SAM2-Hiera-Small
-        "sam2_hiera_s.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_small.pt",
-        # SAM2-Hiera-Base+
-        "sam2_hiera_b_plus.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_base_plus.pt",
-        # SAM2-Hiera-Large
-        "sam2_hiera_l.pt": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt",
-    }
-    _download_model_with_check(
-        model_urls, "SAM-2", download_model_checkpoint_with_progress
-    )
-
-
 def download_medsam_model_checkpoints():
     """
     Download the model checkpoints for MedSAM model
@@ -154,9 +134,6 @@ def main():
 
     # Download the model checkpoints for MedSAM
     download_medsam_model_checkpoints()
-
-    # Download the model checkpoints for SAM-2
-    download_sam2_model_checkpoints()
 
 
 if __name__ == "__main__":
