@@ -25,3 +25,7 @@ segment-anything-2/*
 # Ignore output directory
 output/
 output/*
+
+# Ignore logs directory
+logs/
+logs/*
