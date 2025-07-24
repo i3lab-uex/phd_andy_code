@@ -64,28 +64,13 @@
         <prompt
             xsi:type="Probe:PromptForImage">
           <point>
-            <coordinates
-                x="347"
-                y="325"/>
           </point>
           <point>
-            <coordinates
-                x="166"
-                y="327"/>
           </point>
           <point
               type="NEGATIVE">
-            <coordinates
-                x="251"
-                y="327"/>
           </point>
           <bounding_box>
-            <min_coordinates
-                x="102"
-                y="218"/>
-            <max_coordinates
-                x="400"
-                y="437"/>
           </bounding_box>
         </prompt>
       </initial_state>
@@ -106,28 +91,13 @@
         <prompt
             xsi:type="Probe:PromptForImage">
           <point>
-            <coordinates
-                x="347"
-                y="325"/>
           </point>
           <point>
-            <coordinates
-                x="166"
-                y="327"/>
           </point>
           <point
               type="NEGATIVE">
-            <coordinates
-                x="251"
-                y="327"/>
           </point>
           <bounding_box>
-            <min_coordinates
-                x="102"
-                y="218"/>
-            <max_coordinates
-                x="400"
-                y="437"/>
           </bounding_box>
         </prompt>
       </initial_state>
@@ -166,28 +136,13 @@
         <prompt
             xsi:type="Probe:PromptForImage">
           <point>
-            <coordinates
-                x="347"
-                y="325"/>
           </point>
           <point>
-            <coordinates
-                x="166"
-                y="327"/>
           </point>
           <point
               type="NEGATIVE">
-            <coordinates
-                x="251"
-                y="327"/>
           </point>
           <bounding_box>
-            <min_coordinates
-                x="102"
-                y="218"/>
-            <max_coordinates
-                x="400"
-                y="437"/>
           </bounding_box>
         </prompt>
       </initial_state>

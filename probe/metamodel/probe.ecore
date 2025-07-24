@@ -54,16 +54,9 @@
         upperBound="-1" eType="#//Experiment" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="#//OptimizationAlgorithm"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BoundingBox">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="min_coordinates" lowerBound="1"
-        eType="#//Coordinates" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="max_coordinates" lowerBound="1"
-        eType="#//Coordinates" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundingBox"/>
   <eClassifiers xsi:type="ecore:EClass" name="Point">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PointType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinates" lowerBound="1"
-        eType="#//Coordinates" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -134,9 +127,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaxIterations" eSuperTypes="#//StopCondition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numIterations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Coordinates">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>
