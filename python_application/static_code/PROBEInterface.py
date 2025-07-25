@@ -5,7 +5,7 @@ from python_application.generated_code.model.PROBE import PROBE
 from python_application.static_code.utils.LogCapture import global_stream_capture
 
 
-class ProbeInterface:
+class PROBEInterface:
     """Enhanced PROBE interface with optimization capabilities and real-time logging."""
 
     def __init__(self, probe: PROBE):
