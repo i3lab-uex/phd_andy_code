@@ -7,8 +7,10 @@ from python_application.generated_code.model.Prompt import Prompt
 
 class PromptForImage(Prompt):
     """Represents a PromptForImage object."""
-
-    def __init__(self, point: List[Point], bounding_box: List[BoundingBox]):
+    def __init__(self
+, point: List[Point]
+, bounding_box: List[BoundingBox]
+):
         """
         :param point: point of the PromptForImage
         :param bounding_box: bounding_box of the PromptForImage

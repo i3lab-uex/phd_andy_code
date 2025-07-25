@@ -13,16 +13,14 @@ class PROBE:
     and prompts, allowing for both whole task optimization and specific experiment optimization.
     """
 
-    def __init__(
-        self,
-        device: DeviceType,
-        dataset: List[Dataset],
-        optimization_task: List[OptimizationTask],
-    ):
+    def __init__(self
+, device: DeviceType, dataset: List[Dataset]
+, optimization_task: List[OptimizationTask]
+):
         """
         Initialize a PROBE instance.
 
-        Params:
+        Params:  
         :param device: device of the PROBE
         :param dataset: dataset of the PROBE
         :param optimization_task: optimization_task of the PROBE
@@ -31,9 +29,8 @@ class PROBE:
         self.dataset = dataset
         self.optimization_task = optimization_task
 
-    def run_optimization_whole_task(
-        self, task_name: str, population_size: int = 100, seed: int = 1
-    ) -> Dict[str, Any]:
+    def run_optimization_whole_task(self, task_name: str, population_size: int = 100,
+                                    seed: int = 1) -> Dict[str, Any]:
         """
         Run SAM optimization for all experiments in a task using PROBE configuration.
 
@@ -46,12 +43,8 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
-                OptimizationExecutor,
-            )
-            from python_application.static_code.utils.LogCapture import (
-                global_stream_capture,
-            )
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import OptimizationExecutor
+            from python_application.static_code.utils.LogCapture import global_stream_capture
 
             # Find the specified task
             target_task = None
@@ -64,7 +57,7 @@ class PROBE:
                 return {
                     "status": "error",
                     "message": f"Task '{task_name}' not found",
-                    "results": None,
+                    "results": None
                 }
 
             # Create an executor with stream capture and run optimization for all experiments
@@ -82,29 +75,24 @@ class PROBE:
             return {
                 "status": "success",
                 "message": f"Optimization completed for task '{task_name}'",
-                "results": results,
+                "results": results
             }
 
         except ImportError as e:
             return {
                 "status": "error",
                 "message": f"Failed to import optimization modules: {e}",
-                "results": None,
+                "results": None
             }
         except Exception as e:
             return {
                 "status": "error",
                 "message": f"Experiment execution failed: {e}",
-                "results": None,
+                "results": None
             }
 
-    def run_optimization_using_task_experiment(
-        self,
-        task_name: str,
-        experiment_name: str,
-        population_size: int = 100,
-        seed: int = 1,
-    ) -> Dict[str, Any]:
+    def run_optimization_using_task_experiment(self, task_name: str, experiment_name: str,
+                                               population_size: int = 100, seed: int = 1) -> Dict[str, Any]:
         """
         Run SAM optimization for a specific experiment using PROBE configuration.
 
@@ -118,12 +106,8 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
-                OptimizationExecutor,
-            )
-            from python_application.static_code.utils.LogCapture import (
-                global_stream_capture,
-            )
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import OptimizationExecutor
+            from python_application.static_code.utils.LogCapture import global_stream_capture
 
             # Find the specified task and experiment
             target_task = None
@@ -142,14 +126,14 @@ class PROBE:
                 return {
                     "status": "error",
                     "message": f"Task '{task_name}' not found",
-                    "results": None,
+                    "results": None
                 }
 
             if not target_experiment:
                 return {
                     "status": "error",
                     "message": f"Experiment '{experiment_name}' not found in task '{task_name}'",
-                    "results": None,
+                    "results": None
                 }
 
             # Create an executor with stream capture and run optimization for a specific experiment
@@ -168,29 +152,24 @@ class PROBE:
             return {
                 "status": "success",
                 "message": f"Optimization completed for experiment '{experiment_name}'",
-                "results": results,
+                "results": results
             }
 
         except ImportError as e:
             return {
                 "status": "error",
                 "message": f"Failed to import optimization modules: {e}",
-                "results": None,
+                "results": None
             }
         except Exception as e:
             return {
                 "status": "error",
                 "message": f"Experiment execution failed: {e}",
-                "results": None,
+                "results": None
             }
 
-    def run_prompt_optimization_whole_task(
-        self,
-        task_name: str,
-        prompts_path: str,
-        population_size: int = 100,
-        seed: int = 1,
-    ) -> Dict[str, Any]:
+    def run_prompt_optimization_whole_task(self, task_name: str, prompts_path: str,
+                                           population_size: int = 100, seed: int = 1) -> Dict[str, Any]:
         """
         Run SAM optimization for all experiments in a task using prompts from JSON files.
 
@@ -204,12 +183,8 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
-                OptimizationExecutor,
-            )
-            from python_application.static_code.utils.LogCapture import (
-                global_stream_capture,
-            )
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import OptimizationExecutor
+            from python_application.static_code.utils.LogCapture import global_stream_capture
 
             # Find the specified task
             target_task = None
@@ -222,7 +197,7 @@ class PROBE:
                 return {
                     "status": "error",
                     "message": f"Task '{task_name}' not found",
-                    "results": None,
+                    "results": None
                 }
 
             # Validate prompts path
@@ -230,7 +205,7 @@ class PROBE:
                 return {
                     "status": "error",
                     "message": f"Prompts path does not exist: {prompts_path}",
-                    "results": None,
+                    "results": None
                 }
 
             # Create an executor with stream capture and run optimization for all experiments with prompts
@@ -249,30 +224,25 @@ class PROBE:
             return {
                 "status": "success",
                 "message": f"Prompt-based optimization completed for task '{task_name}'",
-                "results": results,
+                "results": results
             }
 
         except ImportError as e:
             return {
                 "status": "error",
                 "message": f"Failed to import optimization modules: {e}",
-                "results": None,
+                "results": None
             }
         except Exception as e:
             return {
                 "status": "error",
                 "message": f"Experiment execution failed: {e}",
-                "results": None,
+                "results": None
             }
 
-    def run_prompt_optimization_using_task_experiment(
-        self,
-        task_name: str,
-        experiment_name: str,
-        prompts_path: str,
-        population_size: int = 100,
-        seed: int = 1,
-    ) -> Dict[str, Any]:
+    def run_prompt_optimization_using_task_experiment(self, task_name: str, experiment_name: str,
+                                                      prompts_path: str, population_size: int = 100,
+                                                      seed: int = 1) -> Dict[str, Any]:
         """
         Run SAM optimization for a specific experiment using prompts from JSON files.
 
@@ -287,12 +257,8 @@ class PROBE:
             Dict[str, Any]: Experiment results including metrics and execution time
         """
         try:
-            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (
-                OptimizationExecutor,
-            )
-            from python_application.static_code.utils.LogCapture import (
-                global_stream_capture,
-            )
+            from python_application.static_code.genetic_algorithm.OptimizationExecutor import OptimizationExecutor
+            from python_application.static_code.utils.LogCapture import global_stream_capture
 
             # Find the specified task and experiment
             target_task = None
@@ -311,14 +277,14 @@ class PROBE:
                 return {
                     "status": "error",
                     "message": f"Task '{task_name}' not found",
-                    "results": None,
+                    "results": None
                 }
 
             if not target_experiment:
                 return {
                     "status": "error",
                     "message": f"Experiment '{experiment_name}' not found in task '{task_name}'",
-                    "results": None,
+                    "results": None
                 }
 
             # Validate prompts path
@@ -326,7 +292,7 @@ class PROBE:
                 return {
                     "status": "error",
                     "message": f"Prompts path does not exist: {prompts_path}",
-                    "results": None,
+                    "results": None
                 }
 
             # Create an executor with log capture and run optimization for a specific experiment with prompts
@@ -346,20 +312,20 @@ class PROBE:
             return {
                 "status": "success",
                 "message": f"Prompt-based optimization completed for experiment '{experiment_name}'",
-                "results": results,
+                "results": results
             }
 
         except ImportError as e:
             return {
                 "status": "error",
                 "message": f"Failed to import optimization modules: {e}",
-                "results": None,
+                "results": None
             }
         except Exception as e:
             return {
                 "status": "error",
                 "message": f"Experiment execution failed: {e}",
-                "results": None,
+                "results": None
             }
 
     def display_probe(self) -> str:
@@ -482,6 +448,7 @@ class PROBE:
 
         return "\n".join(output)
 
+
     def save_logs_to_file(self, custom_content: str = None) -> str:
         """
         Save PROBE logs to a file in logs/probe_configurations/ directory with incremental numbering.
@@ -527,3 +494,6 @@ class PROBE:
             return f"✅ Configuration saved successfully to {filepath}"
         except Exception as e:
             return f"❌ Error saving configuration: {str(e)}"
+
+
+

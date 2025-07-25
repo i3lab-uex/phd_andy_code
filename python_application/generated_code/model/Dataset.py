@@ -6,10 +6,9 @@ from python_application.generated_code.model.Subset import Subset
 
 class Dataset:
     """Represents a Dataset object."""
-
-    def __init__(
-        self, name: str, description: str, type: DataType, subset: List[Subset]
-    ):
+    def __init__(self
+, name: str, description: str, type: DataType, subset: List[Subset]
+):
         """
         :param name: name of the Dataset
         :param description: description of the Dataset

@@ -4,16 +4,8 @@ from python_application.generated_code.enumerations.ModelType import ModelType
 
 class FoundationModel:
     """Represents a FoundationModel object."""
-
-    def __init__(
-        self,
-        name: str,
-        version: float,
-        description: str,
-        checkpointFilepath: str,
-        configuration: str,
-        type: ModelType,
-    ):
+    def __init__(self
+, name: str, version: float, description: str, checkpointFilepath: str, configuration: str, type: ModelType):
         """
         :param name: name of the FoundationModel
         :param version: version of the FoundationModel
