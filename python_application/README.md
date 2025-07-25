@@ -75,7 +75,7 @@ Change what you need for your platform.
 7. Execute the python script **python_application/static_code/download/DownloadModelCheckpoints.py** to get SAM's model checkpoints:
 
     ```shell
-    python -m python_application/static_code/download/DownloadModelCheckpoints
+    python -m python_application.static_code.download.DownloadModelCheckpoints
     ```
    
 8. Configure PyCharm.
@@ -100,7 +100,7 @@ Change what you need for your platform.
 To download the Covid-19 dataset, execute the python script **python_application/static_code/download/DownloadCovidDataset.py** from the root folder of this project:
 
 ```shell
-python -m python_application/static_code/download/DownloadCovidDataset
+python -m python_application.static_code.download.DownloadCovidDataset
 ```
 
 ## Generate Code from Acceleo
