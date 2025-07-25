@@ -476,7 +476,7 @@ Check the output directory for detailed results and visualizations."""
                                 label="Prompts Directory Path",
                                 value=os.path.join(
                                     os.getcwd(),
-                                    "python_application/static_code/initial_prompts_configuration/covid",
+                                    "initial_prompts_configuration/covid",
                                 ),
                                 info="Directory containing JSON prompt files",
                                 interactive=True,
