@@ -21,3 +21,6 @@ output/*
 # Ignore logs directory
 logs/
 logs/*
+
+# Ignore updateing .pre-commit-config.yaml file
+.pre-commit-config.yaml

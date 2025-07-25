@@ -92,9 +92,9 @@ def organize_montgomery_dataset():
     left_masks = sorted(os.listdir(left_mask_dir))
     right_masks = sorted(os.listdir(right_mask_dir))
     # Ensure both directories have the same number of files
-    assert len(left_masks) == len(
-        right_masks
-    ), "Masks in both directories must have the same number of files."
+    assert len(left_masks) == len(right_masks), (
+        "Masks in both directories must have the same number of files."
+    )
 
     # Process and combine the masks
     for left_mask_name, right_mask_name in zip(left_masks, right_masks):
@@ -107,7 +107,7 @@ def organize_montgomery_dataset():
 
         # Assert both images have the same size
         assert left_mask.shape == right_mask.shape, (
-            f"Masks {left_mask_name} and {right_mask_name}" f" must have the same size."
+            f"Masks {left_mask_name} and {right_mask_name} must have the same size."
         )
 
         # Combine the masks using a logical OR operation

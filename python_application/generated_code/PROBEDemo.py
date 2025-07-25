@@ -1,6 +1,6 @@
-# Generated instance model for ProbeMM
+# Generated instance model for PROBEMM
 import os
-from python_application.static_code.ProbeInterface import ProbeInterface
+from python_application.static_code.PROBEInterface import PROBEInterface
 from python_application.generated_code.enumerations.DeviceType import DeviceType
 from python_application.generated_code.enumerations.MetricType import MetricType
 from python_application.generated_code.enumerations.PointType import PointType
@@ -236,11 +236,10 @@ probe = PROBE(
 
 
 if __name__ == "__main__":
-
     # Print the starting message
     print("🚀 Starting PROBE - SAM Optimization Interface...")
     print("📝 Press Ctrl+C to exit")
 
     # Create and launch the interface
-    interface = ProbeInterface(probe)
+    interface = PROBEInterface(probe)
     interface.launch()

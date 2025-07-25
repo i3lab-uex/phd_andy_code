@@ -205,10 +205,10 @@ class ProgressTracker:
         """
         elapsed = time.time() - self.start_time
         message = f"""✅ Completed: {slice_name}
-   📊 Dice: {metrics.get('dice', 0):.4f}
-   📊 Jaccard: {metrics.get('jaccard', 0):.4f} 
-   📊 Score: {metrics.get('score', 0):.4f}
-   ⏱️ Time: {metrics.get('time', 0):.2f}s (Total: {elapsed:.1f}s)"""
+   📊 Dice: {metrics.get("dice", 0):.4f}
+   📊 Jaccard: {metrics.get("jaccard", 0):.4f} 
+   📊 Score: {metrics.get("score", 0):.4f}
+   ⏱️ Time: {metrics.get("time", 0):.2f}s (Total: {elapsed:.1f}s)"""
         print(message)
 
     def log_final_summary(self, results: dict):
@@ -221,12 +221,12 @@ class ProgressTracker:
         total_time = time.time() - self.start_time
         message = f"""
 🎉 OPTIMIZATION COMPLETED!
-📋 Task/Experiment: {results.get('name', 'Unknown')}
+📋 Task/Experiment: {results.get("name", "Unknown")}
 📊 Summary:
-   • Processed slices: {results.get('processed_slices', 0)}
-   • Average Dice: {results.get('avg_dice', 0):.4f}
-   • Average Jaccard: {results.get('avg_jaccard', 0):.4f}
-   • Average Score: {results.get('avg_score', 0):.4f}
+   • Processed slices: {results.get("processed_slices", 0)}
+   • Average Dice: {results.get("avg_dice", 0):.4f}
+   • Average Jaccard: {results.get("avg_jaccard", 0):.4f}
+   • Average Score: {results.get("avg_score", 0):.4f}
    • Total time: {total_time:.2f}s
 """
         print(message)

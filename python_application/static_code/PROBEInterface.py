@@ -5,7 +5,7 @@ from python_application.generated_code.model.PROBE import PROBE
 from python_application.static_code.utils.LogCapture import global_stream_capture
 
 
-class ProbeInterface:
+class PROBEInterface:
     """Enhanced PROBE interface with optimization capabilities and real-time logging."""
 
     def __init__(self, probe: PROBE):
@@ -51,14 +51,14 @@ class ProbeInterface:
                 results = result["results"]
                 return f"""✅ Prompt-based Task Optimization Completed Successfully!
 
-📋 Task: {results['task_name']}
+📋 Task: {results["task_name"]}
 📊 Results Summary:
-• Total execution time: {results['total_time']:.2f} seconds
-• Number of experiments: {results['num_experiments']}
-• Total processed slices: {results['total_processed_slices']}
-• Average Jaccard Index: {results['avg_jaccard']:.4f}
-• Average Dice Coefficient: {results['avg_dice']:.4f}
-• Average SAM Score: {results['avg_score']:.4f}
+• Total execution time: {results["total_time"]:.2f} seconds
+• Number of experiments: {results["num_experiments"]}
+• Total processed slices: {results["total_processed_slices"]}
+• Average Jaccard Index: {results["avg_jaccard"]:.4f}
+• Average Dice Coefficient: {results["avg_dice"]:.4f}
+• Average SAM Score: {results["avg_score"]:.4f}
 
 Check the output directory for detailed results and visualizations."""
             else:
@@ -101,13 +101,13 @@ Check the output directory for detailed results and visualizations."""
                 results = result["results"]
                 return f"""✅ Prompt-based Experiment Optimization Completed Successfully!
 
-📋 Experiment: {results['experiment_name']}
+📋 Experiment: {results["experiment_name"]}
 📊 Results Summary:
-• Total execution time: {results['total_time']:.2f} seconds
-• Processed slices: {results['processed_slices']}
-• Average Jaccard Index: {results['avg_jaccard']:.4f}
-• Average Dice Coefficient: {results['avg_dice']:.4f}
-• Average SAM Score: {results['avg_score']:.4f}
+• Total execution time: {results["total_time"]:.2f} seconds
+• Processed slices: {results["processed_slices"]}
+• Average Jaccard Index: {results["avg_jaccard"]:.4f}
+• Average Dice Coefficient: {results["avg_dice"]:.4f}
+• Average SAM Score: {results["avg_score"]:.4f}
 
 Check the output directory for detailed results and visualizations."""
             else:
@@ -222,7 +222,10 @@ Check the output directory for detailed results and visualizations."""
         # Final output
         if result_container["stopped"] or self.stop_optimization:
             final_output = global_stream_capture.get_full_output()
-            yield final_output + "\n\n🛑 **Optimization stopped by user request.**\nSystem is ready for new operations."
+            yield (
+                final_output
+                + "\n\n🛑 **Optimization stopped by user request.**\nSystem is ready for new operations."
+            )
         elif result_container["error"]:
             yield result_container["error"]
         elif result_container["result"]:
@@ -318,7 +321,10 @@ Check the output directory for detailed results and visualizations."""
         # Final output
         if result_container["stopped"] or self.stop_optimization:
             final_output = global_stream_capture.get_full_output()
-            yield final_output + "\n\n🛑 **Optimization stopped by user request.**\nSystem is ready for new operations."
+            yield (
+                final_output
+                + "\n\n🛑 **Optimization stopped by user request.**\nSystem is ready for new operations."
+            )
         elif result_container["error"]:
             yield result_container["error"]
         elif result_container["result"]:
