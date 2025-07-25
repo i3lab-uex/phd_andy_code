@@ -7,11 +7,14 @@ from python_application.generated_code.model.StopCondition import StopCondition
 
 class Experiment:
     """Represents a Experiment object."""
-    def __init__(self
-, name: str, initial_state: State
-, sample: Sample
-, stop_condition: List[StopCondition]
-):
+
+    def __init__(
+        self,
+        name: str,
+        initial_state: State,
+        sample: Sample,
+        stop_condition: List[StopCondition],
+    ):
         """
         :param name: name of the Experiment
         :param initial_state: initial_state of the Experiment

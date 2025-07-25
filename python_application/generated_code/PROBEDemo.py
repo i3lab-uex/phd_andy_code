@@ -7,7 +7,9 @@ from python_application.generated_code.enumerations.PointType import PointType
 from python_application.generated_code.enumerations.FileFormatType import FileFormatType
 from python_application.generated_code.enumerations.DataType import DataType
 from python_application.generated_code.enumerations.ModelType import ModelType
-from python_application.generated_code.enumerations.OptimizationAlgorithm import OptimizationAlgorithm
+from python_application.generated_code.enumerations.OptimizationAlgorithm import (
+    OptimizationAlgorithm,
+)
 from python_application.generated_code.model.PROBE import PROBE
 from python_application.generated_code.model.Dataset import Dataset
 from python_application.generated_code.model.Metric import Metric
@@ -46,46 +48,49 @@ datasets = [
                 sample=[
                     Sample(
                         filename="coronacases_001.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_002.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_003.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_004.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_005.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_006.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_007.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_008.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_009.nii.gz",
-                        extension=FileFormatType.NIFTI
+                        extension=FileFormatType.NIFTI,
                     ),
                     Sample(
                         filename="coronacases_010.nii.gz",
-                        extension=FileFormatType.NIFTI
-                    )                ]
-            )        ]
-    )]
+                        extension=FileFormatType.NIFTI,
+                    ),
+                ],
+            )
+        ],
+    )
+]
 
 # Build optimization tasks
 optimization_task = [
@@ -97,9 +102,11 @@ optimization_task = [
             name="vit_h",
             version=1.0,
             description="SAM ViT-H",
-            checkpointFilepath=os.path.join(os.getcwd(), "model_checkpoints/sam_vit_h_4b8939.pth"),
+            checkpointFilepath=os.path.join(
+                os.getcwd(), "model_checkpoints/sam_vit_h_4b8939.pth"
+            ),
             configuration="",
-            type=ModelType.IMAGE_SEGMENTATION
+            type=ModelType.IMAGE_SEGMENTATION,
         ),
         experiment=[
             Experiment(
@@ -109,16 +116,22 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
-                stop_condition=[NoImprovement(), TimeLimit(minutesDuration=5.0), MaxIterations(numIterations=1000)],
+                stop_condition=[
+                    NoImprovement(),
+                    TimeLimit(minutesDuration=5.0),
+                    MaxIterations(numIterations=1000),
+                ],
                 sample=Sample(
-                    filename="coronacases_001.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_001.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 2 - coronacases_002",
                 initial_state=State(
@@ -126,16 +139,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_002.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_002.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 3 - coronacases_003",
                 initial_state=State(
@@ -143,16 +158,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_003.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_003.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 4 - coronacases_004",
                 initial_state=State(
@@ -160,16 +177,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_004.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_004.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 5 - coronacases_005",
                 initial_state=State(
@@ -177,16 +196,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_005.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_005.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 6 - coronacases_006",
                 initial_state=State(
@@ -194,16 +215,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_006.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_006.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 7 - coronacases_007",
                 initial_state=State(
@@ -211,16 +234,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_007.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_007.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 8 - coronacases_008",
                 initial_state=State(
@@ -228,16 +253,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_008.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_008.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 9 - coronacases_009",
                 initial_state=State(
@@ -245,16 +272,18 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_009.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
-,
+                    filename="coronacases_009.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
             Experiment(
                 name="Experiment 10 - coronacases_010",
                 initial_state=State(
@@ -262,26 +291,37 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
                 stop_condition=[MaxIterations(numIterations=1000)],
                 sample=Sample(
-                    filename="coronacases_010.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
-            )
+                    filename="coronacases_010.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
         ],
-        optimization_metric=Metric(name="Sam Score as an optimization metric", type=MetricType.SAM_SCORE),
+        optimization_metric=Metric(
+            name="Sam Score as an optimization metric", type=MetricType.SAM_SCORE
+        ),
         performance_metric=[
-            Metric(name="Jaccard Index", type=MetricType.JACCARD,
-   ),
-            Metric(name="Dice Coefficient", type=MetricType.DICE,
-   ),
-            Metric(name="SAM Score", type=MetricType.SAM_SCORE,
-   )    ]
-    )
-,
+            Metric(
+                name="Jaccard Index",
+                type=MetricType.JACCARD,
+            ),
+            Metric(
+                name="Dice Coefficient",
+                type=MetricType.DICE,
+            ),
+            Metric(
+                name="SAM Score",
+                type=MetricType.SAM_SCORE,
+            ),
+        ],
+    ),
     OptimizationTask(
         name="Swarm Algorithms",
         description="Tarea de optimización mediante el uso de algoritmos de enjambres (SWARM)",
@@ -290,9 +330,11 @@ optimization_task = [
             name="vit_b",
             version=1.0,
             description="MedSAM ViT-B",
-            checkpointFilepath=os.path.join(os.getcwd(), "model_checkpoints/medsam_vit_b_01ec64.pth"),
+            checkpointFilepath=os.path.join(
+                os.getcwd(), "model_checkpoints/medsam_vit_b_01ec64.pth"
+            ),
             configuration="",
-            type=ModelType.IMAGE_SEGMENTATION
+            type=ModelType.IMAGE_SEGMENTATION,
         ),
         experiment=[
             Experiment(
@@ -302,37 +344,50 @@ optimization_task = [
                     hasImproved=False,
                     prompt=PromptForImage(
                         bounding_box=[BoundingBox()],
-                        point=[Point(type=PointType.POSITIVE), Point(type=PointType.POSITIVE), Point(type=PointType.NEGATIVE)]
-                    )
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
                 ),
-                stop_condition=[NoImprovement(), TimeLimit(minutesDuration=5.0), MaxIterations(numIterations=1000)],
+                stop_condition=[
+                    NoImprovement(),
+                    TimeLimit(minutesDuration=5.0),
+                    MaxIterations(numIterations=1000),
+                ],
                 sample=Sample(
-                    filename="coronacases_001.nii.gz",
-                    extension=FileFormatType.NIFTI
-                )
+                    filename="coronacases_001.nii.gz", extension=FileFormatType.NIFTI
+                ),
             )
         ],
-        optimization_metric=Metric(name="Sam Score as an optimization metric", type=MetricType.SAM_SCORE),
+        optimization_metric=Metric(
+            name="Sam Score as an optimization metric", type=MetricType.SAM_SCORE
+        ),
         performance_metric=[
-            Metric(name="Jaccard Index", type=MetricType.JACCARD,
-   ),
-            Metric(name="Dice Coefficient", type=MetricType.DICE,
-   ),
-            Metric(name="SAM Score", type=MetricType.SAM_SCORE,
-   )    ]
-    )
+            Metric(
+                name="Jaccard Index",
+                type=MetricType.JACCARD,
+            ),
+            Metric(
+                name="Dice Coefficient",
+                type=MetricType.DICE,
+            ),
+            Metric(
+                name="SAM Score",
+                type=MetricType.SAM_SCORE,
+            ),
+        ],
+    ),
 ]
 
 # Build the PROBE instance
 probe = PROBE(
-    device=processing_device,
-    dataset=datasets,
-    optimization_task=optimization_task
+    device=processing_device, dataset=datasets, optimization_task=optimization_task
 )
 
 
 if __name__ == "__main__":
-    
     # Print the starting message
     print("🚀 Starting PROBE - SAM Optimization Interface...")
     print("📝 Press Ctrl+C to exit")
@@ -340,4 +395,3 @@ if __name__ == "__main__":
     # Create and launch the interface
     interface = PROBEInterface(probe)
     interface.launch()
-

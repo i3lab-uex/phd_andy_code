@@ -4,9 +4,8 @@ from python_application.generated_code.model.Prompt import Prompt
 
 class State:
     """Represents a State object."""
-    def __init__(self
-, description: str, hasImproved: bool, prompt: Prompt
-):
+
+    def __init__(self, description: str, hasImproved: bool, prompt: Prompt):
         """
         :param description: description of the State
         :param hasImproved: hasImproved of the State

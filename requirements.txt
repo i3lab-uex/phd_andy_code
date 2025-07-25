@@ -9,4 +9,4 @@ scikit-image==0.21.0
 pymoo==0.6.0
 gradio==5.31.0
 pillow==10.4.0
-pre-commit==4.2.0
+ruff==0.12.5

@@ -107,6 +107,14 @@ python -m python_application.static_code.download.DownloadCovidDataset
 
 Generate python code from Acceleo following the instructions in the [Acceleo project README](../probe_code_generation/README.md).
 
+## Format generated code using Ruff Code Formatter Linter
+
+To format the generated code using Ruff, execute the following command from the root folder of this project:
+
+```shell
+ruff format python_application/generated_code
+```
+
 ## Use the PROBE GUI demo
 
 To use the PROBE GUI demo, execute the python script **ProbeDemo.py** from the root folder of this project:
