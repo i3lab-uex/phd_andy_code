@@ -5,4 +5,4 @@ repos:
   rev: v0.12.5
   hooks:
     # Run the formatter.
-    - id: ruff-format python_application
+    - id: ruff-format
