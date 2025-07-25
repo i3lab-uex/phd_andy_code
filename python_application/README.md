@@ -2,7 +2,18 @@
 
 This project contains the Python application that uses the generated code from the Acceleo project. The main script is located at `python_application/probe_demo.py`.
 
-## 1. Requirements
+## Table of Contents
+
+1. [Requirements](#requirements)
+2. [Workspace Configuration](#workspace-configuration)
+   - [SAM 1 Installation](#sam-1-installation)
+3. [Covid-19 Dataset Download](#covid-19-dataset-download)
+4. [Generate Code from Acceleo](#generate-code-from-acceleo)
+5. [Use the PROBE GUI demo](#use-the-probe-gui-demo)
+6. [Project Structure](#project-structure)
+7. [Citing This Work](#citing-this-work)
+
+## Requirements
 
 - Python 3.10
 - Cuda 12.1.0
@@ -10,7 +21,7 @@ This project contains the Python application that uses the generated code from t
 - SAM Installation
 - Required Python packages (see `requirements.txt`)
 
-## 2. Workspace Configuration
+## Workspace Configuration
 
 Although this project has been developed with PyCharm and Visual Studio Code on Windows, taking advantage of the WSL allows you to work on the Linux subsystem.
 The following instructions are based on a Linux environment.
@@ -74,7 +85,7 @@ Change what you need for your platform.
 
 > **Note:** If you no longer need the Conda environment, just deactivate it with `conda deactivate` and delete it with `conda remove -n probe --all --yes`.
 
-### 2.1 SAM Installation
+### SAM Installation
 
 - [Install SAM][sam_installation]: to install SAM version, execute the following command, based on the [official installation instructions][sam_installation].
 
@@ -84,7 +95,7 @@ Change what you need for your platform.
 
     [sam_installation]: https://github.com/facebookresearch/segment-anything/?tab=readme-ov-file#installation "SAM Installation"
 
-## 3. Download Covid-19 Dataset
+## Download Covid-19 Dataset
 
 To download the Covid-19 dataset, execute the python script **python_application/static_code/download/DownloadCovidDataset.py** from the root folder of this project:
 
@@ -92,11 +103,11 @@ To download the Covid-19 dataset, execute the python script **python_application
 python -m python_application/static_code/download/DownloadCovidDataset
 ```
 
-## 4. Generate Code from Acceleo
+## Generate Code from Acceleo
 
 Generate python code from Acceleo following the instructions in the [Acceleo project README](../probe_code_generation/README.md).
 
-## 6. Use the PROBE GUI demo
+## Use the PROBE GUI demo
 
 To use the PROBE GUI demo, execute the python script **ProbeDemo.py** from the root folder of this project:
 
@@ -127,6 +138,20 @@ phd2_code/
     └── README.md                  # Project documentation
 ```
 
-## License
 
-This project is licensed under the MIT License.
+## Citing This Work
+
+If you use this work in your research, please cite us with the following BibTeX entry:
+
+```
+@ARTICLE{gutierrez25,
+  author={Gutiérrez, Juan D. and Delgado, Emilio and Breuer, Carlos, Conejero, José M., and Rodriguez-Echeverria, Roberto},
+  journal={Algorithms},
+  title={Prompt Once, Segment Everything: Leveraging SAM 2 Potential for Infinite Medical Image Segmentation With a Single Prompt},
+  year={2025},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1000/182}}
+
+```
