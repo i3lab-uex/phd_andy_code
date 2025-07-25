@@ -4,8 +4,8 @@ from python_application.generated_code.enumerations.FileFormatType import FileFo
 
 class Sample:
     """Represents a Sample object."""
-
-    def __init__(self, filename: str, extension: FileFormatType):
+    def __init__(self
+, filename: str, extension: FileFormatType):
         """
         :param filename: filename of the Sample
         :param extension: extension of the Sample

@@ -314,7 +314,7 @@ class OptimizationExecutor:
 
             if self.progress_tracker:
                 self.progress_tracker.update_file(
-                    f"[{file_idx+1}/{len(files)}] {filename}"
+                    f"[{file_idx + 1}/{len(files)}] {filename}"
                 )
 
             # Load data
@@ -331,7 +331,7 @@ class OptimizationExecutor:
 
                 if self.progress_tracker:
                     self.progress_tracker.update_slice(
-                        f"{slice_name} [{slice_idx+1}/{image_data.shape[2]}]"
+                        f"{slice_name} [{slice_idx + 1}/{image_data.shape[2]}]"
                     )
 
                 image_slice = image_data[..., slice_idx]
@@ -474,7 +474,7 @@ class OptimizationExecutor:
         for exp_idx, experiment in enumerate(task.experiment):
             if self.progress_tracker:
                 self.progress_tracker.update_stage(
-                    f"Experiment [{exp_idx+1}/{len(task.experiment)}]: {experiment.name}"
+                    f"Experiment [{exp_idx + 1}/{len(task.experiment)}]: {experiment.name}"
                 )
 
             exp_result = self.run_single_experiment_optimization(

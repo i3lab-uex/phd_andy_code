@@ -44,7 +44,7 @@ phd2_code/
 │   ├── generated_code/                # Generated code from Acceleo
 │   │   ├── enumerations/              # Enumerations
 │   │   ├── model/                     # Model classes
-│   │   └── probe_demo.py              # Main script for the demo
+│   │   └── ProbeDemo.py              # Main script for the demo
 │   │
 │   ├── static_code/                   # Static code
 │   │   └── ...                        # Interface for the PROBE GUI

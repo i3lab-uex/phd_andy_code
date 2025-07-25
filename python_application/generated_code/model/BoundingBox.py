@@ -3,5 +3,4 @@
 
 class BoundingBox:
     """Represents a BoundingBox object."""
-
     pass

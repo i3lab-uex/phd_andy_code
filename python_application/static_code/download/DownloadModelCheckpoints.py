@@ -77,7 +77,6 @@ def _download_model_with_check(model_urls, model_type, download_func):
     :param download_func: Function to use for downloading
     """
     for model_name, url in model_urls.items():
-
         local_path = os.path.join(MODEL_CHECKPOINTS_DIR, model_name)
         if not os.path.exists(local_path):
             print(f"Starting download of {model_name} {model_type} model...")

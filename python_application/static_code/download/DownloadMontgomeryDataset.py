@@ -106,9 +106,9 @@ def organize_montgomery_dataset():
         right_mask = np.array(Image.open(right_mask_path))
 
         # Assert both images have the same size
-        assert left_mask.shape == right_mask.shape, (
-            f"Masks {left_mask_name} and {right_mask_name}" f" must have the same size."
-        )
+        assert (
+            left_mask.shape == right_mask.shape
+        ), f"Masks {left_mask_name} and {right_mask_name} must have the same size."
 
         # Combine the masks using a logical OR operation
         combined_mask = np.maximum(left_mask, right_mask)

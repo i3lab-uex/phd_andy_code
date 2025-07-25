@@ -96,13 +96,6 @@ python -m python_application/static_code/download/DownloadCovidDataset
 
 Generate python code from Acceleo following the instructions in the [Acceleo project README](../probe_code_generation/README.md).
 
-## 5. (Optional) Apply PEP-8 Formatting to Python Application using Black
-
-To apply PEP-8 formatting to the Python application using Black, execute the following command from the root folder of this project:
-
-```shell
-black python_application
-```
 
 ## 6. Use the PROBE GUI demo
 
