@@ -112,7 +112,7 @@ Generate python code from Acceleo following the instructions in the [Acceleo pro
 To use the PROBE GUI demo, execute the python script **ProbeDemo.py** from the root folder of this project:
 
 ```shell
-python -m python_application.generated_code.ProbeDemo
+python -m python_application.generated_code.PROBEDemo
 ```
 
 ## Project Structure
