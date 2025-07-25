@@ -5,9 +5,15 @@ from python_application.generated_code.model.Sample import Sample
 
 class Subset:
     """Represents a Subset object."""
-    def __init__(self
-, name: str, path: str, dataFolderName: str, labelsFolderName: str, sample: List[Sample]
-):
+
+    def __init__(
+        self,
+        name: str,
+        path: str,
+        dataFolderName: str,
+        labelsFolderName: str,
+        sample: List[Sample],
+    ):
         """
         :param name: name of the Subset
         :param path: path of the Subset
