@@ -2175,7 +2175,7 @@
       <body startPosition="27224" endPosition="27278" value=" -- ================================================= "/>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Comment">
-      <body startPosition="27289" endPosition="27342" value=" -- ProbeDemo.py: Python main application generation "/>
+      <body startPosition="27289" endPosition="27342" value=" -- PROBEDemo.py: Python main application generation "/>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Comment">
       <body startPosition="27353" endPosition="27407" value=" -- ================================================= "/>
@@ -2192,7 +2192,7 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="# Generated instance model for ProbeMM&#xA;import os&#xA;from python_application.static_code.ProbeInterface import ProbeInterface&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="# Generated instance model for PROBEMM&#xA;import os&#xA;from python_application.static_code.PROBEInterface import PROBEInterface&#xA;"/>
         <body xsi:type="mtl:ForBlock">
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="from python_application.generated_code.enumerations."/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
@@ -3024,8 +3024,8 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;# Build the PROBE instance&#xA;probe = PROBE(&#xA;    device=processing_device,&#xA;    dataset=datasets,&#xA;    optimization_task=optimization_task&#xA;)&#xA;&#xA;&#xA;if __name__ == &quot;__main__&quot;:&#xA;    &#xA;    # Print the starting message&#xA;    print(&quot;🚀 Starting PROBE - SAM Optimization Interface...&quot;)&#xA;    print(&quot;📝 Press Ctrl+C to exit&quot;)&#xA;&#xA;    # Create and launch the interface&#xA;    interface = ProbeInterface(probe)&#xA;    interface.launch()&#xA;&#xA;"/>
-        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="ProbeDemo.py">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;# Build the PROBE instance&#xA;probe = PROBE(&#xA;    device=processing_device,&#xA;    dataset=datasets,&#xA;    optimization_task=optimization_task&#xA;)&#xA;&#xA;&#xA;if __name__ == &quot;__main__&quot;:&#xA;    &#xA;    # Print the starting message&#xA;    print(&quot;🚀 Starting PROBE - SAM Optimization Interface...&quot;)&#xA;    print(&quot;📝 Press Ctrl+C to exit&quot;)&#xA;&#xA;    # Create and launch the interface&#xA;    interface = PROBEInterface(probe)&#xA;    interface.launch()&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="PROBEDemo.py">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </fileUrl>
         <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">

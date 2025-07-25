@@ -687,17 +687,17 @@ class [c.name/]:
 
 
 [comment -- ================================================= /]
-[comment -- ProbeDemo.py: Python main application generation /]
+[comment -- PROBEDemo.py: Python main application generation /]
 [comment -- ================================================= /]
 [template public generatePythonApp(aPROBE : PROBE)]
 
 [file ('__init__.py', false, 'UTF-8')]
 [/file]
 
-[file ('ProbeDemo.py', false, 'UTF-8')]
-# Generated instance model for ProbeMM
+[file ('PROBEDemo.py', false, 'UTF-8')]
+# Generated instance model for PROBEMM
 import os
-from python_application.static_code.ProbeInterface import ProbeInterface
+from python_application.static_code.PROBEInterface import PROBEInterface
     [for (e : EEnum | aPROBE.eClass().ePackage.eClassifiers->filter(ecore::EEnum))]
 from python_application.generated_code.enumerations.[e.name/] import [e.name/]
     [/for]
@@ -799,7 +799,7 @@ if __name__ == "__main__":
     print("📝 Press Ctrl+C to exit")
 
     # Create and launch the interface
-    interface = ProbeInterface(probe)
+    interface = PROBEInterface(probe)
     interface.launch()
 
 [/file]
