@@ -190,6 +190,7 @@ class PROBE:
         prompts_path: str,
         population_size: int = 100,
         seed: int = 1,
+        stop_callback=None,
     ) -> Dict[str, Any]:
         """
         Run SAM optimization for all experiments in a task using prompts from JSON files.
@@ -199,6 +200,7 @@ class PROBE:
             prompts_path (str): Path to the directory containing JSON prompt files
             population_size (int, optional): Population size for genetic algorithm. Defaults to 100.
             seed (int, optional): Random seed for reproducibility. Defaults to 1.
+            stop_callback (callable, optional): Function that returns True if optimization should stop
 
         Returns:
             Dict[str, Any]: Experiment results including metrics and execution time
@@ -244,6 +246,7 @@ class PROBE:
                     seed=seed,
                     use_prompts=True,
                     prompts_path=prompts_path,
+                    stop_callback=stop_callback,
                 )
 
             return {
@@ -272,6 +275,7 @@ class PROBE:
         prompts_path: str,
         population_size: int = 100,
         seed: int = 1,
+        stop_callback=None,
     ) -> Dict[str, Any]:
         """
         Run SAM optimization for a specific experiment using prompts from JSON files.
@@ -282,6 +286,7 @@ class PROBE:
             prompts_path (str): Path to the directory containing JSON prompt files
             population_size (int, optional): Population size for genetic algorithm. Defaults to 100.
             seed (int, optional): Random seed for reproducibility. Defaults to 1.
+            stop_callback (callable, optional): Function that returns True if optimization should stop
 
         Returns:
             Dict[str, Any]: Experiment results including metrics and execution time
@@ -341,6 +346,7 @@ class PROBE:
                     seed=seed,
                     use_prompts=True,
                     prompts_path=prompts_path,
+                    stop_callback=stop_callback,
                 )
 
             return {

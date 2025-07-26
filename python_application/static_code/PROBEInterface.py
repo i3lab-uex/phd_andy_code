@@ -42,11 +42,16 @@ class PROBEInterface:
             str: Formatted results message
         """
         try:
+            # Create stop callback function that the optimization process can check
+            def should_stop():
+                return self.stop_optimization
+
             result = self.probe.run_prompt_optimization_whole_task(
                 task_name=task_name,
                 prompts_path=prompts_path,
                 population_size=population_size,
                 seed=seed,
+                stop_callback=should_stop,
             )
 
             if result["status"] == "success":
@@ -91,12 +96,17 @@ class PROBEInterface:
             str: Formatted results message
         """
         try:
+            # Create stop callback function that the optimization process can check
+            def should_stop():
+                return self.stop_optimization
+
             result = self.probe.run_prompt_optimization_using_task_experiment(
                 task_name=task_name,
                 experiment_name=experiment_name,
                 prompts_path=prompts_path,
                 population_size=population_size,
                 seed=seed,
+                stop_callback=should_stop,
             )
 
             if result["status"] == "success":

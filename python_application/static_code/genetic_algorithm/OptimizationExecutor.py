@@ -269,6 +269,7 @@ class OptimizationExecutor:
         seed: int = 1,
         use_prompts: bool = False,
         prompts_path: Optional[str] = None,
+        stop_callback=None,
     ) -> Dict[str, Any]:
         """
         Run optimization for a single experiment.
@@ -280,6 +281,7 @@ class OptimizationExecutor:
             seed (int, optional): Random seed. Defaults to 1.
             use_prompts (bool, optional): Whether to use JSON prompts. Defaults to False.
             prompts_path (Optional[str], optional): Path to JSON prompts. Defaults to None.
+            stop_callback (callable, optional): Function that returns True if optimization should stop
 
         Returns:
             Dict[str, Any]: Optimization results
@@ -308,6 +310,11 @@ class OptimizationExecutor:
 
         # Process each file
         for file_idx, file_path in enumerate(files):
+            # Check if optimization should stop
+            if stop_callback and stop_callback():
+                print(f"🛑 Optimization stopped by user request at file {file_idx + 1}")
+                break
+
             filename = file_path.split("/")[-1]
             base_name = filename.replace(".nii.gz", "")
 
@@ -326,6 +333,11 @@ class OptimizationExecutor:
 
             # Process each slice
             for slice_idx in range(image_data.shape[2]):
+                # Check if optimization should stop
+                if stop_callback and stop_callback():
+                    print(f"🛑 Optimization stopped by user request at slice {slice_idx + 1}")
+                    break
+
                 slice_name = f"{experiment.name}_{base_name}_slice_{slice_idx}"
 
                 if self.progress_tracker:
@@ -445,6 +457,7 @@ class OptimizationExecutor:
         seed: int = 1,
         use_prompts: bool = False,
         prompts_path: Optional[str] = None,
+        stop_callback=None,
     ) -> Dict[str, Any]:
         """
         Run optimization for all experiments in a task.
@@ -455,6 +468,7 @@ class OptimizationExecutor:
             seed (int, optional): Random seed. Defaults to 1.
             use_prompts (bool, optional): Whether to use JSON prompts. Defaults to False.
             prompts_path (Optional[str], optional): Path to JSON prompts. Defaults to None.
+            stop_callback (callable, optional): Function that returns True if optimization should stop
 
         Returns:
             Dict[str, Any]: Combined results from all experiments
@@ -471,6 +485,11 @@ class OptimizationExecutor:
         print(f"Number of experiments: {len(task.experiment)}")
 
         for exp_idx, experiment in enumerate(task.experiment):
+            # Check if optimization should stop
+            if stop_callback and stop_callback():
+                print(f"🛑 Optimization stopped by user request at experiment {exp_idx + 1}")
+                break
+
             if self.progress_tracker:
                 self.progress_tracker.update_stage(
                     f"Experiment [{exp_idx + 1}/{len(task.experiment)}]: {experiment.name}"
@@ -483,6 +502,7 @@ class OptimizationExecutor:
                 seed=seed,
                 use_prompts=use_prompts,
                 prompts_path=prompts_path,
+                stop_callback=stop_callback,
             )
 
             experiment_results.append(exp_result)
