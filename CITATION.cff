@@ -1,36 +1,48 @@
 cff-version: 1.2.0
-message: If you use this software, please cite both the article from preferred-citation and the software itself.
-authors:
-  - family-names: Gutiérrez
-    given-names: Juan D.
-  - family-names: Delgado
-    given-names: Emilio
-  - family-names: Breuer
-    given-names: Carlos
-  - family-names: Conejero
-    given-names: José M.
-  - family-names: and Rodriguez-Echeverria
-    given-names: Roberto
-title: 'Prompt Once, Segment Everything: Leveraging SAM 2 Potential for Infinite Medical Image Segmentation With a Single Prompt'
-version: 1.0.0
-doi: 10.1000/182
-date-released: '2025-07-25'
+message: Please cite the following works when using this software.
 preferred-citation:
+  abstract: >-
+    Esta tesis doctoral presenta PROBE, un metamodelo software para explorar los
+    límites de rendimiento de modelos fundacionales de segmentación de imágenes
+    mediante técnicas de optimización de prompts. La investigación se centra en
+    el uso del modelo Segment Anything Model (SAM) en tareas de segmentación
+    médica sin necesidad de reentrenamiento, proponiendo una metodología para
+    cuantificar el techo de rendimiento alcanzable mediante algoritmos
+    genéticos. A partir de casos de uso con imágenes médicas (CT, rayos X, MRI),
+    se construye un marco formal que permite sistematizar el uso eficiente de
+    estos modelos en escenarios de recursos limitados. Como contribuciones, se
+    incluyen tres artículos científicos, artefactos software publicados en
+    GitHub, un metamodelo reutilizable y validación empírica del enfoque
+    propuesto.
   authors:
-    - family-names: Gutiérrez
-      given-names: Juan D.
-    - family-names: Delgado
-      given-names: Emilio
-    - family-names: Breuer
-      given-names: Carlos
-    - family-names: Conejero
-      given-names: José M.
-    - family-names: and Rodriguez-Echeverria
-      given-names: Roberto
-  title: 'Prompt Once, Segment Everything: Leveraging SAM 2 Potential for Infinite Medical Image Segmentation With a Single Prompt'
-  doi: 10.1000/182
-  type: article-journal
-  pages: 1-1
-  year: '2025'
-  conference: {}
-  publisher: {}
+    - family-names: Gallardo
+      given-names: Juan Diego Gutiérrez
+  identifiers:
+    - type: url
+      value: https://github.com/andyuex/phd2_code
+  keywords:
+    - modelos fundacionales
+    - segmentación de imágenes médicas
+    - prompts
+    - SAM
+    - algoritmos genéticos
+    - metamodelos
+    - inteligencia artificial médica
+  title: >-
+    PROBE: un metamodelo software para explorar los límites de los modelos
+    fundacionales de segmentación de imágenes aplicados al dominio médico
+  url: https://github.com/andyuex/phd2_code
+  date-published: 2025-07-26
+  year: 2025
+  month: 7
+  thesis-type: Tesis Doctoral
+  languages:
+    - Spanish
+  notes: >-
+    Dirigida por Dr. Roberto Rodríguez Echeverría y Dr. José María Conejero
+    Manzano
+  institution:
+    name: Universidad de Extremadura
+    country: España
+    city: Cáceres
+  type: thesis

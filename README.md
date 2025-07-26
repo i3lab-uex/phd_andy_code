@@ -70,14 +70,18 @@ phd2_code/
 If you use this work in your research, please cite us with the following BibTeX entry:
 
 ```
-@ARTICLE{gutierrez25,
-  author={Gutiérrez, Juan D. and Delgado, Emilio and Breuer, Carlos, Conejero, José M., and Rodriguez-Echeverria, Roberto},
-  journal={Algorithms},
-  title={Prompt Once, Segment Everything: Leveraging SAM 2 Potential for Infinite Medical Image Segmentation With a Single Prompt},
-  year={2025},
-  volume={},
-  number={},
-  pages={1-1},
-  doi={10.1000/182}}
-
+@phdthesis{gutierrez2025,
+  author       = {Juan Diego Gutiérrez Gallardo},
+  title        = {PROBE: un metamodelo software para explorar los límites de los modelos fundacionales de segmentación de imágenes aplicados al dominio médico},
+  school       = {Universidad de Extremadura},
+  year         = {2025},
+  address      = {Cáceres, España},
+  month        = {jul},
+  type         = {Tesis Doctoral},
+  note         = {Dirigida por Dr. Roberto Rodríguez Echeverría y Dr. José María Conejero Manzano},
+  url          = {https://github.com/andyuex/phd2_code},
+  abstract     = {Esta tesis doctoral presenta PROBE, un metamodelo software para explorar los límites de rendimiento de modelos fundacionales de segmentación de imágenes mediante técnicas de optimización de prompts. La investigación se centra en el uso del modelo Segment Anything Model (SAM) en tareas de segmentación médica sin necesidad de reentrenamiento, proponiendo una metodología para cuantificar el techo de rendimiento alcanzable mediante algoritmos genéticos. A partir de casos de uso con imágenes médicas (CT, rayos X, MRI), se construye un marco formal que permite sistematizar el uso eficiente de estos modelos en escenarios de recursos limitados. Como contribuciones, se incluyen tres artículos científicos, artefactos software publicados en GitHub, un metamodelo reutilizable y validación empírica del enfoque propuesto.},
+  keywords     = {modelos fundacionales, segmentación de imágenes médicas, prompts, SAM, algoritmos genéticos, metamodelos, inteligencia artificial médica},
+  language     = {Spanish}
+}
 ```
