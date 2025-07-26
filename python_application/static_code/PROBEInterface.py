@@ -1,6 +1,7 @@
 import os
 import time
 import threading
+from typing import Dict, Union
 import gradio as gr
 from python_application.generated_code.model.PROBE import PROBE
 from python_application.static_code.utils.LogCapture import global_stream_capture
@@ -167,7 +168,11 @@ class PROBEInterface:
         yield "🚀 Starting prompt-based optimization...\n"
 
         # Run optimization in a separate thread and stream logs
-        result_container = {"result": None, "error": None, "stopped": False}
+        result_container: Dict[str, Union[str, None, bool]] = {
+            "result": None,
+            "error": None,
+            "stopped": False,
+        }
 
         def run_optimization():
             try:
@@ -208,7 +213,7 @@ class PROBEInterface:
                 # Append new content
                 yield current_output
                 last_output = current_output
-            time.sleep(0.5)  # Update every 500ms
+            time.sleep(0.5)  # Update every 500 ms
 
         # Wait for the thread to complete
         if opt_thread.is_alive():
@@ -260,7 +265,11 @@ class PROBEInterface:
         yield "⚡ Starting experiment optimization...\n"
 
         # Run optimization in a separate thread and stream logs
-        result_container = {"result": None, "error": None, "stopped": False}
+        result_container: Dict[str, Union[str, None, bool]] = {
+            "result": None,
+            "error": None,
+            "stopped": False,
+        }
 
         def run_optimization():
             try:
@@ -305,7 +314,7 @@ class PROBEInterface:
                 # Append new content
                 yield current_output
                 last_output = current_output
-            time.sleep(0.5)  # Update every 500ms
+            time.sleep(0.5)  # Update every 500 ms
 
         # Wait for thread to complete
         if opt_thread.is_alive():
@@ -388,7 +397,8 @@ class PROBEInterface:
             # Header
             gr.Markdown("# 🔬 PROBE - SAM Optimization Interface")
             gr.Markdown(
-                "Advanced interface for SAM optimization experiments using genetic algorithms and dynamic PROBE configuration"
+                "Advanced interface for SAM optimization experiments using genetic algorithms and dynamic PROBE "
+                "configuration"
             )
 
             with gr.Tabs():
@@ -513,7 +523,7 @@ class PROBEInterface:
                                 label="Optimization Results & Logs",
                                 lines=25,
                                 interactive=False,
-                                autoscroll=False,
+                                autoscroll=True,
                                 show_copy_button=True,
                                 elem_classes=["output-textbox"],
                                 scale=1,
@@ -599,70 +609,64 @@ class PROBEInterface:
                     )
 
                     # Task optimization with UI state management
-                    task_click = (
-                        probe_run_task_btn.click(
-                            start_optimization_ui,
-                            outputs=[
-                                probe_run_task_btn,
-                                probe_run_exp_btn,
-                                probe_stop_btn,
-                                optimization_state,
-                            ],
-                        )
-                        .then(
-                            run_task_with_ui_control,
-                            inputs=[
-                                probe_task_dropdown,
-                                probe_prompts_path,
-                                probe_pop_size,
-                                probe_seed,
-                            ],
-                            outputs=probe_output,
-                            show_progress="minimal",
-                        )
-                        .then(
-                            end_optimization_ui,
-                            outputs=[
-                                probe_run_task_btn,
-                                probe_run_exp_btn,
-                                probe_stop_btn,
-                                optimization_state,
-                            ],
-                        )
+                    task_click_event = probe_run_task_btn.click(
+                        start_optimization_ui,
+                        outputs=[
+                            probe_run_task_btn,
+                            probe_run_exp_btn,
+                            probe_stop_btn,
+                            optimization_state,
+                        ],
+                    )
+                    task_click_event.then(
+                        run_task_with_ui_control,
+                        inputs=[
+                            probe_task_dropdown,
+                            probe_prompts_path,
+                            probe_pop_size,
+                            probe_seed,
+                        ],
+                        outputs=probe_output,
+                        show_progress="minimal",
+                    ).then(
+                        end_optimization_ui,
+                        outputs=[
+                            probe_run_task_btn,
+                            probe_run_exp_btn,
+                            probe_stop_btn,
+                            optimization_state,
+                        ],
                     )
 
                     # Experiment optimization with UI state management
-                    exp_click = (
-                        probe_run_exp_btn.click(
-                            start_optimization_ui,
-                            outputs=[
-                                probe_run_task_btn,
-                                probe_run_exp_btn,
-                                probe_stop_btn,
-                                optimization_state,
-                            ],
-                        )
-                        .then(
-                            run_experiment_with_ui_control,
-                            inputs=[
-                                probe_task_dropdown,
-                                probe_experiment_dropdown,
-                                probe_prompts_path,
-                                probe_pop_size,
-                                probe_seed,
-                            ],
-                            outputs=probe_output,
-                            show_progress="minimal",
-                        )
-                        .then(
-                            end_optimization_ui,
-                            outputs=[
-                                probe_run_task_btn,
-                                probe_run_exp_btn,
-                                probe_stop_btn,
-                                optimization_state,
-                            ],
-                        )
+                    exp_click_event = probe_run_exp_btn.click(
+                        start_optimization_ui,
+                        outputs=[
+                            probe_run_task_btn,
+                            probe_run_exp_btn,
+                            probe_stop_btn,
+                            optimization_state,
+                        ],
+                    )
+                    exp_click_event.then(
+                        run_experiment_with_ui_control,
+                        inputs=[
+                            probe_task_dropdown,
+                            probe_experiment_dropdown,
+                            probe_prompts_path,
+                            probe_pop_size,
+                            probe_seed,
+                        ],
+                        outputs=probe_output,
+                        show_progress="minimal",
+                    ).then(
+                        end_optimization_ui,
+                        outputs=[
+                            probe_run_task_btn,
+                            probe_run_exp_btn,
+                            probe_stop_btn,
+                            optimization_state,
+                        ],
                     )
 
                     # Stop button functionality
@@ -678,11 +682,8 @@ class PROBEInterface:
 
         return interface
 
-    def launch(self, **kwargs):
+    def launch(self):
         """
         Launch the Gradio interface.
-
-        Args:
-            **kwargs: Additional arguments for Gradio launch
         """
-        return self.interface.launch(**kwargs)
+        return self.interface.launch()
