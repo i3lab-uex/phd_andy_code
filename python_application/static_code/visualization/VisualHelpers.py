@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import torch
 
 
@@ -14,12 +15,9 @@ def show_mask(mask: torch.Tensor, ax, random_color: bool = False):
     :param random_color: if True, use a random color to show the mask (bool)
     """
     # Generate color using PyTorch tensors.
-    color = (
-        torch.cat([torch.rand(3), torch.tensor([0.6])])
-        if random_color
-        else torch.tensor([30 / 255, 144 / 255, 255 / 255, 0.6])
-    )
-    # Ensure the mask is a PyTorch tensor.
+    color = torch.cat([torch.rand(3), torch.tensor([0.6])]) if random_color else torch.tensor(
+        [30 / 255, 144 / 255, 255 / 255, 0.6])
+    # Ensure mask is a PyTorch tensor.
     mask = mask if isinstance(mask, torch.Tensor) else torch.tensor(mask)
     # Get mask dimensions.
     h, w = mask.shape[-2:]
@@ -30,16 +28,14 @@ def show_mask(mask: torch.Tensor, ax, random_color: bool = False):
 
 # Function taken from SAM's notebooks.
 # https://github.com/facebookresearch/segment-anything/blob/main/notebooks/predictor_example.ipynb
-def show_points(
-    coords: torch.Tensor, labels: torch.Tensor, ax: plt.Axes, marker_size: int = 375
-):
+def show_points(coords: np.array, labels: np.array, ax: plt.Axes, marker_size: int = 300):
     """
     Show the positive and negative prompts in the image. The positive prompts
     are shown using green circles, the negative prompts are shown using red circles
 
     Params:
-    :param coords: coordinates of the prompts (torch.Tensor)
-    :param labels: labels of the prompts (torch.Tensor)
+    :param coords: coordinates of the prompts (np.array)
+    :param labels: labels of the prompts (np.array)
     :param ax: axes to show the prompts (matplotlib.axes.Axes)
     :param marker_size: size of the markers (int)
     :return:
@@ -49,21 +45,21 @@ def show_points(
     ax.scatter(
         pos_points[:, 0],
         pos_points[:, 1],
-        color="green",
-        marker="*",
+        color='lime',
+        marker='o',
         s=marker_size,
-        edgecolor="white",
-        linewidth=1.25,
-    )
+        edgecolor='white',
+        linewidth=2.5
+        )
     ax.scatter(
         neg_points[:, 0],
         neg_points[:, 1],
-        color="red",
-        marker="*",
+        color='red',
+        marker='o',
         s=marker_size,
-        edgecolor="white",
-        linewidth=1.25,
-    )
+        edgecolor='black',
+        linewidth=2.5
+               )
 
 
 # Function taken from SAM's notebooks.
@@ -78,5 +74,5 @@ def show_box(box, ax):
     x0, y0 = box[0], box[1]
     w, h = box[2] - box[0], box[3] - box[1]
     ax.add_patch(
-        plt.Rectangle((x0, y0), w, h, edgecolor="green", facecolor=(0, 0, 0, 0), lw=3)
+        plt.Rectangle((x0, y0), w, h, edgecolor='orange', facecolor=(0, 0, 0, 0), lw=3)
     )

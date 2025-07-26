@@ -22,9 +22,6 @@ output/*
 logs/
 logs/*
 
-# Ignore updateing .pre-commit-config.yaml file
-.pre-commit-config.yaml
-
 # Ignore initial_prompts_configuration directory
 initial_prompts_configuration/
 initial_prompts_configuration/*
