@@ -111,14 +111,14 @@ def _process_single_slice(
 
     # Process image
     processed_image = process_image_slice(
-        image_slice, windowing=dataset_info["should_apply_windowing"]
+        image_slice
     )
     print(f"Processing slice {slice_name} - Image shape: {processed_image.shape}")
 
     # Setup predictor
     predictor.set_image(processed_image)
 
-    # Prepare optimization problem
+    # Prepare an optimization problem
     original_mask_as_bool = mask_slice != 0
     objective = task.optimization_metric.name.lower()
     if "jaccard" in objective:
@@ -241,8 +241,7 @@ class OptimizationExecutor:
             "name": dataset.name,
             "images_path": f"{subset.path}/{subset.dataFolderName}",
             "masks_path": f"{subset.path}/{subset.labelsFolderName}",
-            "output_path": f"output/{dataset.name}/{task.name}",
-            "should_apply_windowing": dataset.name == "Coronacases",
+            "output_path": f"output/{dataset.name}/{task.name}"
         }
 
     def _setup_sam_model(self, task: OptimizationTask) -> SamPredictor:

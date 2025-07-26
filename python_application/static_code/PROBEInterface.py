@@ -1,5 +1,6 @@
 import os
 import time
+import threading
 import gradio as gr
 from python_application.generated_code.model.PROBE import PROBE
 from python_application.static_code.utils.LogCapture import global_stream_capture
@@ -50,17 +51,17 @@ class PROBEInterface:
             if result["status"] == "success":
                 results = result["results"]
                 return f"""✅ Prompt-based Task Optimization Completed Successfully!
-
-📋 Task: {results["task_name"]}
-📊 Results Summary:
-• Total execution time: {results["total_time"]:.2f} seconds
-• Number of experiments: {results["num_experiments"]}
-• Total processed slices: {results["total_processed_slices"]}
-• Average Jaccard Index: {results["avg_jaccard"]:.4f}
-• Average Dice Coefficient: {results["avg_dice"]:.4f}
-• Average SAM Score: {results["avg_score"]:.4f}
-
-Check the output directory for detailed results and visualizations."""
+                
+                📋 Task: {results["task_name"]}
+                📊 Results Summary:
+                • Total execution time: {results["total_time"]:.2f} seconds
+                • Number of experiments: {results["num_experiments"]}
+                • Total processed slices: {results["total_processed_slices"]}
+                • Average Jaccard Index: {results["avg_jaccard"]:.4f}
+                • Average Dice Coefficient: {results["avg_dice"]:.4f}
+                • Average SAM Score: {results["avg_score"]:.4f}
+                
+                Check the output directory for detailed results and visualizations."""
             else:
                 return f"❌ Error: {result['message']}"
 
@@ -100,16 +101,16 @@ Check the output directory for detailed results and visualizations."""
             if result["status"] == "success":
                 results = result["results"]
                 return f"""✅ Prompt-based Experiment Optimization Completed Successfully!
-
-📋 Experiment: {results["experiment_name"]}
-📊 Results Summary:
-• Total execution time: {results["total_time"]:.2f} seconds
-• Processed slices: {results["processed_slices"]}
-• Average Jaccard Index: {results["avg_jaccard"]:.4f}
-• Average Dice Coefficient: {results["avg_dice"]:.4f}
-• Average SAM Score: {results["avg_score"]:.4f}
-
-Check the output directory for detailed results and visualizations."""
+                
+                📋 Experiment: {results["experiment_name"]}
+                📊 Results Summary:
+                • Total execution time: {results["total_time"]:.2f} seconds
+                • Processed slices: {results["processed_slices"]}
+                • Average Jaccard Index: {results["avg_jaccard"]:.4f}
+                • Average Dice Coefficient: {results["avg_dice"]:.4f}
+                • Average SAM Score: {results["avg_score"]:.4f}
+                
+                Check the output directory for detailed results and visualizations."""
             else:
                 return f"❌ Error: {result['message']}"
 
@@ -166,8 +167,6 @@ Check the output directory for detailed results and visualizations."""
         yield "🚀 Starting prompt-based optimization...\n"
 
         # Run optimization in a separate thread and stream logs
-        import threading
-
         result_container = {"result": None, "error": None, "stopped": False}
 
         def run_optimization():
@@ -261,8 +260,6 @@ Check the output directory for detailed results and visualizations."""
         yield "⚡ Starting experiment optimization...\n"
 
         # Run optimization in a separate thread and stream logs
-        import threading
-
         result_container = {"result": None, "error": None, "stopped": False}
 
         def run_optimization():
@@ -371,13 +368,20 @@ Check the output directory for detailed results and visualizations."""
             title="PROBE - SAM Optimization Interface",
             theme=gr.themes.Base(),
             css="""
-            .output-textbox {
-                height: 500px !important;
-                overflow-y: auto !important;
-            }
             .output-textbox textarea {
                 height: 500px !important;
+                overflow-y: auto !important;
                 scroll-behavior: smooth !important;
+                white-space: pre-wrap !important;
+                word-wrap: break-word !important;
+                resize: none !important;
+            }
+            .output-textbox .scroll-hide {
+                scrollbar-width: thin !important;
+            }
+            .output-textbox .wrap {
+                height: 500px !important;
+                overflow-y: auto !important;
             }
             """,
         ) as interface:
@@ -403,6 +407,9 @@ Check the output directory for detailed results and visualizations."""
                         max_lines=20,
                         interactive=False,
                         autoscroll=False,
+                        show_copy_button=True,
+                        elem_classes=["output-textbox"],
+                        scale=1,
                     )
 
                     status_output = gr.Textbox(
@@ -505,10 +512,11 @@ Check the output directory for detailed results and visualizations."""
                             probe_output = gr.Textbox(
                                 label="Optimization Results & Logs",
                                 lines=25,
-                                max_lines=25,
                                 interactive=False,
-                                autoscroll=True,
+                                autoscroll=False,
+                                show_copy_button=True,
                                 elem_classes=["output-textbox"],
+                                scale=1,
                             )
 
                     # Hidden state components for managing button states

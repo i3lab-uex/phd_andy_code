@@ -197,26 +197,24 @@ def find_bounding_box(mask: np.ndarray) -> Union[Tuple[int, int, int, int], None
     return None
 
 
-def process_image_slice(image_slice: np.ndarray, windowing: bool = True) -> np.ndarray:
+def process_image_slice(image_slice: np.ndarray) -> np.ndarray:
     """
     Process an image slice for SAM.
 
     Args:
         image_slice (np.ndarray): Image slice
-        windowing (bool, optional): Whether to apply CT windowing. Defaults to True.
 
     Returns:
         np.ndarray: Processed image in RGB format
     """
     processed_image = np.copy(image_slice)
 
-    if windowing:
-        # CT windowing configuration
-        window_level = -650
-        window_width = 1500
-        processed_image = processed_image.clip(
-            window_level - window_width // 2, window_level + window_width // 2
-        )
+    # CT windowing configuration
+    window_level = -650
+    window_width = 1500
+    processed_image = processed_image.clip(
+        window_level - window_width // 2, window_level + window_width // 2
+    )
 
     # Normalization
     processed_image = (
