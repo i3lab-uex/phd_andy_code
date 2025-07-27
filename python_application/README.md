@@ -38,8 +38,8 @@ Change what you need for your platform.
 2. Create and activate a new environment:
 
     ```shell
-    conda create --name probe python=3.10 --yes
-    conda activate probe
+    conda create --name PROBE python=3.10 --yes
+    conda activate PROBE
     ```
 
 3. Clean conda and pip caches:
@@ -105,7 +105,7 @@ python -m python_application.static_code.download.DownloadCovidDataset
 
 ## Generate Code from Acceleo
 
-Generate python code from Acceleo following the instructions in the [Acceleo project README](../probe_code_generation/README.md).
+Generate python code from Acceleo following the instructions in the [Acceleo project README](../PROBE_code_generation/README.md).
 
 ## Format generated code using Ruff Code Formatter Linter
 

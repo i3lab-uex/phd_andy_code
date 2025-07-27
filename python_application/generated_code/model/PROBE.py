@@ -368,7 +368,7 @@ class PROBE:
                 "results": None,
             }
 
-    def display_probe(self) -> str:
+    def display_PROBE(self) -> str:
         """
         Display the complete PROBE configuration.
 
@@ -490,10 +490,10 @@ class PROBE:
 
     def save_logs_to_file(self, custom_content: str = None) -> str:
         """
-        Save PROBE logs to a file in logs/probe_configurations/ directory with incremental numbering.
+        Save PROBE logs to a file in logs/PROBE_configurations/ directory with incremental numbering.
 
         Args:
-            custom_content (str, optional): Custom content to save. If None, uses display_probe() output.
+            custom_content (str, optional): Custom content to save. If None, uses display_PROBE() output.
 
         Returns:
             str: Confirmation message with the file path
@@ -502,13 +502,13 @@ class PROBE:
         from datetime import datetime
 
         # Create logs directory structure
-        logs_dir = os.path.join("logs", "probe_configurations")
+        logs_dir = os.path.join("logs", "PROBE_configurations")
         os.makedirs(logs_dir, exist_ok=True)
 
         # Find the next available number
         counter = 1
         while True:
-            filename = f"probe_config{counter}.txt"
+            filename = f"PROBE_config{counter}.txt"
             filepath = os.path.join(logs_dir, filename)
             if not os.path.exists(filepath):
                 break
@@ -518,7 +518,7 @@ class PROBE:
         if custom_content is not None:
             content = custom_content
         else:
-            content = self.display_probe()
+            content = self.display_PROBE()
 
         # Add timestamp header
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

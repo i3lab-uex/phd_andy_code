@@ -1,6 +1,6 @@
 # PROBE Metamodel and Model Project
 
-This project contains the Eclipse EMF project with the `probe.ecore` metamodel and its graphical visualization `probe.aird` and model `/probe/model/PROBE_coronacases_optimization.xmi` model.
+This project contains the Eclipse EMF project with the `PROBE.ecore` metamodel and its graphical visualization `PROBE.aird` and model `/PROBE/model/PROBE_coronacases_optimization.xmi` model.
 
 ## Table of Contents
 
@@ -16,19 +16,19 @@ To work with this project, you need to install the Eclipse IDE for Java Develope
 1. Open Eclipse IDE.
 2. Go to `File` > `Import...`.
 3. Select `Projects from Folder or Archive` and click `Next`.
-4. Browse to the location of this project and select the `probe` folder and click `Finish`.
+4. Browse to the location of this project and select the `PROBE` folder and click `Finish`.
 5. (Optional) If not done yet, right-click on the project in the Project Explorer and select `Configure` > `Convert to Modelling Project`.
 
 ## Metamodel and Model definition
 
 You can appreciate the metamodel of the PROBE project in the following image:
 
-![Probe Metamodel](metamodel/images/ProbeMM.png)
+![PROBE Metamodel](metamodel/images/PROBEMM.png)
 
-The metamodel is defined in the `probe.ecore` file, and the graphical visualization is provided in the `probe.aird` file. The example model instance is located in the `model` folder as `PROBE_coronacases_optimization.xmi`.
-In the following image, you can see the graphical representation of the probe example model:
+The metamodel is defined in the `PROBE.ecore` file, and the graphical visualization is provided in the `PROBE.aird` file. The example model instance is located in the `model` folder as `PROBE_coronacases_optimization.xmi`.
+In the following image, you can see the graphical representation of the PROBE example model:
 
-![Probe Metamodel](../resources/images/probe_model.png)
+![PROBE Metamodel](../resources/images/PROBE_model.png)
 
 ## Project Structure
 
@@ -36,12 +36,12 @@ The project is structured as follows:
 
 ```
 phd2_code/
-└── probe/                                      # Eclipse EMF project
+└── PROBE/                                      # Eclipse EMF project
     │
     ├── metamodel/
     │   ├── images/                             # Images used in the metamodel
-    │   ├── probe.aird                          # Graphical visualization
-    │   └── probe.ecore                         # Metamodel definition
+    │   ├── PROBE.aird                          # Graphical visualization
+    │   └── PROBE.ecore                         # Metamodel definition
     │
     ├── model/                                  # Model folder
     │   └── PROBE_coronacases_optimization.xmi  # Example model

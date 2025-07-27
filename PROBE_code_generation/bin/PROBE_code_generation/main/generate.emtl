@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="generate" nsURI="probe_code_generation::main::generate" startHeaderPosition="87" endHeaderPosition="261">
+  <mtl:Module name="generate" nsURI="PROBE_code_generation::main::generate" startHeaderPosition="87" endHeaderPosition="261">
     <documentation xsi:type="mtl:ModuleDocumentation">
       <body startPosition="33" endPosition="83" value="&#xD;&#xA;The documentation of the module generate.&#xD;&#xA;&#xD;&#xA;"/>
     </documentation>
     <input>
-      <takesTypesFrom href="https://www.example.org/probe#/"/>
+      <takesTypesFrom href="https://www.example.org/PROBE#/"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.eclipse.org/emf/2002/Ecore#/"/>
@@ -18,7 +18,7 @@
           <source xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
             <source xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generateElement/aPROBE">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
           </source>
@@ -33,7 +33,7 @@
           <source xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
             <source xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generateElement/aPROBE">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
           </source>
@@ -44,7 +44,7 @@
       <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePythonApp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generateElement/aPROBE">
-          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
         </argument>
       </body>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
@@ -54,7 +54,7 @@
         </parametersDocumentation>
       </documentation>
       <parameter name="aPROBE">
-        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Comment">
@@ -1343,7 +1343,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=": Experiment results including metrics and execution time&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        try:&#xD;&#xA;            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (&#xD;&#xA;                OptimizationExecutor,&#xD;&#xA;            )&#xD;&#xA;            from python_application.static_code.utils.LogCapture import (&#xD;&#xA;                global_stream_capture,&#xD;&#xA;            )&#xD;&#xA;&#xD;&#xA;            # Find the specified task and experiment&#xD;&#xA;            target_task = None&#xD;&#xA;            target_experiment = None&#xD;&#xA;&#xD;&#xA;            for task in self.optimization_task:&#xD;&#xA;                if task.name == task_name:&#xD;&#xA;                    target_task = task&#xD;&#xA;                    for experiment in task.experiment:&#xD;&#xA;                        if experiment.name == experiment_name:&#xD;&#xA;                            target_experiment = experiment&#xD;&#xA;                            break&#xD;&#xA;                    break&#xD;&#xA;&#xD;&#xA;            if not target_task:&#xD;&#xA;                return {&#xD;&#xA;                    &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                    &quot;message&quot;: f&quot;Task '{task_name}' not found&quot;,&#xD;&#xA;                    &quot;results&quot;: None,&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            if not target_experiment:&#xD;&#xA;                return {&#xD;&#xA;                    &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                    &quot;message&quot;: f&quot;Experiment '{experiment_name}' not found in task '{task_name}'&quot;,&#xD;&#xA;                    &quot;results&quot;: None,&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            # Validate prompts path&#xD;&#xA;            if not os.path.exists(prompts_path):&#xD;&#xA;                return {&#xD;&#xA;                    &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                    &quot;message&quot;: f&quot;Prompts path does not exist: {prompts_path}&quot;,&#xD;&#xA;                    &quot;results&quot;: None,&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            # Create an executor with log capture and run optimization for a specific experiment with prompts&#xD;&#xA;            executor = OptimizationExecutor(self, global_stream_capture)&#xD;&#xA;&#xD;&#xA;            # Use context manager to capture all output&#xD;&#xA;            with global_stream_capture.capture():&#xD;&#xA;                results = executor.run_single_experiment_optimization(&#xD;&#xA;                    task=target_task,&#xD;&#xA;                    experiment=target_experiment,&#xD;&#xA;                    population_size=population_size,&#xD;&#xA;                    seed=seed,&#xD;&#xA;                    use_prompts=True,&#xD;&#xA;                    prompts_path=prompts_path,&#xD;&#xA;                    stop_callback=stop_callback,&#xD;&#xA;                )&#xD;&#xA;&#xD;&#xA;            return {&#xD;&#xA;                &quot;status&quot;: &quot;success&quot;,&#xD;&#xA;                &quot;message&quot;: f&quot;Prompt-based optimization completed for experiment '{experiment_name}'&quot;,&#xD;&#xA;                &quot;results&quot;: results,&#xD;&#xA;            }&#xD;&#xA;&#xD;&#xA;        except ImportError as e:&#xD;&#xA;            return {&#xD;&#xA;                &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                &quot;message&quot;: f&quot;Failed to import optimization modules: {e}&quot;,&#xD;&#xA;                &quot;results&quot;: None,&#xD;&#xA;            }&#xD;&#xA;        except Exception as e:&#xD;&#xA;            return {&#xD;&#xA;                &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                &quot;message&quot;: f&quot;Experiment execution failed: {e}&quot;,&#xD;&#xA;                &quot;results&quot;: None,&#xD;&#xA;            }&#xD;&#xA;&#xD;&#xA;    def display_probe(self) -> str:&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        Display the complete PROBE configuration.&#xD;&#xA;&#xD;&#xA;        Returns:&#xD;&#xA;            str: Formatted string with PROBE information&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        output = "/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=": Experiment results including metrics and execution time&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        try:&#xD;&#xA;            from python_application.static_code.genetic_algorithm.OptimizationExecutor import (&#xD;&#xA;                OptimizationExecutor,&#xD;&#xA;            )&#xD;&#xA;            from python_application.static_code.utils.LogCapture import (&#xD;&#xA;                global_stream_capture,&#xD;&#xA;            )&#xD;&#xA;&#xD;&#xA;            # Find the specified task and experiment&#xD;&#xA;            target_task = None&#xD;&#xA;            target_experiment = None&#xD;&#xA;&#xD;&#xA;            for task in self.optimization_task:&#xD;&#xA;                if task.name == task_name:&#xD;&#xA;                    target_task = task&#xD;&#xA;                    for experiment in task.experiment:&#xD;&#xA;                        if experiment.name == experiment_name:&#xD;&#xA;                            target_experiment = experiment&#xD;&#xA;                            break&#xD;&#xA;                    break&#xD;&#xA;&#xD;&#xA;            if not target_task:&#xD;&#xA;                return {&#xD;&#xA;                    &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                    &quot;message&quot;: f&quot;Task '{task_name}' not found&quot;,&#xD;&#xA;                    &quot;results&quot;: None,&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            if not target_experiment:&#xD;&#xA;                return {&#xD;&#xA;                    &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                    &quot;message&quot;: f&quot;Experiment '{experiment_name}' not found in task '{task_name}'&quot;,&#xD;&#xA;                    &quot;results&quot;: None,&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            # Validate prompts path&#xD;&#xA;            if not os.path.exists(prompts_path):&#xD;&#xA;                return {&#xD;&#xA;                    &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                    &quot;message&quot;: f&quot;Prompts path does not exist: {prompts_path}&quot;,&#xD;&#xA;                    &quot;results&quot;: None,&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;            # Create an executor with log capture and run optimization for a specific experiment with prompts&#xD;&#xA;            executor = OptimizationExecutor(self, global_stream_capture)&#xD;&#xA;&#xD;&#xA;            # Use context manager to capture all output&#xD;&#xA;            with global_stream_capture.capture():&#xD;&#xA;                results = executor.run_single_experiment_optimization(&#xD;&#xA;                    task=target_task,&#xD;&#xA;                    experiment=target_experiment,&#xD;&#xA;                    population_size=population_size,&#xD;&#xA;                    seed=seed,&#xD;&#xA;                    use_prompts=True,&#xD;&#xA;                    prompts_path=prompts_path,&#xD;&#xA;                    stop_callback=stop_callback,&#xD;&#xA;                )&#xD;&#xA;&#xD;&#xA;            return {&#xD;&#xA;                &quot;status&quot;: &quot;success&quot;,&#xD;&#xA;                &quot;message&quot;: f&quot;Prompt-based optimization completed for experiment '{experiment_name}'&quot;,&#xD;&#xA;                &quot;results&quot;: results,&#xD;&#xA;            }&#xD;&#xA;&#xD;&#xA;        except ImportError as e:&#xD;&#xA;            return {&#xD;&#xA;                &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                &quot;message&quot;: f&quot;Failed to import optimization modules: {e}&quot;,&#xD;&#xA;                &quot;results&quot;: None,&#xD;&#xA;            }&#xD;&#xA;        except Exception as e:&#xD;&#xA;            return {&#xD;&#xA;                &quot;status&quot;: &quot;error&quot;,&#xD;&#xA;                &quot;message&quot;: f&quot;Experiment execution failed: {e}&quot;,&#xD;&#xA;                &quot;results&quot;: None,&#xD;&#xA;            }&#xD;&#xA;&#xD;&#xA;    def display_PROBE(self) -> str:&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        Display the complete PROBE configuration.&#xD;&#xA;&#xD;&#xA;        Returns:&#xD;&#xA;            str: Formatted string with PROBE information&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        output = "/>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </body>
@@ -1351,7 +1351,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;&#xD;&#xA;        for ds in self.dataset:&#xD;&#xA;            output.append(f&quot;\n📂 Dataset: {ds.name} - {ds.description} ({ds.type})&quot;)&#xD;&#xA;            for ss in ds.subset:&#xD;&#xA;                output.append(f&quot;  📁 Subset: {ss.name}, Path: {ss.path}&quot;)&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;    Data folder: {ss.dataFolderName}, Labels folder: {ss.labelsFolderName}&quot;&#xD;&#xA;                )&#xD;&#xA;                output.append(f&quot;    Samples ({len(ss.sample)} total):&quot;)&#xD;&#xA;                for sp in ss.sample:&#xD;&#xA;                    output.append(&#xD;&#xA;                        f&quot;      🖼️ Sample: {sp.filename} (Format: {sp.extension})&quot;&#xD;&#xA;                    )&#xD;&#xA;&#xD;&#xA;        for i, ot in enumerate(self.optimization_task):&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;\n🚀 Optimization Task {i + 1}: {ot.name} - {ot.description}&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(f&quot;  🔬 Algorithm: {ot.algorithm}&quot;)&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;  🤖 Foundation Model: {ot.foundation_model.name} ({ot.foundation_model.type}) &quot;&#xD;&#xA;                f&quot;v{ot.foundation_model.version}&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;    📁 Checkpoint: {ot.foundation_model.checkpointFilepath}&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(f&quot;    ⚙️ Configuration: {ot.foundation_model.configuration}&quot;)&#xD;&#xA;            if (&#xD;&#xA;                hasattr(ot.foundation_model, &quot;description&quot;)&#xD;&#xA;                and ot.foundation_model.description&#xD;&#xA;            ):&#xD;&#xA;                output.append(f&quot;    📝 Description: {ot.foundation_model.description}&quot;)&#xD;&#xA;&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;  🎯 Optimization Metric: {ot.optimization_metric.name} ({ot.optimization_metric.type})&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;  📊 Performance Metrics ({len(ot.performance_metric)} total):&quot;&#xD;&#xA;            )&#xD;&#xA;            for m in ot.performance_metric:&#xD;&#xA;                output.append(f&quot;    - {m.name}&quot;)&#xD;&#xA;&#xD;&#xA;            output.append(f&quot;  🧪 Experiments ({len(ot.experiment)} total):&quot;)&#xD;&#xA;            for e in ot.experiment:&#xD;&#xA;                output.append(f&quot;    ▶ Experiment: {e.name}&quot;)&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      🏁 Initial State: {e.initial_state.description} (Improved: {e.initial_state.hasImproved})&quot;&#xD;&#xA;                )&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      💬 Prompt Type: {type(e.initial_state.prompt).__name__}&quot;&#xD;&#xA;                )&#xD;&#xA;&#xD;&#xA;                # Detailed prompt information&#xD;&#xA;                if (&#xD;&#xA;                    hasattr(e.initial_state.prompt, &quot;bounding_box&quot;)&#xD;&#xA;                    and e.initial_state.prompt.bounding_box&#xD;&#xA;                ):&#xD;&#xA;                    output.append(&#xD;&#xA;                        f&quot;        📦 Bounding Boxes ({len(e.initial_state.prompt.bounding_box)} total):&quot;&#xD;&#xA;                    )&#xD;&#xA;                    for idx, box in enumerate(e.initial_state.prompt.bounding_box):&#xD;&#xA;                        if (&#xD;&#xA;                            hasattr(box, &quot;x&quot;)&#xD;&#xA;                            and hasattr(box, &quot;y&quot;)&#xD;&#xA;                            and hasattr(box, &quot;width&quot;)&#xD;&#xA;                            and hasattr(box, &quot;height&quot;)&#xD;&#xA;                        ):&#xD;&#xA;                            output.append(&#xD;&#xA;                                f&quot;          Box {idx + 1}: x={box.x}, y={box.y}, w={box.width}, h={box.height}&quot;&#xD;&#xA;                            )&#xD;&#xA;                        else:&#xD;&#xA;                            output.append(&#xD;&#xA;                                f&quot;          Box {idx + 1}: {type(box).__name__}&quot;&#xD;&#xA;                            )&#xD;&#xA;&#xD;&#xA;                if (&#xD;&#xA;                    hasattr(e.initial_state.prompt, &quot;point&quot;)&#xD;&#xA;                    and e.initial_state.prompt.point&#xD;&#xA;                ):&#xD;&#xA;                    output.append(&#xD;&#xA;                        f&quot;        📍 Points ({len(e.initial_state.prompt.point)} total):&quot;&#xD;&#xA;                    )&#xD;&#xA;                    for idx, point in enumerate(e.initial_state.prompt.point):&#xD;&#xA;                        point_info = f&quot;          Point {idx + 1}: Type={point.type}&quot;&#xD;&#xA;                        if hasattr(point, &quot;x&quot;) and hasattr(point, &quot;y&quot;):&#xD;&#xA;                            point_info += f&quot;, x={point.x}, y={point.y}&quot;&#xD;&#xA;                        if hasattr(point, &quot;label&quot;):&#xD;&#xA;                            point_info += f&quot;, label={point.label}&quot;&#xD;&#xA;                        output.append(point_info)&#xD;&#xA;&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      ⏹️ Stop Conditions ({len(e.stop_condition)} total):&quot;&#xD;&#xA;                )&#xD;&#xA;                for idx, sc in enumerate(e.stop_condition):&#xD;&#xA;                    condition_info = f&quot;        {idx + 1}. {type(sc).__name__}&quot;&#xD;&#xA;                    # Add specific details for different stop condition types&#xD;&#xA;                    if hasattr(sc, &quot;minutesDuration&quot;):&#xD;&#xA;                        condition_info += f&quot; (Duration: {sc.minutesDuration} minutes)&quot;&#xD;&#xA;                    elif hasattr(sc, &quot;numIterations&quot;):&#xD;&#xA;                        condition_info += f&quot; (Max iterations: {sc.numIterations})&quot;&#xD;&#xA;                    elif hasattr(sc, &quot;threshold&quot;) and hasattr(sc, &quot;metric&quot;):&#xD;&#xA;                        condition_info += (&#xD;&#xA;                            f&quot; (Threshold: {sc.threshold}, Metric: {sc.metric})&quot;&#xD;&#xA;                        )&#xD;&#xA;                    output.append(condition_info)&#xD;&#xA;&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      🖼️ Sample: {e.sample.filename} ({e.sample.extension})&quot;&#xD;&#xA;                )&#xD;&#xA;&#xD;&#xA;        return &quot;\n&quot;.join(output)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    def save_logs_to_file(self, custom_content: str = None) -> str:&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        Save PROBE logs to a file in logs/probe_configurations/ directory with incremental numbering.&#xD;&#xA;&#xD;&#xA;        Args:&#xD;&#xA;            custom_content (str, optional): Custom content to save. If None, uses display_probe() output.&#xD;&#xA;&#xD;&#xA;        Returns:&#xD;&#xA;            str: Confirmation message with the file path&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        import os&#xD;&#xA;        from datetime import datetime&#xD;&#xA;&#xD;&#xA;        # Create logs directory structure&#xD;&#xA;        logs_dir = os.path.join(&quot;logs&quot;, &quot;probe_configurations&quot;)&#xD;&#xA;        os.makedirs(logs_dir, exist_ok=True)&#xD;&#xA;&#xD;&#xA;        # Find the next available number&#xD;&#xA;        counter = 1&#xD;&#xA;        while True:&#xD;&#xA;            filename = f&quot;probe_config{counter}.txt&quot;&#xD;&#xA;            filepath = os.path.join(logs_dir, filename)&#xD;&#xA;            if not os.path.exists(filepath):&#xD;&#xA;                break&#xD;&#xA;            counter += 1&#xD;&#xA;&#xD;&#xA;        # Get content to save&#xD;&#xA;        if custom_content is not None:&#xD;&#xA;            content = custom_content&#xD;&#xA;        else:&#xD;&#xA;            content = self.display_probe()&#xD;&#xA;&#xD;&#xA;        # Add timestamp header&#xD;&#xA;        timestamp = datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)&#xD;&#xA;        header = f&quot;PROBE Configuration - Generated on {timestamp}\n&quot;&#xD;&#xA;        header += &quot;=&quot; * 60 + &quot;\n\n&quot;&#xD;&#xA;        full_content = header + content&#xD;&#xA;&#xD;&#xA;        # Save file&#xD;&#xA;        try:&#xD;&#xA;            with open(filepath, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:&#xD;&#xA;                f.write(full_content)&#xD;&#xA;            return f&quot;✅ Configuration saved successfully to {filepath}&quot;&#xD;&#xA;        except Exception as e:&#xD;&#xA;            return f&quot;❌ Error saving configuration: {str(e)}&quot;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;&#xD;&#xA;        for ds in self.dataset:&#xD;&#xA;            output.append(f&quot;\n📂 Dataset: {ds.name} - {ds.description} ({ds.type})&quot;)&#xD;&#xA;            for ss in ds.subset:&#xD;&#xA;                output.append(f&quot;  📁 Subset: {ss.name}, Path: {ss.path}&quot;)&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;    Data folder: {ss.dataFolderName}, Labels folder: {ss.labelsFolderName}&quot;&#xD;&#xA;                )&#xD;&#xA;                output.append(f&quot;    Samples ({len(ss.sample)} total):&quot;)&#xD;&#xA;                for sp in ss.sample:&#xD;&#xA;                    output.append(&#xD;&#xA;                        f&quot;      🖼️ Sample: {sp.filename} (Format: {sp.extension})&quot;&#xD;&#xA;                    )&#xD;&#xA;&#xD;&#xA;        for i, ot in enumerate(self.optimization_task):&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;\n🚀 Optimization Task {i + 1}: {ot.name} - {ot.description}&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(f&quot;  🔬 Algorithm: {ot.algorithm}&quot;)&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;  🤖 Foundation Model: {ot.foundation_model.name} ({ot.foundation_model.type}) &quot;&#xD;&#xA;                f&quot;v{ot.foundation_model.version}&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;    📁 Checkpoint: {ot.foundation_model.checkpointFilepath}&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(f&quot;    ⚙️ Configuration: {ot.foundation_model.configuration}&quot;)&#xD;&#xA;            if (&#xD;&#xA;                hasattr(ot.foundation_model, &quot;description&quot;)&#xD;&#xA;                and ot.foundation_model.description&#xD;&#xA;            ):&#xD;&#xA;                output.append(f&quot;    📝 Description: {ot.foundation_model.description}&quot;)&#xD;&#xA;&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;  🎯 Optimization Metric: {ot.optimization_metric.name} ({ot.optimization_metric.type})&quot;&#xD;&#xA;            )&#xD;&#xA;            output.append(&#xD;&#xA;                f&quot;  📊 Performance Metrics ({len(ot.performance_metric)} total):&quot;&#xD;&#xA;            )&#xD;&#xA;            for m in ot.performance_metric:&#xD;&#xA;                output.append(f&quot;    - {m.name}&quot;)&#xD;&#xA;&#xD;&#xA;            output.append(f&quot;  🧪 Experiments ({len(ot.experiment)} total):&quot;)&#xD;&#xA;            for e in ot.experiment:&#xD;&#xA;                output.append(f&quot;    ▶ Experiment: {e.name}&quot;)&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      🏁 Initial State: {e.initial_state.description} (Improved: {e.initial_state.hasImproved})&quot;&#xD;&#xA;                )&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      💬 Prompt Type: {type(e.initial_state.prompt).__name__}&quot;&#xD;&#xA;                )&#xD;&#xA;&#xD;&#xA;                # Detailed prompt information&#xD;&#xA;                if (&#xD;&#xA;                    hasattr(e.initial_state.prompt, &quot;bounding_box&quot;)&#xD;&#xA;                    and e.initial_state.prompt.bounding_box&#xD;&#xA;                ):&#xD;&#xA;                    output.append(&#xD;&#xA;                        f&quot;        📦 Bounding Boxes ({len(e.initial_state.prompt.bounding_box)} total):&quot;&#xD;&#xA;                    )&#xD;&#xA;                    for idx, box in enumerate(e.initial_state.prompt.bounding_box):&#xD;&#xA;                        if (&#xD;&#xA;                            hasattr(box, &quot;x&quot;)&#xD;&#xA;                            and hasattr(box, &quot;y&quot;)&#xD;&#xA;                            and hasattr(box, &quot;width&quot;)&#xD;&#xA;                            and hasattr(box, &quot;height&quot;)&#xD;&#xA;                        ):&#xD;&#xA;                            output.append(&#xD;&#xA;                                f&quot;          Box {idx + 1}: x={box.x}, y={box.y}, w={box.width}, h={box.height}&quot;&#xD;&#xA;                            )&#xD;&#xA;                        else:&#xD;&#xA;                            output.append(&#xD;&#xA;                                f&quot;          Box {idx + 1}: {type(box).__name__}&quot;&#xD;&#xA;                            )&#xD;&#xA;&#xD;&#xA;                if (&#xD;&#xA;                    hasattr(e.initial_state.prompt, &quot;point&quot;)&#xD;&#xA;                    and e.initial_state.prompt.point&#xD;&#xA;                ):&#xD;&#xA;                    output.append(&#xD;&#xA;                        f&quot;        📍 Points ({len(e.initial_state.prompt.point)} total):&quot;&#xD;&#xA;                    )&#xD;&#xA;                    for idx, point in enumerate(e.initial_state.prompt.point):&#xD;&#xA;                        point_info = f&quot;          Point {idx + 1}: Type={point.type}&quot;&#xD;&#xA;                        if hasattr(point, &quot;x&quot;) and hasattr(point, &quot;y&quot;):&#xD;&#xA;                            point_info += f&quot;, x={point.x}, y={point.y}&quot;&#xD;&#xA;                        if hasattr(point, &quot;label&quot;):&#xD;&#xA;                            point_info += f&quot;, label={point.label}&quot;&#xD;&#xA;                        output.append(point_info)&#xD;&#xA;&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      ⏹️ Stop Conditions ({len(e.stop_condition)} total):&quot;&#xD;&#xA;                )&#xD;&#xA;                for idx, sc in enumerate(e.stop_condition):&#xD;&#xA;                    condition_info = f&quot;        {idx + 1}. {type(sc).__name__}&quot;&#xD;&#xA;                    # Add specific details for different stop condition types&#xD;&#xA;                    if hasattr(sc, &quot;minutesDuration&quot;):&#xD;&#xA;                        condition_info += f&quot; (Duration: {sc.minutesDuration} minutes)&quot;&#xD;&#xA;                    elif hasattr(sc, &quot;numIterations&quot;):&#xD;&#xA;                        condition_info += f&quot; (Max iterations: {sc.numIterations})&quot;&#xD;&#xA;                    elif hasattr(sc, &quot;threshold&quot;) and hasattr(sc, &quot;metric&quot;):&#xD;&#xA;                        condition_info += (&#xD;&#xA;                            f&quot; (Threshold: {sc.threshold}, Metric: {sc.metric})&quot;&#xD;&#xA;                        )&#xD;&#xA;                    output.append(condition_info)&#xD;&#xA;&#xD;&#xA;                output.append(&#xD;&#xA;                    f&quot;      🖼️ Sample: {e.sample.filename} ({e.sample.extension})&quot;&#xD;&#xA;                )&#xD;&#xA;&#xD;&#xA;        return &quot;\n&quot;.join(output)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    def save_logs_to_file(self, custom_content: str = None) -> str:&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        Save PROBE logs to a file in logs/PROBE_configurations/ directory with incremental numbering.&#xD;&#xA;&#xD;&#xA;        Args:&#xD;&#xA;            custom_content (str, optional): Custom content to save. If None, uses display_PROBE() output.&#xD;&#xA;&#xD;&#xA;        Returns:&#xD;&#xA;            str: Confirmation message with the file path&#xD;&#xA;        &quot;&quot;&quot;&#xD;&#xA;        import os&#xD;&#xA;        from datetime import datetime&#xD;&#xA;&#xD;&#xA;        # Create logs directory structure&#xD;&#xA;        logs_dir = os.path.join(&quot;logs&quot;, &quot;PROBE_configurations&quot;)&#xD;&#xA;        os.makedirs(logs_dir, exist_ok=True)&#xD;&#xA;&#xD;&#xA;        # Find the next available number&#xD;&#xA;        counter = 1&#xD;&#xA;        while True:&#xD;&#xA;            filename = f&quot;PROBE_config{counter}.txt&quot;&#xD;&#xA;            filepath = os.path.join(logs_dir, filename)&#xD;&#xA;            if not os.path.exists(filepath):&#xD;&#xA;                break&#xD;&#xA;            counter += 1&#xD;&#xA;&#xD;&#xA;        # Get content to save&#xD;&#xA;        if custom_content is not None:&#xD;&#xA;            content = custom_content&#xD;&#xA;        else:&#xD;&#xA;            content = self.display_PROBE()&#xD;&#xA;&#xD;&#xA;        # Add timestamp header&#xD;&#xA;        timestamp = datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)&#xD;&#xA;        header = f&quot;PROBE Configuration - Generated on {timestamp}\n&quot;&#xD;&#xA;        header += &quot;=&quot; * 60 + &quot;\n\n&quot;&#xD;&#xA;        full_content = header + content&#xD;&#xA;&#xD;&#xA;        # Save file&#xD;&#xA;        try:&#xD;&#xA;            with open(filepath, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:&#xD;&#xA;                f.write(full_content)&#xD;&#xA;            return f&quot;✅ Configuration saved successfully to {filepath}&quot;&#xD;&#xA;        except Exception as e:&#xD;&#xA;            return f&quot;❌ Error saving configuration: {str(e)}&quot;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
             <ifExpr xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -2221,7 +2221,7 @@
                 <source xsi:type="ocl.ecore:OperationCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generatePythonApp/aPROBE">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
                   </source>
                   <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
                 </source>
@@ -2262,7 +2262,7 @@
                 <source xsi:type="ocl.ecore:OperationCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generatePythonApp/aPROBE">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
                   </source>
                   <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
                 </source>
@@ -2277,11 +2277,11 @@
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;# Processing device&#xD;&#xA;processing_device = DeviceType."/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
-          <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//DeviceType"/>
+          <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//DeviceType"/>
           <source xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generatePythonApp/aPROBE">
-            <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+            <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//PROBE/device"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//PROBE/device"/>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;&#xD;&#xA;# Build datasets&#xD;&#xA;datasets = "/>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
@@ -2293,25 +2293,25 @@
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="d" referredVariable="/0/generatePythonApp/%.3/%.8/d">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Dataset/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Dataset/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;        description=&quot;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="d" referredVariable="/0/generatePythonApp/%.3/%.8/d">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Dataset/description"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Dataset/description"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;        type=DataType."/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
-            <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//DataType"/>
+            <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//DataType"/>
             <source xsi:type="ocl.ecore:VariableExp" name="d" referredVariable="/0/generatePythonApp/%.3/%.8/d">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Dataset/type"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Dataset/type"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xD;&#xA;        subset="/>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
@@ -2323,33 +2323,33 @@
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="subset" referredVariable="/0/generatePythonApp/%.3/%.8/%.9/subset">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Subset/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Subset/name"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;                path=os.path.join(os.getcwd(), &quot;"/>
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="subset" referredVariable="/0/generatePythonApp/%.3/%.8/%.9/subset">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Subset/path"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Subset/path"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;),&#xD;&#xA;                dataFolderName=&quot;"/>
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="subset" referredVariable="/0/generatePythonApp/%.3/%.8/%.9/subset">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Subset/dataFolderName"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Subset/dataFolderName"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;                labelsFolderName=&quot;"/>
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="subset" referredVariable="/0/generatePythonApp/%.3/%.8/%.9/subset">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Subset/labelsFolderName"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Subset/labelsFolderName"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;                sample="/>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
@@ -2361,27 +2361,27 @@
               <body xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="sample" referredVariable="/0/generatePythonApp/%.3/%.8/%.9/%.11/sample">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Sample/filename"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Sample/filename"/>
               </body>
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;                        extension=FileFormatType."/>
               <body xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//FileFormatType"/>
+                <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//FileFormatType"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="sample" referredVariable="/0/generatePythonApp/%.3/%.8/%.9/%.11/sample">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Sample/extension"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Sample/extension"/>
               </body>
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;                    )"/>
               <loopVariable name="sample">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
               </loopVariable>
               <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(Sample)">
                 <source xsi:type="ocl.ecore:VariableExp" name="subset" referredVariable="/0/generatePythonApp/%.3/%.8/%.9/subset">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Subset/sample"/>
+                <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Subset/sample"/>
               </iterSet>
               <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -2393,13 +2393,13 @@
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;            )"/>
             <loopVariable name="subset">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
             </loopVariable>
             <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(Subset)">
               <source xsi:type="ocl.ecore:VariableExp" name="d" referredVariable="/0/generatePythonApp/%.3/%.8/d">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Dataset/subset"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Dataset/subset"/>
             </iterSet>
             <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -2411,13 +2411,13 @@
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;    )"/>
           <loopVariable name="d">
-            <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+            <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(Dataset)">
             <source xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generatePythonApp/aPROBE">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
             </source>
-            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//PROBE/dataset"/>
+            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//PROBE/dataset"/>
           </iterSet>
           <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -2436,97 +2436,97 @@
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//OptimizationTask/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//OptimizationTask/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;        description=&quot;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//OptimizationTask/description"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//OptimizationTask/description"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;        algorithm=OptimizationAlgorithm."/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
-            <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//OptimizationAlgorithm"/>
+            <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//OptimizationAlgorithm"/>
             <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//OptimizationTask/algorithm"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//OptimizationTask/algorithm"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xD;&#xA;        foundation_model=FoundationModel(&#xD;&#xA;            name=&quot;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//FoundationModel"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//FoundationModel"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/foundation_model"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/foundation_model"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//FoundationModel/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//FoundationModel/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;            version="/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//FoundationModel"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//FoundationModel"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/foundation_model"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/foundation_model"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//FoundationModel/version"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//FoundationModel/version"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xD;&#xA;            description=&quot;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//FoundationModel"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//FoundationModel"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/foundation_model"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/foundation_model"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//FoundationModel/description"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//FoundationModel/description"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;            checkpointFilepath=os.path.join(os.getcwd(), &quot;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//FoundationModel"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//FoundationModel"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/foundation_model"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/foundation_model"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//FoundationModel/checkpointFilepath"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//FoundationModel/checkpointFilepath"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;),&#xD;&#xA;            configuration=&quot;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//FoundationModel"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//FoundationModel"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/foundation_model"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/foundation_model"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//FoundationModel/configuration"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//FoundationModel/configuration"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;            type=ModelType."/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
-            <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//ModelType"/>
+            <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//ModelType"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//FoundationModel"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//FoundationModel"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/foundation_model"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/foundation_model"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//FoundationModel/type"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//FoundationModel/type"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;        ),&#xD;&#xA;        experiment="/>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
@@ -2539,17 +2539,17 @@
               <body xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="exp" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/exp">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Experiment/name"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Experiment/name"/>
               </body>
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;                initial_state=State(&#xD;&#xA;                    description=&quot;"/>
               <body xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="initial_state" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/initial_state">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//State/description"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//State/description"/>
               </body>
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;                    hasImproved="/>
               <body xsi:type="mtl:IfBlock">
@@ -2557,9 +2557,9 @@
                 <ifExpr xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="initial_state" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/initial_state">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//State/hasImproved"/>
+                  <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//State/hasImproved"/>
                 </ifExpr>
                 <else>
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="False"/>
@@ -2575,38 +2575,38 @@
                   <body xsi:type="mtl:ForBlock">
                     <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BoundingBox()"/>
                     <loopVariable name="bb">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
                     </loopVariable>
                     <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/15/Sequence(BoundingBox)">
                       <source xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(BoundingBox)">
                         <source xsi:type="ocl.ecore:OperationCallExp">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                           <source xsi:type="ocl.ecore:PropertyCallExp">
-                            <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Prompt"/>
+                            <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Prompt"/>
                             <source xsi:type="ocl.ecore:VariableExp" name="initial_state" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/initial_state">
-                              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                             </source>
-                            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//State/prompt"/>
+                            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//State/prompt"/>
                           </source>
                           <argument xsi:type="ocl.ecore:TypeExp" eType="/16/PromptForImage">
-                            <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                            <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                           </argument>
                           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                         </source>
-                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//PromptForImage/bounding_box"/>
+                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//PromptForImage/bounding_box"/>
                       </source>
                       <body xsi:type="ocl.ecore:OperationCallExp">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.7/%.1/%.1/collect/temp1">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
                         </source>
                         <argument xsi:type="ocl.ecore:TypeExp" eType="/16/BoundingBox">
-                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
                         </argument>
                         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                       </body>
                       <iterator xsi:type="ocl.ecore:Variable" name="temp1">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
                       </iterator>
                     </iterSet>
                     <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
@@ -2620,20 +2620,20 @@
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(BoundingBox)">
                       <source xsi:type="ocl.ecore:OperationCallExp">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                         <source xsi:type="ocl.ecore:PropertyCallExp">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Prompt"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Prompt"/>
                           <source xsi:type="ocl.ecore:VariableExp" name="initial_state" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/initial_state">
-                            <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                            <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                           </source>
-                          <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//State/prompt"/>
+                          <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//State/prompt"/>
                         </source>
                         <argument xsi:type="ocl.ecore:TypeExp" eType="/16/PromptForImage">
-                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                         </argument>
                         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//PromptForImage/bounding_box"/>
+                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//PromptForImage/bounding_box"/>
                     </source>
                     <argument xsi:type="ocl.ecore:NullLiteralExp">
                       <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
@@ -2652,46 +2652,46 @@
                   <body xsi:type="mtl:ForBlock">
                     <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Point(type=PointType."/>
                     <body xsi:type="ocl.ecore:PropertyCallExp">
-                      <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//PointType"/>
+                      <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//PointType"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.7/%.3/%.1/p">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Point/type"/>
+                      <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Point/type"/>
                     </body>
                     <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")"/>
                     <loopVariable name="p">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
                     </loopVariable>
                     <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/15/Sequence(Point)">
                       <source xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(Point)">
                         <source xsi:type="ocl.ecore:OperationCallExp">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                           <source xsi:type="ocl.ecore:PropertyCallExp">
-                            <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Prompt"/>
+                            <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Prompt"/>
                             <source xsi:type="ocl.ecore:VariableExp" name="initial_state" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/initial_state">
-                              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                             </source>
-                            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//State/prompt"/>
+                            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//State/prompt"/>
                           </source>
                           <argument xsi:type="ocl.ecore:TypeExp" eType="/16/PromptForImage">
-                            <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                            <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                           </argument>
                           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                         </source>
-                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//PromptForImage/point"/>
+                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//PromptForImage/point"/>
                       </source>
                       <body xsi:type="ocl.ecore:OperationCallExp">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.7/%.3/%.1/collect/temp2">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
                         </source>
                         <argument xsi:type="ocl.ecore:TypeExp" eType="/16/Point">
-                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
                         </argument>
                         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                       </body>
                       <iterator xsi:type="ocl.ecore:Variable" name="temp2">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
                       </iterator>
                     </iterSet>
                     <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
@@ -2705,20 +2705,20 @@
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(Point)">
                       <source xsi:type="ocl.ecore:OperationCallExp">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                         <source xsi:type="ocl.ecore:PropertyCallExp">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Prompt"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Prompt"/>
                           <source xsi:type="ocl.ecore:VariableExp" name="initial_state" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/initial_state">
-                            <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                            <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                           </source>
-                          <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//State/prompt"/>
+                          <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//State/prompt"/>
                         </source>
                         <argument xsi:type="ocl.ecore:TypeExp" eType="/16/PromptForImage">
-                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                         </argument>
                         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//PromptForImage/point"/>
+                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//PromptForImage/point"/>
                     </source>
                     <argument xsi:type="ocl.ecore:NullLiteralExp">
                       <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
@@ -2733,14 +2733,14 @@
                 <ifExpr xsi:type="ocl.ecore:OperationCallExp">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                   <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Prompt"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Prompt"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="initial_state" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/initial_state">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//State/prompt"/>
+                    <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//State/prompt"/>
                   </source>
                   <argument xsi:type="ocl.ecore:TypeExp" eType="/16/PromptForImage">
-                    <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+                    <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
                   </argument>
                   <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
                 </ifExpr>
@@ -2752,18 +2752,18 @@
                   <ifExpr xsi:type="ocl.ecore:OperationCallExp">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Prompt"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Prompt"/>
                       <source xsi:type="ocl.ecore:PropertyCallExp">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="exp" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/exp">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
                         </source>
-                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Experiment/initial_state"/>
+                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Experiment/initial_state"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//State/prompt"/>
+                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//State/prompt"/>
                     </source>
                     <argument xsi:type="ocl.ecore:TypeExp" eType="/16/PromptForText">
-                      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForText"/>
+                      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForText"/>
                     </argument>
                     <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
                   </ifExpr>
@@ -2773,18 +2773,18 @@
                   <ifExpr xsi:type="ocl.ecore:OperationCallExp">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                     <source xsi:type="ocl.ecore:PropertyCallExp">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Prompt"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Prompt"/>
                       <source xsi:type="ocl.ecore:PropertyCallExp">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="exp" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/exp">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
                         </source>
-                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Experiment/initial_state"/>
+                        <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Experiment/initial_state"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//State/prompt"/>
+                      <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//State/prompt"/>
                     </source>
                     <argument xsi:type="ocl.ecore:TypeExp" eType="/16/PromptForAudio">
-                      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForAudio"/>
+                      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForAudio"/>
                     </argument>
                     <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
                   </ifExpr>
@@ -2800,25 +2800,25 @@
                   <body xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
                     <source xsi:type="ocl.ecore:OperationCallExp">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//TimeLimit"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//TimeLimit"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="sc" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.10/sc">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
                       </source>
                       <argument xsi:type="ocl.ecore:TypeExp" eType="/16/TimeLimit">
-                        <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//TimeLimit"/>
+                        <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//TimeLimit"/>
                       </argument>
                       <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//TimeLimit/minutesDuration"/>
+                    <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//TimeLimit/minutesDuration"/>
                   </body>
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")"/>
                   <ifExpr xsi:type="ocl.ecore:OperationCallExp">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="sc" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.10/sc">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
                     </source>
                     <argument xsi:type="ocl.ecore:TypeExp" eType="/16/TimeLimit">
-                      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//TimeLimit"/>
+                      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//TimeLimit"/>
                     </argument>
                     <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
                   </ifExpr>
@@ -2830,25 +2830,25 @@
                     <body xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                       <source xsi:type="ocl.ecore:OperationCallExp">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//MaxIterations"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//MaxIterations"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="sc" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.10/sc">
-                          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+                          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
                         </source>
                         <argument xsi:type="ocl.ecore:TypeExp" eType="/16/MaxIterations">
-                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//MaxIterations"/>
+                          <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//MaxIterations"/>
                         </argument>
                         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                       </source>
-                      <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//MaxIterations/numIterations"/>
+                      <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//MaxIterations/numIterations"/>
                     </body>
                     <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")"/>
                     <ifExpr xsi:type="ocl.ecore:OperationCallExp">
                       <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="sc" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.10/sc">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
                       </source>
                       <argument xsi:type="ocl.ecore:TypeExp" eType="/16/MaxIterations">
-                        <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//MaxIterations"/>
+                        <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//MaxIterations"/>
                       </argument>
                       <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
                     </ifExpr>
@@ -2858,23 +2858,23 @@
                     <ifExpr xsi:type="ocl.ecore:OperationCallExp">
                       <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="sc" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/%/%.10/sc">
-                        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+                        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
                       </source>
                       <argument xsi:type="ocl.ecore:TypeExp" eType="/16/NoImprovement">
-                        <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//NoImprovement"/>
+                        <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//NoImprovement"/>
                       </argument>
                       <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
                     </ifExpr>
                   </elseIf>
                 </body>
                 <loopVariable name="sc">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
                 </loopVariable>
                 <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(StopCondition)">
                   <source xsi:type="ocl.ecore:VariableExp" name="exp" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/exp">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Experiment/stop_condition"/>
+                  <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Experiment/stop_condition"/>
                 </iterSet>
                 <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -2887,53 +2887,53 @@
               <body xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="exp" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/exp">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Experiment/sample"/>
+                  <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Experiment/sample"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Sample/filename"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Sample/filename"/>
               </body>
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;,&#xD;&#xA;                    extension=FileFormatType."/>
               <body xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//FileFormatType"/>
+                <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//FileFormatType"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="exp" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/exp">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
                   </source>
-                  <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Experiment/sample"/>
+                  <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Experiment/sample"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Sample/extension"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Sample/extension"/>
               </body>
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;                )&#xD;&#xA;            )&#xD;&#xA;"/>
               <letVariable name="initial_state">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                 <initExpression xsi:type="ocl.ecore:OperationCallExp">
-                  <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                  <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                   <source xsi:type="ocl.ecore:PropertyCallExp">
-                    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="exp" referredVariable="/0/generatePythonApp/%.3/%.13/%.21/exp">
-                      <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+                      <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
                     </source>
-                    <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//Experiment/initial_state"/>
+                    <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//Experiment/initial_state"/>
                   </source>
                   <argument xsi:type="ocl.ecore:TypeExp" eType="/16/State">
-                    <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+                    <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
                   </argument>
                   <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
                 </initExpression>
               </letVariable>
             </body>
             <loopVariable name="exp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
             </loopVariable>
             <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(Experiment)">
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/experiment"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/experiment"/>
             </iterSet>
             <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -2947,25 +2947,25 @@
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/optimization_metric"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/optimization_metric"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Metric/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Metric/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, type=MetricType."/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
-            <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//MetricType"/>
+            <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//MetricType"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/optimization_metric"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/optimization_metric"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Metric/type"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Metric/type"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="),&#xD;&#xA;        performance_metric="/>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
@@ -2977,27 +2977,27 @@
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="metric" referredVariable="/0/generatePythonApp/%.3/%.13/%.31/metric">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Metric/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Metric/name"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, type=MetricType."/>
             <body xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EEnum" href="https://www.example.org/probe#//MetricType"/>
+              <eType xsi:type="ecore:EEnum" href="https://www.example.org/PROBE#//MetricType"/>
               <source xsi:type="ocl.ecore:VariableExp" name="metric" referredVariable="/0/generatePythonApp/%.3/%.13/%.31/metric">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/probe#//Metric/type"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="https://www.example.org/PROBE#//Metric/type"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xD;&#xA;   )"/>
             <loopVariable name="metric">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
             </loopVariable>
             <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(Metric)">
               <source xsi:type="ocl.ecore:VariableExp" name="ot" referredVariable="/0/generatePythonApp/%.3/%.13/ot">
-                <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+                <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//OptimizationTask/performance_metric"/>
+              <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//OptimizationTask/performance_metric"/>
             </iterSet>
             <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3009,13 +3009,13 @@
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;    )&#xD;&#xA;"/>
           <loopVariable name="ot">
-            <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+            <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/15/OrderedSet(OptimizationTask)">
             <source xsi:type="ocl.ecore:VariableExp" name="aPROBE" referredVariable="/0/generatePythonApp/aPROBE">
-              <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+              <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
             </source>
-            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/probe#//PROBE/optimization_task"/>
+            <referredProperty xsi:type="ecore:EReference" href="https://www.example.org/PROBE#//PROBE/optimization_task"/>
           </iterSet>
           <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -3024,7 +3024,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;&#xD;&#xA;# Build the PROBE instance&#xD;&#xA;probe = PROBE(&#xD;&#xA;    device=processing_device,&#xD;&#xA;    dataset=datasets,&#xD;&#xA;    optimization_task=optimization_task&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;if __name__ == &quot;__main__&quot;:&#xD;&#xA;    &#xD;&#xA;    # Print the starting message&#xD;&#xA;    print(&quot;🚀 Starting PROBE - SAM Optimization Interface...&quot;)&#xD;&#xA;    print(&quot;📝 Press Ctrl+C to exit&quot;)&#xD;&#xA;&#xD;&#xA;    # Create and launch the interface&#xD;&#xA;    interface = PROBEInterface(probe)&#xD;&#xA;    interface.launch()&#xD;&#xA;&#xD;&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xD;&#xA;&#xD;&#xA;# Build the PROBE instance&#xD;&#xA;PROBE = PROBE(&#xD;&#xA;    device=processing_device,&#xD;&#xA;    dataset=datasets,&#xD;&#xA;    optimization_task=optimization_task&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;if __name__ == &quot;__main__&quot;:&#xD;&#xA;    &#xD;&#xA;    # Print the starting message&#xD;&#xA;    print(&quot;🚀 Starting PROBE - SAM Optimization Interface...&quot;)&#xD;&#xA;    print(&quot;📝 Press Ctrl+C to exit&quot;)&#xD;&#xA;&#xD;&#xA;    # Create and launch the interface&#xD;&#xA;    interface = PROBEInterface(PROBE)&#xD;&#xA;    interface.launch()&#xD;&#xA;&#xD;&#xA;"/>
         <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="PROBEDemo.py">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </fileUrl>
@@ -3033,7 +3033,7 @@
         </charset>
       </body>
       <parameter name="aPROBE">
-        <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+        <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
       </parameter>
     </ownedModuleElement>
   </mtl:Module>
@@ -3064,7 +3064,7 @@
         <eAnnotations source="MTL" references="/0/generateElement"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aPROBE">
-          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
         </eParameters>
       </eOperations>
       <eOperations name="generatePythonEnumerationClasses">
@@ -3094,7 +3094,7 @@
         <eAnnotations source="MTL" references="/0/generatePythonApp"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aPROBE">
-          <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+          <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
         </eParameters>
       </eOperations>
     </eClassifiers>
@@ -3127,7 +3127,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PROBE_PROBE_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="https://www.example.org/probe#//PROBE"/>
+        <references href="https://www.example.org/PROBE#//PROBE"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ecore_EPackage_Class">
@@ -3140,22 +3140,22 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -3207,49 +3207,49 @@
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Dataset)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Subset)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Sample)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(OptimizationTask)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Experiment)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(BoundingBox)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:CollectionType" name="Collection(BoundingBox)" instanceClassName="java.util.Collection">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(BoundingBox)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(BoundingBox)" instanceClassName="java.util.List">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Point)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:CollectionType" name="Collection(Point)" instanceClassName="java.util.Collection">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Point)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Point)" instanceClassName="java.util.List">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(StopCondition)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Metric)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+      <elementType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
     </eClassifiers>
   </ecore:EPackage>
   <ecore:EPackage name="types">
@@ -3260,31 +3260,31 @@
       <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="State">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//State"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//State"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="PromptForImage">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForImage"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForImage"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="BoundingBox">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="Point">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="PromptForText">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForText"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForText"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="PromptForAudio">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PromptForAudio"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PromptForAudio"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="TimeLimit">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//TimeLimit"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//TimeLimit"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="MaxIterations">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//MaxIterations"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//MaxIterations"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:TypeType" name="NoImprovement">
-      <referredType xsi:type="ecore:EClass" href="https://www.example.org/probe#//NoImprovement"/>
+      <referredType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//NoImprovement"/>
     </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
@@ -3807,31 +3807,28 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
@@ -3840,13 +3837,16 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
@@ -3858,319 +3858,319 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Sample"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Sample"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="i">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Subset"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Dataset"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Subset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="i">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//BoundingBox"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Dataset"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Point"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//StopCondition"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//BoundingBox"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Experiment"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Point"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//Metric"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//StopCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//OptimizationTask"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Experiment"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="https://www.example.org/probe#//PROBE"/>
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//Metric"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//OptimizationTask"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="https://www.example.org/PROBE#//PROBE"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>

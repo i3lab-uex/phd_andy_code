@@ -382,7 +382,7 @@ optimization_task = [
 ]
 
 # Build the PROBE instance
-probe = PROBE(
+PROBE = PROBE(
     device=processing_device, dataset=datasets, optimization_task=optimization_task
 )
 
@@ -393,5 +393,5 @@ if __name__ == "__main__":
     print("📝 Press Ctrl+C to exit")
 
     # Create and launch the interface
-    interface = PROBEInterface(probe)
+    interface = PROBEInterface(PROBE)
     interface.launch()

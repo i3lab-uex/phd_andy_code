@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Probe:PROBE
+<PROBE:PROBE
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:Probe="https://www.example.org/probe"
-    xsi:schemaLocation="https://www.example.org/probe ../metamodel/probe.ecore">
+    xmlns:PROBE="https://www.example.org/PROBE"
+    xsi:schemaLocation="https://www.example.org/PROBE ../metamodel/PROBE.ecore">
   <dataset name="Coronacases"
       description="Lung CT (Coronacases Dataset)">
     <subset
@@ -62,7 +62,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -71,12 +71,12 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:NoImprovement"/>
+          xsi:type="PROBE:NoImprovement"/>
       <stop_condition
-          xsi:type="Probe:TimeLimit"
+          xsi:type="PROBE:TimeLimit"
           minutesDuration="5.0"/>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -85,7 +85,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -94,7 +94,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -103,7 +103,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -112,7 +112,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -121,7 +121,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -130,7 +130,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -139,7 +139,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -148,7 +148,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -157,7 +157,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -166,7 +166,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -175,7 +175,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -184,7 +184,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -193,7 +193,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -202,7 +202,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -211,7 +211,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -220,7 +220,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
     <experiment
@@ -229,7 +229,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -238,7 +238,7 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
   </optimization_task>
@@ -271,7 +271,7 @@
       <initial_state
           description="Experiment 1 Initial State">
         <prompt
-            xsi:type="Probe:PromptForImage">
+            xsi:type="PROBE:PromptForImage">
           <point/>
           <point/>
           <point
@@ -280,13 +280,13 @@
         </prompt>
       </initial_state>
       <stop_condition
-          xsi:type="Probe:NoImprovement"/>
+          xsi:type="PROBE:NoImprovement"/>
       <stop_condition
-          xsi:type="Probe:TimeLimit"
+          xsi:type="PROBE:TimeLimit"
           minutesDuration="5.0"/>
       <stop_condition
-          xsi:type="Probe:MaxIterations"
+          xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
     </experiment>
   </optimization_task>
-</Probe:PROBE>
+</PROBE:PROBE>

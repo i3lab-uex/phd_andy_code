@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package probe_code_generation.main;
+package PROBE_code_generation.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/probe_code_generation/main/generate";
+    public static final String MODULE_FILE_NAME = "/PROBE_code_generation/main/generate";
     
     /**
      * The name of the templates that are to be generated.

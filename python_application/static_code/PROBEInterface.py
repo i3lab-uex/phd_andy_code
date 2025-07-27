@@ -436,7 +436,7 @@ class PROBEInterface:
                         label="Status", lines=2, interactive=False
                     )
 
-                    display_button.click(self.probe.display_probe, outputs=probe_output)
+                    display_button.click(self.probe.display_PROBE, outputs=probe_output)
                     save_button.click(
                         self.probe.save_logs_to_file, outputs=status_output
                     )

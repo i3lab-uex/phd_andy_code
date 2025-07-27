@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package probe_code_generation;
+package PROBE_code_generation;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
@@ -21,7 +21,7 @@ public class Activator extends Plugin {
     /**
      * The plug-in ID.
      */
-    public static final String PLUGIN_ID = "probe_Acceleo_code_generation";
+    public static final String PLUGIN_ID = "PROBE_Acceleo_code_generation";
 
     /**
      * The shared instance.

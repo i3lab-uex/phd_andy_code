@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="generate" name="probe_code_generation">
+<project default="generate" name="PROBE_code_generation">
     <property name="ECLIPSE_HOME" value="../../../../eclipse/modeling-2024-06/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../../eclipse-workspace"/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="probe_code_generation.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/probe_code_generation/bin"/>
+    <path id="PROBE_code_generation.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/PROBE_code_generation/bin"/>
     </path>
 
-    <path id="probe_code_generation.classpath">
-        <path refid="probe_code_generation.libraryclasspath"/>
+    <path id="PROBE_code_generation.classpath">
+        <path refid="PROBE_code_generation.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="probe_code_generation.libraryclasspath.alljars">
-        <pathelement location="../probe_code_generation/bin"/>
+    <path id="PROBE_code_generation.libraryclasspath.alljars">
+        <pathelement location="../PROBE_code_generation/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="probe_code_generation.classpath.alljars">
-        <path refid="probe_code_generation.libraryclasspath.alljars"/>
+    <path id="PROBE_code_generation.classpath.alljars">
+        <path refid="PROBE_code_generation.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="generate">
-        <java classname="probe_code_generation.main.Generate" classpathref="probe_code_generation.classpath">
+        <java classname="PROBE_code_generation.main.Generate" classpathref="PROBE_code_generation.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -35,7 +35,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generate.alljars">
-        <java classname="probe_code_generation.main.Generate" classpathref="probe_code_generation.classpath">
+        <java classname="PROBE_code_generation.main.Generate" classpathref="PROBE_code_generation.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

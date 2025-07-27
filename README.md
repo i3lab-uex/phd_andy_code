@@ -2,17 +2,17 @@
 
 This project contains the code projects for the thesis titled "[Thesis Title]". The code is organized into the following directories: each one corresponding to a different project nature:
 
-- `probe` - Contains the Eclipse EMF project with the `probe.ecore` metamodel, its graphical clas diagram visualization `probe.aird` and its model XML instance file `probe/model/PROBE_coronacases_optimization.xmi`. You can find the metamodel and model instructions in the [README.md](probe/README.md) file.
+- `PROBE` - Contains the Eclipse EMF project with the `PROBE.ecore` metamodel, its graphical clas diagram visualization `PROBE.aird` and its model XML instance file `PROBE/model/PROBE_coronacases_optimization.xmi`. You can find the metamodel and model instructions in the [README.md](PROBE/README.md) file.
 
 
-- `probe_code_generation` - Contains the Acceleo code generation project with the code transformations in the mtl file `probe_code_generation/src/probe_Acceleo_code_generation/main/generate.mtl`. You can find the code generation instructions in the [README.md](probe_code_generation/README.md) file.
+- `PROBE_code_generation` - Contains the Acceleo code generation project with the code transformations in the mtl file `PROBE_code_generation/src/PROBE_Acceleo_code_generation/main/generate.mtl`. You can find the code generation instructions in the [README.md](PROBE_code_generation/README.md) file.
 
 
-- `python_application` - Contains the Python application that uses the generated code from Acceleo and the static one. The main script is located at `python_application/ProbeDemo.py`. You can find the Python application instructions in the [README.md](python_application/README.md) file.
+- `python_application` - Contains the Python application that uses the generated code from Acceleo and the static one. The main script is located at `python_application/PROBEDemo.py`. You can find the Python application instructions in the [README.md](python_application/README.md) file.
 
 ## Table of Contents
 
-1. [PROBE Metamodel](#probe-metamodel)
+1. [PROBE Metamodel](#PROBE-metamodel)
 2. [Project Structure](#project-structure)
 3. [Citing This Work](#citing-this-work)
 
@@ -20,7 +20,7 @@ This project contains the code projects for the thesis titled "[Thesis Title]". 
 
 You can appreciate the metamodel of the PROBE project in the following image:
 
-![Probe Metamodel](probe/metamodel/images/ProbeMM.png)
+![PROBE Metamodel](PROBE/metamodel/images/PROBEMM.png)
 
 
 ## Project Structure
@@ -29,17 +29,17 @@ The project is structured as follows:
 
 ```
 phd2_code/
-├── probe/                             # Eclipse EMF project
+├── PROBE/                             # Eclipse EMF project
 │   ├── metamodel/
-│   │   ├── probe.aird                 # Graphical visualization
-│   │   └── probe.ecore                # Metamodel definition
+│   │   ├── PROBE.aird                 # Graphical visualization
+│   │   └── PROBE.ecore                # Metamodel definition
 │   ├── model/                         # Model folder
 │   │   └── PROBE_coronacases_optimization.xmi  # Example model
 │   └── README.md                      # Project documentation
 │
-├── probe_code_generation/             # Acceleo code generation project
+├── PROBE_code_generation/             # Acceleo code generation project
 │   ├── src/
-│   │   └── probe_Acceleo_code_generation/
+│   │   └── PROBE_Acceleo_code_generation/
 │   │       └── main/
 │   │           └── generate.mtl       # Code transformations
 │   └── README.md                      # Project documentation
