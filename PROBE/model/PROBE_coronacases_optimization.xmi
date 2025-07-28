@@ -35,23 +35,23 @@
     </subset>
   </dataset>
   <optimization_task
-      name="Genetic Algorithms"
+      name="Genetic Algorithms - SAM ViT-L"
       description="Tarea de optimización mediante el uso de algoritmos genéticos">
     <performance_metric
         name="Jaccard Index"
-        baseline="0.9738"/>
+        baseline="0.9782"/>
     <performance_metric
         name="Dice Coefficient"
         type="DICE"
-        baseline="0.9866"/>
+        baseline="0.9888"/>
     <performance_metric
         name="SAM Score"
         type="SAM_SCORE"/>
     <foundation_model
-        name="vit_h"
+        name="vit_l"
         version="1.0"
-        description="SAM ViT-H"
-        checkpointFilepath="model_checkpoints/sam_vit_h_4b8939.pth"
+        description="SAM ViT-L"
+        checkpointFilepath="model_checkpoints/sam_vit_l_0b3195.pth"
         configuration=""/>
     <optimization_metric
         name="Sam Score as an optimization metric"
@@ -243,16 +243,15 @@
     </experiment>
   </optimization_task>
   <optimization_task
-      name="Swarm Algorithms"
-      description="Tarea de optimización mediante el uso de algoritmos de enjambres (SWARM)"
-      algorithm="PARTICLE_SWARM">
+      name="Genetic Algorithms - MedSAM ViT-B"
+      description="Tarea de optimización mediante el uso de algoritmos genéticos">
     <performance_metric
         name="Jaccard Index"
-        baseline="0.9738"/>
+        baseline="0.9782"/>
     <performance_metric
         name="Dice Coefficient"
         type="DICE"
-        baseline="0.9866"/>
+        baseline="0.9888"/>
     <performance_metric
         name="SAM Score"
         type="SAM_SCORE"/>
@@ -284,6 +283,168 @@
       <stop_condition
           xsi:type="PROBE:TimeLimit"
           minutesDuration="5.0"/>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.1"
+        name="Experiment 2 - coronacases_002">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.2"
+        name="Experiment 3 - coronacases_003">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.3"
+        name="Experiment 4 - coronacases_004">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.4"
+        name="Experiment 5 - coronacases_005">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.5"
+        name="Experiment 6 - coronacases_006">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.6"
+        name="Experiment 7 - coronacases_007">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.7"
+        name="Experiment 8 - coronacases_008">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.8"
+        name="Experiment 9 - coronacases_009">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
+      <stop_condition
+          xsi:type="PROBE:MaxIterations"
+          numIterations="1000"/>
+    </experiment>
+    <experiment
+        sample="//@dataset.0/@subset.0/@sample.9"
+        name="Experiment 10 - coronacases_010">
+      <initial_state
+          description="Experiment 1 Initial State">
+        <prompt
+            xsi:type="PROBE:PromptForImage">
+          <point/>
+          <point/>
+          <point
+              type="NEGATIVE"/>
+          <bounding_box/>
+        </prompt>
+      </initial_state>
       <stop_condition
           xsi:type="PROBE:MaxIterations"
           numIterations="1000"/>
