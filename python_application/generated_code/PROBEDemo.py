@@ -95,15 +95,15 @@ datasets = [
 # Build optimization tasks
 optimization_task = [
     OptimizationTask(
-        name="Genetic Algorithms",
+        name="Genetic Algorithms - SAM ViT-L",
         description="Tarea de optimización mediante el uso de algoritmos genéticos",
         algorithm=OptimizationAlgorithm.GENETIC,
         foundation_model=FoundationModel(
-            name="vit_h",
+            name="vit_l",
             version=1.0,
-            description="SAM ViT-H",
+            description="SAM ViT-L",
             checkpointFilepath=os.path.join(
-                os.getcwd(), "model_checkpoints/sam_vit_h_4b8939.pth"
+                os.getcwd(), "model_checkpoints/sam_vit_l_0b3195.pth"
             ),
             configuration="",
             type=ModelType.IMAGE_SEGMENTATION,
@@ -323,9 +323,9 @@ optimization_task = [
         ],
     ),
     OptimizationTask(
-        name="Swarm Algorithms",
-        description="Tarea de optimización mediante el uso de algoritmos de enjambres (SWARM)",
-        algorithm=OptimizationAlgorithm.PARTICLE_SWARM,
+        name="Genetic Algorithms - MedSAM ViT-B",
+        description="Tarea de optimización mediante el uso de algoritmos genéticos",
+        algorithm=OptimizationAlgorithm.GENETIC,
         foundation_model=FoundationModel(
             name="vit_b",
             version=1.0,
@@ -359,7 +359,178 @@ optimization_task = [
                 sample=Sample(
                     filename="coronacases_001.nii.gz", extension=FileFormatType.NIFTI
                 ),
-            )
+            ),
+            Experiment(
+                name="Experiment 2 - coronacases_002",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_002.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 3 - coronacases_003",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_003.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 4 - coronacases_004",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_004.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 5 - coronacases_005",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_005.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 6 - coronacases_006",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_006.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 7 - coronacases_007",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_007.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 8 - coronacases_008",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_008.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 9 - coronacases_009",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_009.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
+            Experiment(
+                name="Experiment 10 - coronacases_010",
+                initial_state=State(
+                    description="Experiment 1 Initial State",
+                    hasImproved=False,
+                    prompt=PromptForImage(
+                        bounding_box=[BoundingBox()],
+                        point=[
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.POSITIVE),
+                            Point(type=PointType.NEGATIVE),
+                        ],
+                    ),
+                ),
+                stop_condition=[MaxIterations(numIterations=1000)],
+                sample=Sample(
+                    filename="coronacases_010.nii.gz", extension=FileFormatType.NIFTI
+                ),
+            ),
         ],
         optimization_metric=Metric(
             name="Sam Score as an optimization metric", type=MetricType.SAM_SCORE

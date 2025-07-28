@@ -4,6 +4,7 @@ This module centralizes optimization execution using PROBE task and experiment d
 """
 
 import os
+import glob
 import time
 import random
 import torch
@@ -52,9 +53,7 @@ def _get_sample_files(
     Returns:
         List[str]: List of file paths to process
     """
-    import glob
-
-    # If experiment specifies a specific sample, use only that
+    # If the experiment specifies a specific sample, use only that
     if experiment.sample and experiment.sample.filename:
         sample_file = f"{dataset_info['images_path']}/{experiment.sample.filename}"
         if os.path.exists(sample_file):
@@ -246,7 +245,7 @@ class OptimizationExecutor:
 
     def _setup_sam_model(self, task: OptimizationTask) -> SamPredictor:
         """
-        Setup SAM model from task configuration.
+        Set up the SAM model from task configuration.
 
         Args:
             task (OptimizationTask): Task containing model configuration

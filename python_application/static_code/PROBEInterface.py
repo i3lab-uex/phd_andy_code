@@ -42,7 +42,7 @@ class PROBEInterface:
             str: Formatted results message
         """
         try:
-            # Create stop callback function that the optimization process can check
+            # Create a stop callback function that the optimization process can check
             def should_stop():
                 return self.stop_optimization
 
