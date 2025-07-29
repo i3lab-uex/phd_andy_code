@@ -38,8 +38,8 @@ Change what you need for your platform.
 2. Create and activate a new environment:
 
     ```shell
-    conda create --name PROBE python=3.10 --yes
-    conda activate PROBE
+    conda create --name probe python=3.10 --yes
+    conda activate probe
     ```
 
 3. Clean conda and pip caches:
