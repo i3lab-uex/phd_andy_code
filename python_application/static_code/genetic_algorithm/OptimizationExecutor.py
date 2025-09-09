@@ -64,6 +64,8 @@ def _get_sample_files(
     # Otherwise, use all files in the dataset
     if dataset_info["name"] == "Coronacases":
         files = glob.glob(f"{dataset_info['images_path']}/coronacases_*.nii.gz")
+    elif dataset_info["name"] == "Radiopaedia":
+        files = glob.glob(f"{dataset_info['images_path']}/radiopaedia_*.nii.gz")
     else:
         # Generic pattern for other datasets
         files = glob.glob(f"{dataset_info['images_path']}/*.nii.gz")
