@@ -2,6 +2,7 @@ import os
 import time
 import threading
 from typing import Dict, Union
+from datetime import datetime
 import gradio as gr
 from python_application.generated_code.model.PROBE import PROBE
 from python_application.static_code.utils.LogCapture import global_stream_capture
@@ -25,6 +26,38 @@ class PROBEInterface:
         self.optimization_running = False
         self.stop_optimization = False
         self.current_thread = None
+
+    def _save_results_to_file(self, results_text: str, task_name: str = None, experiment_name: str = None) -> None:
+        """
+        Save optimization results to a file.
+
+        Args:
+            results_text (str): The results text to save
+            task_name (str, optional): Name of the task for filename
+            experiment_name (str, optional): Name of the experiment for filename
+        """
+        try:
+            # Create results directory if it doesn't exist
+            results_dir = os.path.join(os.getcwd(), "optimization_results")
+            os.makedirs(results_dir, exist_ok=True)
+
+            # Generate filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            if experiment_name:
+                filename = f"optimization_results_{task_name}_{experiment_name}_{timestamp}.txt"
+            else:
+                filename = f"optimization_results_{task_name}_{timestamp}.txt"
+
+            filepath = os.path.join(results_dir, filename)
+
+            # Write results to file
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.write(f"Optimization Results - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                f.write("=" * 60 + "\n\n")
+                f.write(results_text)
+
+        except Exception as e:
+            print(f"Warning: Could not save results to file: {str(e)}")
 
     def run_prompt_task_optimization(
         self, task_name: str, prompts_path: str, population_size: int, seed: int
@@ -56,7 +89,7 @@ class PROBEInterface:
 
             if result["status"] == "success":
                 results = result["results"]
-                return f"""✅ Prompt-based Task Optimization Completed Successfully!
+                results_text = f"""✅ Prompt-based Task Optimization Completed Successfully!
                 
                 📋 Task: {results["task_name"]}
                 📊 Results Summary:
@@ -68,6 +101,11 @@ class PROBEInterface:
                 • Average SAM Score: {results["avg_score"]:.4f}
                 
                 Check the output directory for detailed results and visualizations."""
+
+                # Save results to file
+                self._save_results_to_file(results_text, results["task_name"])
+
+                return results_text
             else:
                 return f"❌ Error: {result['message']}"
 
@@ -111,7 +149,7 @@ class PROBEInterface:
 
             if result["status"] == "success":
                 results = result["results"]
-                return f"""✅ Prompt-based Experiment Optimization Completed Successfully!
+                results_text = f"""✅ Prompt-based Experiment Optimization Completed Successfully!
                 
                 📋 Experiment: {results["experiment_name"]}
                 📊 Results Summary:
@@ -122,6 +160,11 @@ class PROBEInterface:
                 • Average SAM Score: {results["avg_score"]:.4f}
                 
                 Check the output directory for detailed results and visualizations."""
+
+                # Save results to file
+                self._save_results_to_file(results_text, task_name, results["experiment_name"])
+
+                return results_text
             else:
                 return f"❌ Error: {result['message']}"
 
