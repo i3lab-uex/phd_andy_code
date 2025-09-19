@@ -40,6 +40,39 @@ from python_application.static_code.utils.LogCapture import (
 )
 
 
+@staticmethod
+def initialize_pop(coords: np.ndarray, popSize: int, box_coor: List[int]) -> np.ndarray:
+    """
+    Initializes a population for the SAM prompt optimization genetic algorithm.
+
+    The first individual contains the original coordinates, and the rest are random variations within the bounding box limits.
+
+    Args:
+        coords (array-like): Initial coordinates in format [x1, y1, x2, y2, ...].
+
+    Returns:
+        np.ndarray: Matrix of shape (popSize, len(coords)) with modified coordinates.
+    """
+    print(coords)
+    ind = np.ndarray(shape=(popSize, len(coords)), dtype=float)
+    ind[0] = coords
+    for i in range(1, popSize):
+        x = random.uniform(-popSize / 2, popSize / 2)
+        y = random.uniform(-popSize / 2, popSize / 2)
+        for j in range(0, len(coords), 2):
+            ind[i, j] = coords[j] + x
+
+            while ind[i, j] > box_coor[2] or ind[i, j] < box_coor[0]:
+                ind[i, j] = coords[j] + random.uniform(-popSize / 2, popSize / 2)
+
+        for j in range(1, len(coords + 1), 2):
+            ind[i, j] = coords[j] + y
+
+            while ind[i, j] > box_coor[3] or ind[i, j] < box_coor[1]:
+                ind[i, j] = coords[j] + random.uniform(-popSize / 2, popSize / 2)
+    return ind
+
+
 def _get_sample_files(
     dataset_info: Dict[str, str], experiment: Experiment
 ) -> List[str]:
@@ -83,7 +116,9 @@ def _process_single_slice(
     slice_name: str,
     dataset_info: Dict[str, str],
     population_size: int,
-    seed: int,
+    points_coordinates: np.ndarray,
+    box_coords: List[int],
+    seed: int
 ) -> Dict[str, Any]:
     """
     Process a single image slice.
@@ -97,6 +132,7 @@ def _process_single_slice(
         slice_name (str): Name for output files
         dataset_info (Dict[str, str]): Dataset configuration
         population_size (int): GA population size
+        coordinates (np.ndarray): Initial coordinates for population initialization
         seed (int): Random seed
 
     Returns:
@@ -120,7 +156,9 @@ def _process_single_slice(
     predictor.set_image(processed_image)
 
     # Prepare an optimization problem
-    original_mask_as_bool = mask_slice != 0
+    original_mask_transformed = np.squeeze(mask_slice)
+    original_mask_as_bool = original_mask_transformed != 0
+
     objective = task.optimization_metric.name.lower()
     if "jaccard" in objective:
         objective = "jaccard"
@@ -141,7 +179,7 @@ def _process_single_slice(
     )
 
     # Run optimization
-    algorithm = GA(pop_size=population_size)
+    algorithm = GA(pop_size=population_size, sampling=initialize_pop(points_coordinates, population_size, box_coords))
     history_callback = OptimizationCallback()
 
     result = minimize(
@@ -357,6 +395,7 @@ class OptimizationExecutor:
                                 prompts_path, base_name, slice_idx
                             )
                         )
+                        points_coordinates = np.asarray(pos_coords + neg_coords)
                         prompt_info = {
                             "input_box": np.array(box_coords),
                             "coordinates": np.array(pos_coords + neg_coords),
@@ -389,6 +428,8 @@ class OptimizationExecutor:
                     slice_name,
                     dataset_info,
                     population_size,
+                    points_coordinates,
+                    box_coords,
                     seed,
                 )
 
