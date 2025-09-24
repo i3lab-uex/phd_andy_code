@@ -492,6 +492,59 @@ class OptimizationExecutor:
 
         return final_results
 
+    def _write_final_results_to_file(self, task: OptimizationTask, final_results: Dict[str, Any]) -> str:
+        """
+        Write final optimization results to a text file in the task output directory.
+
+        Args:
+            task (OptimizationTask): The optimization task that was executed
+            final_results (Dict[str, Any]): Dictionary containing aggregated results from all experiments
+
+        Returns:
+            str: Path to the generated results summary file
+        """
+        # Get dataset information to determine output path
+        dataset_info = self._extract_dataset_info(task)
+        results_summary_file = f"{dataset_info['output_path']}/{task.name}_task_summary.txt"
+
+        # Write comprehensive results summary to file
+        with open(results_summary_file, "w") as f:
+            f.write("="*60 + "\n")
+            f.write(f"TASK OPTIMIZATION SUMMARY: {task.name}\n")
+            f.write("="*60 + "\n\n")
+
+            # Write basic task information
+            f.write(f"Task Name: {final_results['task_name']}\n")
+            f.write(f"Total Execution Time: {final_results['total_time']:.2f} seconds\n")
+            f.write(f"Total Processed Slices: {final_results['total_processed_slices']}\n")
+            f.write(f"Number of Experiments: {final_results['num_experiments']}\n\n")
+
+            # Write aggregated metrics across all experiments
+            f.write("AVERAGE METRICS ACROSS ALL EXPERIMENTS:\n")
+            f.write("-"*40 + "\n")
+            f.write(f"Average Dice Coefficient: {final_results['avg_dice']}\n")
+            f.write(f"Average Jaccard Index: {final_results['avg_jaccard']}\n")
+            f.write(f"Average Score: {final_results['avg_score']}\n\n")
+
+            # Write detailed results for each individual experiment
+            f.write("INDIVIDUAL EXPERIMENT RESULTS:\n")
+            f.write("-"*40 + "\n")
+            for i, exp_result in enumerate(final_results['experiment_results'], 1):
+                f.write(f"\nExperiment {i}: {exp_result['experiment_name']}\n")
+                f.write(f"  - Execution Time: {exp_result['total_time']:.2f} seconds\n")
+                f.write(f"  - Processed Slices: {exp_result['processed_slices']}\n")
+                f.write(f"  - Average Dice: {exp_result['avg_dice']}\n")
+                f.write(f"  - Average Jaccard: {exp_result['avg_jaccard']}\n")
+                f.write(f"  - Average Score: {exp_result['avg_score']}\n")
+
+            # Write footer with generation timestamp
+            f.write(f"\n{'='*60}\n")
+            f.write(f"Summary generated on: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+
+        print(f"📊 Task summary saved to: {results_summary_file}")
+        return results_summary_file
+
+
     def run_task_optimization(
         self,
         task: OptimizationTask,
