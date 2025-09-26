@@ -627,6 +627,9 @@ class OptimizationExecutor:
             "experiment_results": experiment_results,
         }
 
+        # Write final results to a summary file
+        self._write_final_results_to_file(task, final_results)
+
         if self.progress_tracker:
             self.progress_tracker.log_final_summary(
                 {"name": task.name, **final_results}
