@@ -13,9 +13,6 @@ authors:
     email: andy@unex.es
     affiliation: Universidad de Extremadura
     orcid: 'https://orcid.org/0000-0002-1024-6202'
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.22159981
 repository-code: 'https://github.com/i3lab-uex/phd_andy_code'
 abstract: >-
   Los modelos fundacionales de inteligencia artificial (IA) orientados a prompt presentan un potencial sin precedentes para resolver tareas complejas, desde la generación de texto coherente hasta el reconocimiento de objetos en imágenes.
