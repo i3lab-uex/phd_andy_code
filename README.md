@@ -1,6 +1,6 @@
 # PROBE: una propuesta conceptual de software dirigida por modelos para explorar los límites de los modelos fundacionales orientados a prompt aplicados a tareas específicas
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22159446.svg)](https://doi.org/10.5281/zenodo.22159446)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22159981.svg)](https://doi.org/10.5281/zenodo.22159981)
 
 This project contains the code projects for the PhD work entitled "PROBE: una propuesta conceptual de software dirigida por modelos para explorar los límites de los modelos fundacionales orientados a prompt aplicados a tareas específicas".
 The code is organized into the following directories, each one corresponding to a different project characteristic:
