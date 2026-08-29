@@ -3,13 +3,9 @@
 
 cff-version: 1.2.0
 title: >-
-  PROBE: una propuesta conceptual de software dirigida por
-  modelos para explorar los límites de los modelos
-  fundacionales orientados a prompt aplicados a tareas
-  específicas
+  PROBE: una propuesta conceptual de software dirigida por modelos para explorar los límites de los modelos fundacionales orientados a prompt aplicados a tareas específicas
 message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
+  Si utilizas este software, te rogamos que lo cites utilizando los   metadatos de este archivo.
 type: software
 authors:
   - given-names: Juan D.
@@ -17,50 +13,23 @@ authors:
     email: andy@unex.es
     affiliation: Universidad de Extremadura
     orcid: 'https://orcid.org/0000-0002-1024-6202'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22159446
 repository-code: 'https://github.com/i3lab-uex/phd_andy_code'
 abstract: >-
-  Los modelos fundacionales de inteligencia artificial (IA)
-  orientados a prompt presentan un potencial sin precedentes
-  para resolver tareas complejas, desde la generación de
-  texto coherente hasta el reconocimiento de objetos en
-  imágenes.
-  Sin embargo, su aplicación efectiva en dominios
-  específicos sin incurrir en costosos procesos de
-  reentrenamiento o ajuste fino (fine-tuning) constituye un
-  desafío fundamental.
-  Además, no existe una metodología sistemática que permita
-  evaluar su rendimiento al aplicarlos a una tarea
-  específica, ni comparar el funcionamiento de diferentes
-  versiones del mismo modelo.
-  Esta tesis aborda directamente dichas carencias,
-  explorando tres cuestiones clave: 1) la viabilidad de
-  aplicar un modelo de propósito general a una tarea
-  específica (downstream task) mediante la optimización de
-  la interacción (prompting), 2) la existencia y
-  cuantificación de un techo de rendimiento inherente a esta
-  aproximación no intrusiva, y 3) la transferencia directa
-  de mejoras a la tarea específica cuando el modelo base
-  evoluciona.
+  Los modelos fundacionales de inteligencia artificial (IA) orientados a prompt presentan un potencial sin precedentes para resolver tareas complejas, desde la generación de texto coherente hasta el reconocimiento de objetos en imágenes.
+  Sin embargo, su aplicación efectiva en dominios específicos sin incurrir en costosos procesos de reentrenamiento o ajuste fino (fine-tuning) constituye un desafío fundamental.
+  Además, no existe una metodología sistemática que permita evaluar su rendimiento al aplicarlos a una tarea específica, ni comparar el funcionamiento de diferentes versiones del mismo modelo.
+  Esta tesis aborda directamente dichas carencias, explorando tres cuestiones clave: 1) la viabilidad de aplicar un modelo de propósito general a una tarea específica (downstream task) mediante la optimización de la interacción (prompting), 2) la existencia y cuantificación de un techo de rendimiento inherente a esta aproximación no intrusiva, y 3) la transferencia directa de mejoras a la tarea específica cuando el modelo base evoluciona.
 
-  Para dar respuesta a estos desafíos se realiza una
-  propuesta dirigida por modelos que formaliza un marco
-  metodológico para la exploración y evaluación de los
-  límites de rendimiento de modelos fundacionales orientados
-  a prompt llamada PROBE (Prompt Optimization for Boundary
-  Exploration, Optimización de Prompts para la Exploración
-  de Límites).
-  Esta propuesta establece un proceso estructurado para
-  determinar el máximo potencial de un modelo fundacional
-  aplicado a una tarea especializada, permitiendo a los
-  usuarios tomar decisiones informadas sobre su idoneidad y
-  estrategia de implementación.
+  Para dar respuesta a estos desafíos se realiza una propuesta dirigida por modelos que formaliza un marco metodológico para la exploración y evaluación de los límites de rendimiento de modelos fundacionales orientados a prompt llamada PROBE (Prompt Optimization for Boundary Exploration, Optimización de Prompts para la Exploración de Límites).
+  Esta propuesta establece un proceso estructurado para determinar el máximo potencial de un modelo fundacional aplicado a una tarea especializada, permitiendo a los usuarios tomar decisiones informadas sobre su idoneidad y estrategia de implementación.
 
-  La propuesta se valida empíricamente a través de un caso
-  de estudio en segmentación de imágenes, demostrando la
-  capacidad de ésta para guiar la optimización y medir sus
-  límites de forma efectiva.
+  La propuesta se valida empíricamente a través de un caso de estudio en segmentación de imágenes, demostrando la capacidad de ésta para guiar la optimización y medir sus límites de forma efectiva.
 keywords:
   - Ingeniería del software dirigida por modelos
   - Modelos fundacionales
   - Optimización de prompts
 license: CC-BY-NC-ND-4.0
+version: 1.0.0
